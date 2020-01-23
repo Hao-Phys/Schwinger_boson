@@ -1,0 +1,5715 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{amsthm}\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{appendix}
+\usepackage{comment}
+\usepackage{lscape}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,headheight=1cm,headsep=4cm,footskip=1cm,left=2cm,right=2cm}
+\numberwithin{equation}{section}
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+
+
+\title{Dynamical structure factor: $J_1$-$J_2$ triangular lattice antiferromagnetic model}
+\date{July 2018}
+\author{Hao Zhang}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 2
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 4cm
+\footskip 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Dynamical structure factor:
+\begin_inset Formula $J_{1}$
+\end_inset
+
+-
+\begin_inset Formula $J_{2}$
+\end_inset
+
+ triangular lattice antiferromagnetic model
+\end_layout
+
+\begin_layout Author
+Hao Zhang
+\end_layout
+
+\begin_layout Date
+July, 2018
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+We consider the triangular lattice 
+\begin_inset Formula $S=1/2$
+\end_inset
+
+ Heisenberg model in the presence of nearest neighbor (NN) 
+\begin_inset Formula $J_{1}$
+\end_inset
+
+ and next nearest neighbor (NNN) 
+\begin_inset Formula $J_{2}$
+\end_inset
+
+ antiferromagnetic couplings,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{H}=J_{1}\sum_{\bm{i},\bm{\delta}_{1}>0}\bm{S}_{\bm{i}}\cdot\bm{S}_{\bm{i}+\bm{\delta}_{1}}+J_{2}\sum_{\bm{i},\bm{\delta}_{2}>0}\bm{S}_{\bm{i}}\cdot\bm{S}_{\bm{i}+\bm{\delta}_{2}}\label{eq:hham}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will use the Schwinger boson method including Gaussian fluctuations to
+ calculate the dynamical structure factor of this model.
+ To reproduce realistic spin dynamics of a symmetry-broken ground state,
+ we introduce a small symmetry breaking field in 
+\begin_inset Formula $x-y$
+\end_inset
+
+ plane and take thermodynamic limit at the end of the calculation,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\bm{h}_{\bm{i}}=(h\cos(\bm{Q}\cdot\bm{r}_{\bm{i}}),h\sin(\bm{Q}\cdot\bm{r}_{\bm{i}}),0)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\bm{Q}$
+\end_inset
+
+ is the order parameter of the symmetry-broken ground state.
+ For 
+\begin_inset Formula $2\pi/3$
+\end_inset
+
+ -phase of triangular lattice, 
+\begin_inset Formula $\bm{Q}=(\frac{2\pi}{3},\frac{2\pi}{\sqrt{3}})$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Section
+Path integral formalism
+\end_layout
+
+\begin_layout Subsection
+Spin representation
+\end_layout
+
+\begin_layout Standard
+We introduce the Schwinger boson representation of spin operators 
+\begin_inset Formula $\bm{S}_{\bm{i}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+S_{\bm{i}}^{+} & =b_{\bm{i}\uparrow}^{\dagger}b_{\bm{i}\downarrow}\nonumber \\
+S_{\bm{i}}^{-} & =b_{\bm{i}\downarrow}^{\dagger}b_{\bm{i}\uparrow}\nonumber \\
+S_{\bm{i}}^{z} & =\frac{1}{2}(b_{\bm{i}\uparrow}^{\dagger}b_{\bm{i}\uparrow}-b_{\bm{i}\downarrow}^{\dagger}b_{\bm{i}\downarrow})
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The physical subspace of the Fock space formed by Schwinger bosons must
+ have well-defined spin size:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sum_{\sigma}b_{\bm{i}\sigma}^{\dagger}b_{\bm{i}\sigma}=2S=1\quad\sigma=\uparrow,\downarrow\label{eq:constraint}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Heisenberg interactions of 
+\begin_inset Formula $J_{1}-J_{2}$
+\end_inset
+
+ model can be expressed in terms of 
+\series bold
+six
+\series default
+ pairs of 
+\shape italic
+bond operators
+\shape default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\bm{S}_{\bm{i}}\cdot\bm{S}_{\bm{i}+\bm{\delta}}=-A_{\bm{i},\bm{\delta}}^{\dagger}A_{\bm{i},\bm{\delta}}+:B_{\bm{i},\bm{\delta}}^{\dagger}B_{\bm{i},\bm{\delta}}:
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}$
+\end_inset
+
+, and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+A_{\bm{i},\bm{\delta}} & =\frac{1}{2}(b_{\bm{i}\uparrow}b_{\bm{i}+\bm{\delta}\downarrow}-b_{\bm{i}\downarrow}b_{\bm{i}+\bm{\delta}\uparrow})\nonumber \\
+B_{\bm{i},\bm{\delta}} & =\frac{1}{2}(b_{\bm{i}\uparrow}b_{\bm{i}+\bm{\delta}\uparrow}^{\dagger}+b_{\bm{i}\downarrow}b_{\bm{i}+\bm{\delta}\downarrow}^{\dagger})
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+....................................
+ The physical meaning of the bond operator needs to be added ..............................................
+\end_layout
+
+\begin_layout Subsection
+The generating Hamiltonian
+\end_layout
+
+\begin_layout Standard
+The generating Hamiltonian is defined by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{H}[j,h]=\mathcal{H}-\frac{1}{2}\sum_{\bm{i}}\sum_{\sigma\sigma'}j_{\bm{i}}^{\tau\mu}b_{\bm{i}\sigma}^{\tau\dagger}\sigma_{\sigma\sigma'}^{\mu}b_{\bm{i}\sigma'}^{\tau}+\mathcal{H}_{h}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $j_{\bm{i}}^{\tau\mu}$
+\end_inset
+
+ represents the external current coupled with the spin component 
+\begin_inset Formula $S^{\mu}=\frac{1}{2}\sigma^{\mu}$
+\end_inset
+
+ at space 
+\begin_inset Formula $\bm{i}$
+\end_inset
+
+ and imaginary-time 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+ The Zeeman energy of the spin operators with the symmetry breaking field
+ is given by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{H}_{h} & =-\sum_{i}\bm{h}_{\bm{i}}\cdot\bm{S}_{\bm{i}}\nonumber \\
+ & =-\frac{1}{2}\sum_{\bm{i}}\bm{h}_{\bm{i}}\cdot\bm{\sigma}_{\bm{i}}\\
+ & =-\frac{h}{2}\sum_{\bm{i}}\cos(\bm{Q}\cdot\bm{r}_{\bm{i}})\sigma_{\bm{i}}^{x}+\sin(\bm{Q}\cdot\bm{r}_{\bm{i}})\sigma_{\bm{i}}^{y}\nonumber \\
+ & =-\frac{h}{2}\sum_{\bm{i}}e^{-i\bm{Q}\cdot\bm{r}_{\bm{i}}}b_{{\bm{i}}\uparrow}^{\dagger}b_{{\bm{i}}\downarrow}+e^{i\bm{Q}\cdot\bm{r}_{\bm{i}}}b_{{\bm{i}}\downarrow}^{\dagger}b_{{\bm{i}}\uparrow}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Schwinger boson representation introduces an extra local 
+\begin_inset Formula $U(1)$
+\end_inset
+
+ 
+\shape italic
+gauge
+\shape default
+ symmetry in the model, as evident by 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:constraint"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+b_{\bm{i}\sigma}^{\tau}\rightarrow b_{\bm{i}\sigma}^{\tau}e^{i\theta_{\bm{i}}^{\tau}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can exploit this property to simplify the Zeeman energy.
+ Performing the following gauge transforms:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+b_{\bm{i}\uparrow}^{\tau} & \rightarrow e^{-i\frac{\bm{Q\cdot\bm{r}_{i}}}{2}}b_{\bm{i}\uparrow}^{\tau}\nonumber \\
+b_{\bm{i}\downarrow}^{\tau} & \rightarrow e^{i\frac{\bm{Q\cdot\bm{r}_{i}}}{2}}b_{\bm{i}\downarrow}^{\tau}\label{eq:gaugetrans}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Zeeman energy now takes the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{H}_{h}\rightarrow-\frac{h}{2}\sum_{\bm{i}}b_{{\bm{i}}\uparrow}^{\dagger}b_{{\bm{i}}\downarrow}+b_{{\bm{i}}\downarrow}^{\dagger}b_{{\bm{i}}\uparrow}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The generating functional
+\end_layout
+
+\begin_layout Standard
+The generating functional of boson coherent states path integral is given
+ by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+Z[j,h] & =\Tr P_{S}T_{\tau}\bigg[\exp\bigg(-\int_{0}^{\beta}d\tau\mathcal{H}[j,h]\bigg)\bigg]\nonumber \\
+ & =\lim_{\epsilon\rightarrow0}\Tr T_{\tau}\prod_{n=0}^{N_{\epsilon}-1}\big[P_{S}^{\tau_{n}}\exp(-\epsilon\mathcal{H}[j(\tau_{n}),h])\big]
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\epsilon=\beta/N_{\epsilon}$
+\end_inset
+
+ is the imaginary time step, and 
+\begin_inset Formula $\tau_{n}=n\epsilon$
+\end_inset
+
+ is the discrete imaginary time.
+ 
+\begin_inset Formula $P_{S}$
+\end_inset
+
+ is the projector to enforce the constraint 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:constraint"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+P_{S} & =\prod_{\bm{i}}\bigg\{\frac{1}{2\pi}\int_{-\pi}^{\pi}\dd\lambda_{\bm{i}}\exp\bigg(-i\lambda_{\bm{i}}(\sum_{\sigma}b_{\bm{i}\sigma}^{\dagger}b_{\bm{i}\sigma}-2S)\bigg)\\
+ & =\lim_{\epsilon\rightarrow0}\prod_{\bm{i}}\epsilon\int_{-\pi/\epsilon}^{\pi/\epsilon}\frac{\dd\lambda_{\bm{i}}^{\tau_{n}}}{2\pi}\exp\bigg(-i\epsilon\lambda_{\bm{i}}^{\tau_{n}}(\sum_{\sigma}b_{\bm{i}\sigma}^{\tau_{n}\dagger}b_{\bm{i}\sigma}^{\tau_{n}}-2S)\bigg)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The projector projects out all the unphysical cases: the exponential factor
+ oscillates very fast when the system deviates from the physical subspace,
+ leading to a cancelling of phases.
+ The constraint must be satisfied at 
+\emph on
+every
+\emph default
+ single time.
+ In the second step, we have introduced the variable 
+\begin_inset Formula $\epsilon\lambda_{\bm{i}}^{\tau_{n}}=\lambda_{\bm{i}}$
+\end_inset
+
+ to display the explicit time-dependence.
+ In this way, the effect of the projector is incorporated into the path
+ integral.
+ 
+\end_layout
+
+\begin_layout Standard
+The resolution of identity of boson coherent states is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathbb{I}=\int\dd^{2}\vb{b}e^{-\bar{{\vb{b}}}\vb{b}}\ket{\vb{b}}\bra{\vb{b}}\label{eq:roi}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\vb{b}=(b_{1\sigma},...,b_{\mathcal{N}\sigma})$
+\end_inset
+
+ is a 
+\begin_inset Formula $2\mathcal{N}$
+\end_inset
+
+-dimensional (
+\begin_inset Formula $\sigma=\uparrow,\downarrow)$
+\end_inset
+
+ vector living in the parameter space of boson coherent states.
+ The integration measure is defined as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\int\dd^{2}\vb{b}\equiv\int_{-\infty}^{\infty}\prod_{\bm{i}\sigma}\frac{\dd(\Re b_{\bm{i}\sigma})\dd(\Im b_{\bm{i}\sigma})}{\pi}=\int_{-\infty}^{\infty}\prod_{\bm{i}\sigma}\frac{\text{d}\bar{b}_{\bm{i}\sigma}\text{d}b_{\bm{i}\sigma}}{2\pi i}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $b_{\bm{i}\sigma}=\Re b_{\bm{i}\sigma}+i\Im b_{\bm{i}\sigma}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{b}{}_{\bm{i}\sigma}=\Re b_{\bm{i}\sigma}-i\Im b_{\bm{i}\sigma}$
+\end_inset
+
+ , and 
+\begin_inset Formula $\dd(\Re b_{\bm{i}\sigma})\dd(\Im b_{\bm{i}\sigma})=\mathcal{J}\text{d}\bar{b}_{\bm{i}\sigma}\text{d}b_{\bm{i}\sigma}$
+\end_inset
+
+ , and 
+\begin_inset Formula $\mathcal{J}=1/(2i)$
+\end_inset
+
+ is the Jacobian.
+ The trace of an operator can be calculated by using the boson coherent
+ states,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\Tr\mathcal{O} & =\sum_{n}\bra{n}\mathcal{O}\ket{n}\\
+ & =\int\dd^{2}\vb{b}e^{-\bar{{\vb{b}}}\vb{b}}\sum_{n}\bra{n}\ket{\vb{b}}\bra{\vb{b}}\mathcal{O}\ket{n}\\
+ & =\int\dd^{2}\vb{b}e^{-\bar{{\vb{b}}}\vb{b}}\bra{\vb{b}}\mathcal{O}\ket{\vb{b}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The generating functional can now be written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+Z[j,h] & =T_{\tau}\int\dd^{2}\vb{b}^{0}e^{-\bar{\vb{b}}^{0}\vb{b}^{0}}\bra{\vb{b}^{0}}\lim_{\epsilon\rightarrow0}\prod_{n=0}^{N_{\epsilon}-1}\prod_{i}\epsilon\int\dd\lambda_{i}\exp\bigg[-\epsilon\bigg(\mathcal{H}[j(\tau_{n}),h]+\lambda_{i}^{\tau_{n}}(\sum_{\sigma}b_{\bm{i}\sigma}^{\tau_{n}\dagger}b_{\bm{i}\sigma}^{\tau_{n}}-2S)\bigg)\bigg]\ket{\vb{b}^{0}}\\
+ & =T_{\tau}\int\dd^{2}\vb{b}^{0}e^{-\bar{\vb{b}}^{0}\vb{b}^{0}}\bra{\vb{b}^{0}}\lim_{\epsilon\rightarrow0}\prod_{n=0}^{N_{\epsilon}-1}\prod_{i}\epsilon\int\dd\lambda_{i}\bigg[1-\epsilon\bigg(\mathcal{H}[j(\tau_{n}),h]+\lambda_{i}^{\tau_{n}}(\sum_{\sigma}b_{\bm{i}\sigma}^{\tau_{n}\dagger}b_{\bm{i}\sigma}^{\tau_{n}}-2S)\bigg)+\mathcal{O}(\epsilon^{2})\bigg]\ket{\vb{b}^{0}}\\
+ & =T_{\tau}\int\dd^{2}\vb{b}^{0}e^{-\bar{\vb{b}}^{0}\vb{b}^{0}}\bra{\vb{b}^{0}}\lim_{\epsilon\rightarrow0}\prod_{\tau=0}^{\beta-\epsilon}\prod_{i}\epsilon\int\dd\lambda_{i}\bigg[1-\epsilon\bigg(\mathcal{H}[j(\tau),h]+\lambda_{i}^{\tau}(\sum_{\sigma}b_{\bm{i}\sigma}^{\tau\dagger}b_{\bm{i}\sigma}^{\tau}-2S)\bigg)+\mathcal{O}(\epsilon^{2})\bigg]\ket{\vb{b}^{0}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We insert 
+\begin_inset Formula $N_{\epsilon}-1$
+\end_inset
+
+ resolution of identity 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:roi"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ in the above path integral, and use periodic boundary condition
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\vb{b}^{0}=\vb{b}^{\beta}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The process of evaluating the path integral takes care of the time-ordering
+ automatically,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+Z[j,h] & =\lim_{\epsilon\rightarrow0}\prod_{\tau}\int\dd^{2}\vb{b}^{\tau}e^{-\bar{{\vb{b}}}^{\tau}\vb{b}^{\tau}}\prod_{\tau=0}^{\beta-\epsilon}\bra{\vb{b}^{\tau+\epsilon}}\epsilon\prod_{i}\int\dd\lambda_{i}\bigg[1-\epsilon\bigg(\mathcal{H}[j(\tau),h]+\lambda_{i}^{\tau}(\sum_{\sigma}b_{\bm{i}\sigma}^{\tau\dagger}b_{\bm{i}\sigma}^{\tau}-2S)\bigg)+\mathcal{O}(\epsilon)\bigg]\ket{\vb{b}^{\tau}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will use the following properties of boson coherent states,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+b_{i\sigma}^{\tau}\ket{\vb{b}} & =b_{i\sigma}^{\tau}\ket{\vb{b}}\nonumber \\
+\bra{\vb{b}}b_{i\sigma}^{\tau\dagger} & =\bra{\vb{b}}\bar{b}_{i\sigma}^{\tau}\\
+\bra{\vb{b}}\ket{\vb{b}'} & =e^{\bar{\vb{b}}\vb{b}'}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The generating functional is now written as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+Z[j] & \simeq\lim_{\epsilon\rightarrow0}\prod_{\tau}\int\dd^{2}\vb{b}^{\tau}e^{-\bar{{\vb{b}}}^{\tau}\vb{b}^{\tau}}\prod_{\tau=0}^{\beta-\epsilon}\epsilon\prod_{\bm{i}}\int\dd\lambda_{\bm{i}}^{\tau}\bigg[\bra{\vb{b}^{\tau+\epsilon}}\ket{\vb{b}^{\tau}}-\epsilon\bigg(H[j(\tau),h]+\lambda_{\bm{i}}^{\tau}(\sum_{\sigma}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma}^{\tau}-2S)\bigg)\bra{\vb{b}^{\tau}}\ket{\vb{b}^{\tau}}\bigg]\nonumber \\
+ & =\lim_{\epsilon\rightarrow0}\prod_{\tau}\int\dd^{2}\vb{b}^{\tau}e^{-\bar{{\vb{b}}}^{\tau}\vb{b}^{\tau}}\prod_{\tau=0}^{\beta-\epsilon}\epsilon\prod_{\bm{i}}\int\dd\lambda_{\bm{i}}^{\tau}\bigg[e^{\bar{\vb{b}}^{\tau+\epsilon}(\vb{b}^{\tau+\epsilon}-\epsilon\partial_{\tau}\vb{b}^{\tau+\epsilon})}-\epsilon\bigg(H[j(\tau),h]+\lambda_{\bm{i}}^{\tau}(\sum_{\sigma}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma}^{\tau}-2S)\bigg)e^{\bar{{\vb{b}}}^{\tau}\vb{b}^{\tau}}\bigg]\nonumber \\
+ & =\int\mathcal{D}^{2}\vb{b}\int\mathcal{D}\lambda\exp\bigg(-\int_{0}^{\beta}d\tau\sum_{{\bm{i}}\sigma}\bar{b}_{{\bm{i}}\sigma}^{\tau}\partial_{\tau}b_{{\bm{i}}\sigma}^{\tau}+H[j(\tau),h]+i\sum_{\bm{i}}\lambda_{\bm{i}}^{\tau}(\sum_{\sigma}\bar{b}_{{\bm{i}}\sigma}^{\tau}b_{{\bm{i}}\sigma}^{\tau}-2S)\bigg)\label{eq:partition}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where we have assumed the operators in 
+\begin_inset Formula $(...)$
+\end_inset
+
+ of the first line are evaluated at equal time, which is of course a shaky
+ assumption.
+ The effect of this time-ordering will be compensated by a manipulation
+ in the Fourier transform of the boson operators later.
+ The short-handed notations of the integration measures are defined as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\int\mathcal{D}^{2}\bm{b} & =\lim_{\epsilon\rightarrow0}\prod_{\tau}\dd^{2}\vb{b}^{\tau}\nonumber \\
+\int\mathcal{D}\lambda & =\lim_{\epsilon\rightarrow0}\prod_{\bm{i}\tau}\epsilon\int\dd\lambda_{\bm{i}}^{\tau}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+classical generating Hamiltonian
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $H[j(\tau),h]$
+\end_inset
+
+ in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:partition"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ has been evaluated in between boson coherent states, then it's no longer
+ an operator.
+ We can call it 
+\begin_inset Quotes eld
+\end_inset
+
+classical
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+H[j(\tau),h] & =J_{1}\sum_{\bm{i},\bm{\delta}_{1}>0}(-\bar{A}_{\bm{i},\bm{\delta}_{1}}^{\tau}A_{\bm{i},\bm{\delta}_{1}}^{\tau}+\bar{B}_{\bm{i},\bm{\delta}_{1}}^{\tau}B_{\bm{i},\bm{\delta}_{1}}^{\tau})\nonumber \\
+ & +J_{2}\sum_{\bm{i},\bm{\delta}_{2}>0}(-\bar{A}_{\bm{i},\bm{\delta}_{2}}^{\tau}A_{\bm{i},\bm{\delta}_{2}}^{\tau}+\bar{B}_{\bm{i},\bm{\delta}_{2}}^{\tau}B_{\bm{i},\bm{\delta}_{2}}^{\tau})\nonumber \\
+ & -\sum_{\bm{i}}\sum_{\sigma\sigma'}j_{\bm{i}}^{\tau\mu}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma'}^{\tau}\sigma_{\sigma\sigma'}^{\mu}+\mathcal{H}_{h}\label{eq:clham}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+A_{\bm{i},\bm{\delta}}^{\tau} & =\frac{1}{2}(b_{\bm{i}\uparrow}^{\tau}b_{\bm{i}+\bm{\delta}\downarrow}^{\tau}-b_{\bm{i}\downarrow}^{\tau}b_{\bm{i}+\bm{\delta}\uparrow}^{\tau})\nonumber \\
+B_{\bm{i},\bm{\delta}}^{\tau} & =\frac{1}{2}(b_{\bm{i}\uparrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\uparrow}^{\tau}+b_{\bm{i}\downarrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\downarrow}^{\tau})
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Hubbard-Stratonovich transform
+\end_layout
+
+\begin_layout Standard
+The classical Hamiltonian 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:clham"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is quartic in boson coherent states variables, which cannot be readily
+ integrated.
+ We introduce Hubbard-Stratonovich (H-S) transform to decouple it into quadratic
+ terms to solve this problem.
+ The H-S identities for pairs of auxiliary fields 
+\begin_inset Formula $(\bar{W}_{\bm{i},\bm{\delta}}^{r},W_{\bm{i},\bm{\delta}}^{r})$
+\end_inset
+
+ are [
+\begin_inset Formula $\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $r=A,B$
+\end_inset
+
+] 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+e^{-J_{\bm{\delta}}\bar{B}_{\bm{i}\bm{\delta}}^{\tau}B_{\bm{i},\bm{\delta}}^{\tau}}=J_{\bm{\delta}}\int\frac{\dd\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}\dd W_{\bm{i},\bm{\delta}}^{(B)\tau}}{2\pi i}e^{-J_{\bm{\delta}}\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}W_{\bm{i},\bm{\delta}}^{(B)\tau}+J_{\bm{\delta}}(-\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}B_{\bm{i},\bm{\delta}}^{\tau}+W_{\bm{i},\bm{\delta}}^{(B)\tau}\bar{B}_{\bm{i},\bm{\delta}}^{\tau})}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+e^{J_{\bm{\delta}}\bar{A}_{\bm{i}\bm{\delta}}^{\tau}A_{\bm{i},\bm{\delta}}^{\tau}}=J_{\bm{\delta}}\int\frac{\dd\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}\dd W_{\bm{i},\bm{\delta}}^{(A)\tau}}{2\pi i}e^{-J_{\bm{\delta}}\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}W_{\bm{i},\bm{\delta}}^{(A)\tau}+J_{\bm{\delta}}(\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}A_{\bm{i},\bm{\delta}}^{\tau}+W_{\bm{i},\bm{\delta}}^{(A)\tau}\bar{A}_{\bm{i},\bm{\delta}}^{\tau})}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As an example, we can check the second identity: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+ & \int\dd\Re W\dd\Im We^{-J(\bar{W}W+\bar{W}A-W\bar{A})}\nonumber \\
+ & =\int\dd\Re W\dd\Im We^{-J[(\Re W-i\Im W)(\Re W+i\Im W)+(\Re W-i\Im W)A-(\Re W+i\Im W)\bar{A}]}\nonumber \\
+ & =\int\dd\Re W\dd\Im We^{(\Re W+\frac{1}{2}(A-\bar{A}))^{2}+(\Im W-\frac{i}{2}(A+\bar{A}))^{2}}e^{\frac{1}{4}J[(A+\bar{A})^{2}-(A-\bar{A})^{2}]}\nonumber \\
+ & =\frac{\pi}{J}e^{J\bar{A}A}
+\end{align}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Also notice that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\int\dd\bar{W}\dd W=(2i)\int\dd\Re W\dd\Im W
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The effective action
+\end_layout
+
+\begin_layout Standard
+The partition function 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:partition"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is now quadratic in boson variables, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z[j,h]=\int\mathcal{D}\bar{W}\mathcal{D}W\mathcal{D}\lambda e^{-\mathcal{S}_{\text{eff}}(\bar{W},W,\lambda,j,h)}\label{eq:pathintegral}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The integration measure for the auxiliary fields is defined as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{D}\bar{W}\mathcal{D}W=\prod_{\bm{i},\bm{\delta}>0}\prod_{\tau}\prod_{r=A,B}J_{\bm{\delta}}\frac{\dd\bar{W}_{\bm{i},\bm{\delta}}^{(r)\tau}\dd W_{\bm{i},\bm{\delta}}^{(r)\tau}}{2\pi i}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The effective action can be split into the auxiliary fields action and the
+ bosonic action
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{S}_{\text{eff}}(\bar{W},W,\lambda,j,h)=\mathcal{S}_{0}(\bar{W},W,\lambda)+\mathcal{S}_{\text{bos}}(\bar{W},W,\lambda,j,h)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The auxiliary fields action takes the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{S}_{0}(\bar{W},W,\lambda)=\int_{0}^{\beta}d\tau\bigg(\sum_{\bm{i},\bm{\delta}>0}\sum_{r}J_{\bm{\delta}}\bar{W}_{\bm{i}\bm{\delta}}^{(r)\tau}W_{\bm{i}\bm{\delta}}^{(r)\tau}-i2S\sum_{\bm{i}}\lambda_{\bm{i}}^{\tau}\bigg)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The bosonic action is defined as the integration over quadratic bosonic
+ variables,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+e^{-\mathcal{S}_{\text{bos}}} & =\int\mathcal{D}^{2}\vb{b}\exp\bigg(-\int_{0}^{\beta}d\tau\sum_{\bm{i}\sigma}\bar{b}_{\bm{i}\sigma}^{\tau}\partial_{\tau}b_{\bm{i}\sigma}^{\tau}+i\sum_{\bm{i}}\lambda_{\bm{i}}^{\tau}\sum_{\sigma}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma}^{\tau}\nonumber \\
+ & +\sum_{\bm{i},\bm{\delta}>0}J_{\bm{\delta}}\big(\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}B_{\bm{i},\bm{\delta}}^{\tau}-W_{\bm{i},\bm{\delta}}^{(B)\tau}\bar{B}_{\bm{i},\bm{\delta}}^{\tau}-\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}A_{\bm{i},\bm{\delta}}^{\tau}-W_{\bm{i},\bm{\delta}}^{(A)\tau}\bar{A}_{\bm{i},\bm{\delta}}^{\tau}\big)\nonumber \\
+ & -\sum_{\bm{i}}\sum_{\sigma\sigma'}j_{\bm{i}}^{\tau\mu}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma'}^{\tau}\sigma_{\sigma\sigma'}^{\mu}+\mathcal{H}_{h}\bigg)\nonumber \\
+ & =\int\mathcal{D}^{2}\vb{b}e^{-\vb{b}^{\dagger}\mathcal{G}^{-1}(\bar{W},W,\lambda,j,h)\vb{b}}=\det[\mathcal{G}(\bar{W},W,\lambda,j,h)]\label{eq:defofaction1}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The dimension of 
+\begin_inset Formula $\mathcal{G}$
+\end_inset
+
+ is 
+\begin_inset Formula $[(\beta/\epsilon)\mathcal{N}N]\times[(\beta/\epsilon)\mathcal{N}N]$
+\end_inset
+
+ , where 
+\begin_inset Formula $N$
+\end_inset
+
+ is the group index of 
+\begin_inset Formula $SU(N)$
+\end_inset
+
+, and 
+\begin_inset Formula $N=2$
+\end_inset
+
+ for physical 
+\begin_inset Formula $SU(2)$
+\end_inset
+
+ model; 
+\begin_inset Formula $\mathcal{N}$
+\end_inset
+
+ is the number of sites of the lattice.
+ 
+\end_layout
+
+\begin_layout Subsection
+Nambu representation 
+\end_layout
+
+\begin_layout Standard
+To investigate possible collective behaviors of the model, we introduce
+ Fourier transforms on boson variables to momentum and Matsubara space.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+b_{\bm{i}\sigma}^{\tau} & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{k},n}b_{\bm{k}\sigma}^{\omega_{n}}e^{-i(\bm{k}\cdot\bm{r}_{i}-\omega_{n}\tau)}\\
+\bar{b}_{\bm{i}\sigma}^{\tau} & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{k},n}\bar{b}_{\bm{k}\sigma}^{\omega_{n}}e^{i(\bm{k}\cdot\bm{r}_{i}-\omega_{n}\tau)}e^{-i\omega_{n}0^{+}}\label{eq:Fourier}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the 
+\series bold
+convergence factor
+\series default
+ 
+\begin_inset Formula $e^{i\omega_{n}0^{+}}$
+\end_inset
+
+ is introduced to account for the time order of boson coherent states as
+ mentioned in the texts after 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:partition"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Similarly, the Fourier transforms on the auxiliary fields are
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+W_{\bm{i},\bm{\delta}}^{(r)\tau} & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}}\sum_{n}W_{\bm{k},\bm{\delta}}^{(r)\omega_{n}}e^{-i(\bm{k}\cdot\bm{x}_{i}-\omega_{n}\tau)}\nonumber \\
+\bar{W}_{\bm{i},\bm{\delta}}^{(r)\tau} & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}}\sum_{n}\bar{W}_{\bm{k},\bm{\delta}}^{(r)\omega_{n}}e^{i(\bm{k}\cdot\bm{x}_{i}-\omega_{n}\tau)}\nonumber \\
+\lambda_{\bm{i}}^{\tau} & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}}\sum_{n}\lambda_{\bm{k}}^{\omega_{n}}e^{-i(\bm{k}\cdot\bm{x}_{i}-\omega_{n}\tau)}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It's convenient to work in the
+\color orange
+ 
+\color red
+Nambu representation
+\color inherit
+ 
+\begin_inset Formula $\vb{b}_{\bm{k},\omega}^{\dagger}=(\bar{b}_{\bm{k}\uparrow}^{\omega},b_{-\bm{k}\downarrow}^{-\omega},\bar{b}_{\bm{k}\downarrow}^{\omega},b_{-\bm{k}\uparrow}^{-\omega})$
+\end_inset
+
+ , which doubles the degrees of freedom of the system.
+ The inverse Green function at 
+\emph on
+each
+\emph default
+ 
+\begin_inset Formula $(\omega,\bm{k})$
+\end_inset
+
+ is a 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ matrix, and the full inverse Green function is given by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{G}^{-1} & =\frac{1}{2}\sum_{\bm{k},\omega}\vb{b}_{\bm{k},\omega}^{\dagger}\mathcal{G}_{\bm{k},\omega}^{-1}\vb{b}_{\bm{k},\omega}\\
+ & \equiv\frac{1}{2}\sum_{\bm{k},\omega}\vb{b}_{\bm{k},\omega}^{\dagger}\mathcal{M}_{\bm{k},\omega}\vb{b}_{\bm{k},\omega}\label{eq:gsumm}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\mathcal{M}_{\bm{k},\omega}\equiv\mathcal{G}_{\bm{k},\omega}^{-1}$
+\end_inset
+
+ is called the dynamical matrix, where we have inserted the factor 
+\begin_inset Formula $1/2$
+\end_inset
+
+ to avoid over-counting.
+ For details of calculation of the dynamical matrix, see Appendix (A).
+ In Nambu representation, the Gaussian integral 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:defofaction1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is equivalent to 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+e^{-\mathcal{S}_{\text{bos}}} & =\int\prod_{\bm{k},\omega>0}\mathcal{D}^{2}\vb{b}_{\bm{k},\omega}e^{-\frac{1}{2}\sum_{\bm{k},\omega}\vb{b}_{\bm{k},\omega}^{\dagger}\mathcal{M}_{\bm{k},\omega}\vb{b}_{\bm{k},\omega}}\\
+ & =\int\prod_{\bm{k},\omega>0}\mathcal{D}^{2}\vb{b}_{\bm{k},\omega}e^{-\frac{1}{2}\sum_{\bm{k},\omega>0}\vb{b}_{\bm{k},\omega}^{\dagger}\mathcal{M}_{\bm{k},\omega}\vb{b}_{\bm{k},\omega}}e^{-\frac{1}{2}\sum_{\bm{k},\omega<0}\vb{b}_{\bm{k},\omega}^{\dagger}\mathcal{M}_{\bm{k},\omega}\vb{b}_{\bm{k},\omega}}\\
+ & =\int\prod_{\bm{k},\omega>0}\mathcal{D}^{2}\vb{b}_{\bm{k},\omega}e^{\sum_{\bm{k},\omega>0}\vb{b}_{\bm{k},\omega}^{\dagger}\mathcal{M}_{\bm{k},\omega}\vb{b}_{\bm{k},\omega}}\\
+ & =\prod_{\bm{k},\omega>0}\det\mathcal{G}_{\bm{k},\omega}\\
+ & =\bigg[\prod_{\bm{k},\omega}\det\mathcal{G}_{\bm{k},\omega}\bigg]^{\frac{1}{2}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that we only integrate over 
+\begin_inset Formula $\bm{k},\omega>0$
+\end_inset
+
+ to avoid another possible over-counting from the integration.
+ The bosonic action is now written as
+\begin_inset Formula 
+\begin{equation}
+\mathcal{S}_{\text{bos}}=-\frac{1}{2}\sum_{\bm{k},\omega}\ln\det\mathcal{G}_{\bm{k},\omega}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The elements of dynamical matrix 
+\begin_inset Formula $\frac{1}{2}\mathcal{M}_{\bm{k},\bm{k}'}^{\omega,\omega'}[j=0]$
+\end_inset
+
+ in the Nambu representation are listed below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\frac{1}{2}\mathcal{M}_{11} & =\bigg[\frac{1}{2}i\omega\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i}{2}\frac{\lambda_{\bm{k}-\bm{k}'}^{\omega-\omega'}}{\sqrt{\mathcal{N}\beta}}\nonumber \\
+ & -\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}\bigg(W_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}\bigg)\bigg]e^{-i\omega0^{+}}\label{eq:m11}\\
+\frac{1}{2}\mathcal{M}_{22} & =\bigg[\frac{1}{2}(-i\omega)\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i}{2}\frac{\lambda_{\bm{k}'-\bm{k}}^{\omega'-\omega}}{\sqrt{\mathcal{N}\beta}}\nonumber \\
+ & -\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}\bigg(W_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}e^{-i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}e^{i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}\bigg)\bigg]e^{i\omega0^{+}}\\
+\frac{1}{2}\mathcal{M}_{33} & =\bigg[\frac{1}{2}i\omega\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i}{2}\frac{\lambda_{\bm{k}-\bm{k}'}^{\omega-\omega'}}{\sqrt{\mathcal{N}\beta}}\nonumber \\
+ & -\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}\bigg(W_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}\bigg)\bigg]e^{-i\omega0^{+}}\\
+\frac{1}{2}\mathcal{M}_{44} & =\bigg[\frac{1}{2}(-i\omega)\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i}{2}\frac{\lambda_{\bm{k}'-\bm{k}}^{\omega'-\omega}}{\sqrt{\mathcal{N}\beta}}\nonumber \\
+ & -\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}\bigg(W_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}e^{-i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}e^{i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}\bigg)\bigg]e^{i\omega0^{+}}\\
+\frac{1}{2}\mathcal{M}_{12} & =\bigg[\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(A)\omega-\omega'}\bigg(e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}\bigg)\bigg]e^{-i(\omega-\omega')0^{+}}\\
+\frac{1}{2}\mathcal{M}_{21} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(A)\omega'-\omega}\bigg(e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}\bigg)\\
+\frac{1}{2}\mathcal{M}_{34} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(A)\omega-\omega'}\bigg(e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}\bigg)\\
+\frac{1}{2}\mathcal{M}_{43} & =\bigg[\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(A)\omega'-\omega}\bigg(e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}\bigg)\bigg]e^{-i(\omega-\omega')0^{+}}\\
+\frac{1}{2}\mathcal{M}_{13} & =\mathcal{M}_{24}=\mathcal{M}_{31}=\mathcal{M}_{42}=-\frac{h}{2}\delta_{\bm{k},\bm{k}'}\\
+\frac{1}{2}\mathcal{M}_{14} & =\mathcal{M}_{23}=\mathcal{M}_{32}=\mathcal{M}_{41}=0\label{eq:m41}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Saddle point expansion
+\end_layout
+
+\begin_layout Standard
+The generating functional 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:pathintegral"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ can be evaluated using 
+\shape italic
+saddle point approximation
+\shape default
+, assuming 
+\begin_inset Formula $N=2$
+\end_inset
+
+ , the group index, is large.
+ We expand the effective action around its saddle point: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{S}_{\text{eff}}=\mathcal{S}^{(0)}+\sum_{\alpha}\mathcal{S}_{\alpha}^{(1)}\Delta\phi_{\alpha}+\sum_{\alpha_{1}\alpha_{2}}\mathcal{S}_{\alpha_{1}\alpha_{2}}^{(2)}\Delta\phi_{\alpha_{1}}\Delta\phi_{\alpha_{2}}+\mathcal{S}_{\text{int}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the fluctuations of gauge fields around the saddle point are denoted
+ by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta\phi_{\alpha}=\phi_{\alpha}-\phi_{\alpha}^{\text{sp}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The label 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ includes field, Nambu (momentum and frequency) indices, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\phi_{\alpha}=(\bar{W}_{\bm{k},\bm{\delta}}^{(r)\omega},W_{\bm{k},\bm{\delta}}^{(r)\omega},\lambda_{\bm{k}}^{\omega})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathcal{S}_{\text{int}}$
+\end_inset
+
+ includes third and higher order expansion in the fluctuations of gauge
+ fields, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{S}_{\text{int}}=\sum_{n=3}^{\infty}\mathcal{S}_{\alpha_{1}..\alpha_{n}}^{(n)}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The coefficients of 
+\begin_inset Formula $\mathcal{S}_{\text{int}}$
+\end_inset
+
+ are
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{S}_{\alpha_{1},...\alpha_{n}}^{(n)}=\frac{1}{n!}\frac{\partial^{n}\mathcal{S}_{\text{eff}}}{\partial\phi_{\alpha_{1}}...\partial\phi_{\alpha_{n}}}\bigg|_{\text{sp}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Perturbation theory
+\end_layout
+
+\begin_layout Standard
+We will rewrite the bosonic action 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:defofaction1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ in such a way that is useful for perturbative calculations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{S}_{\text{bos}} & =-\frac{1}{2}\sum_{\bm{k},\omega}\ln\det\mathcal{G}_{\bm{k},\omega}\\
+ & =-\frac{1}{2}\sum_{\bm{k},\omega}\Tr\ln\mathcal{G}_{\bm{k},\omega}\\
+ & =\frac{1}{2}\sum_{\bm{k},\omega}\Tr\ln\mathcal{G}_{\bm{k},\omega}^{-1}\\
+ & =\frac{1}{2}\sum_{\bm{k},\omega}\Tr\ln\big\{\mathcal{G}_{\bm{k},\omega;\text{sp}}^{-1}[1+\mathcal{G}_{\bm{k},\omega;\text{sp}}(\mathcal{G}_{\bm{k},\omega}^{-1}-\mathcal{G}_{\bm{k},\omega;\text{sp}}^{-1})]\big\}\\
+ & =\frac{1}{2}\sum_{\bm{k},\omega}\Tr\ln\mathcal{G}_{\bm{k},\omega;\text{sp}}^{-1}+\frac{1}{4}\sum_{\bm{k},\omega}\Tr\ln[1+\mathcal{G}_{\bm{k},\omega;\text{sp}}(\mathcal{G}_{\bm{k},\omega}^{-1}-\mathcal{G}_{\bm{k},\omega;\text{sp}}^{-1})]\\
+ & =\mathcal{S}_{\text{bos}}[\phi=0]+\frac{1}{2}\sum_{\bm{k},\omega}\Tr\ln\big[1+\mathcal{G}_{\bm{k},\omega;\text{sp}}\sum_{\alpha}\Delta\phi_{\alpha}\hat{v}_{\alpha}\big]\label{eq:expand1}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\mathcal{S}_{\text{bos}}[\phi=0]=\frac{1}{2}\sum_{\bm{k},\omega}\Tr\ln\mathcal{G}_{\bm{k},\omega;\text{sp}}^{-1}$
+\end_inset
+
+ is the saddle point bosonic action, and the 
+\emph on
+internal vertices
+\emph default
+ are defined as following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+(\mathcal{G}_{\bm{k},\omega}^{-1}-\mathcal{G}_{\bm{k},\omega;\text{sp}}^{-1}) & =\sum_{\alpha}\Delta\phi_{\alpha}\frac{\partial\mathcal{G}_{\bm{k},\omega}^{-1}}{\partial\phi_{\alpha}}\bigg|_{\phi=0}\\
+ & =\sum_{\alpha}\Delta\phi_{\alpha}\hat{v}_{\alpha}\label{eq:expand2}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{S}_{\text{bos}}-\mathcal{S}_{\text{bos}}[\phi & =0]=\frac{1}{2}\sum_{\bm{k},\omega}\Tr\ln\big[1+\mathcal{G}_{\bm{k},\omega;\text{sp}}\sum_{\alpha}\Delta\phi_{\alpha}\hat{v}_{\alpha}\big]\\
+ & =\frac{1}{2}\sum_{\bm{k},\omega}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\Tr\bigg(\mathcal{G}_{\bm{k},\omega;\text{sp}}\sum_{\alpha}\Delta\phi_{\alpha}\hat{v}_{\alpha}\bigg)^{n}\\
+ & =\frac{1}{2}\sum_{\bm{k},\omega}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sum_{\alpha_{1},...,\alpha_{n}}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}}\Tr\bigg(\mathcal{G}_{\bm{k},\omega;\text{sp}}\hat{v}_{\alpha_{1}}...\mathcal{G}_{\bm{k},\omega;\text{sp}}\hat{v}_{\alpha_{n}}\bigg)\\
+ & =\frac{1}{2}\sum_{\bm{k},\omega}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n!}\sum_{\alpha_{1},...,\alpha_{n}}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}}\sum_{P(\alpha_{1},...,\alpha_{n})}\Tr\bigg(\mathcal{G}_{\bm{k},\omega;\text{sp}}\hat{v}_{\alpha_{1}}...\mathcal{G}_{\bm{k},\omega;\text{sp}}\hat{v}_{\alpha_{n}}\bigg)\label{eq:expand3}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $P(\alpha_{1},...,\alpha_{n})$
+\end_inset
+
+ denotes the permutation of 
+\begin_inset Formula $(\alpha_{1},...,\alpha_{n})$
+\end_inset
+
+ .
+ We are ready to written down the effective action 
+\begin_inset Formula $\mathcal{S}_{\text{eff}}$
+\end_inset
+
+ order by order
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{S}^{(0)} & =\mathcal{S}_{0}^{(0)}+\mathcal{S}_{\text{bos}}[\phi=0]=\mathcal{S}^{\text{sp}}\\
+\mathcal{S}_{\alpha}^{(1)} & =\frac{\partial\mathcal{S}_{0}^{(1)}}{\partial\phi_{\alpha}}+\frac{1}{2}\sum_{\alpha}\Tr\big[\mathcal{G}_{\text{sp}}\hat{v}_{\alpha}\big]=0\\
+\mathcal{S}_{\alpha_{1}\alpha_{2}}^{(2)} & =\frac{1}{2}\frac{\partial^{2}\mathcal{S}_{0}^{(2)}}{\partial\phi_{\alpha_{1}}\partial\phi_{\alpha_{2}}}-\frac{1}{4}\sum_{\alpha_{1}\alpha_{2}}\Tr\bigg(\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{2}}\bigg)\\
+\mathcal{S}_{\alpha_{1},...\alpha_{n}}^{\text{int}} & =\mathcal{S}_{\text{bos}}^{(n\geq3)}\label{eq:effectivexpansion}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In summary, the generating functional is now written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z[j,h]=e^{-\mathcal{S}^{\text{sp}}(\bar{W}_{\text{sp}},W_{\text{sp}},\lambda_{\text{sp}},j)}\int\mathcal{D}[\bar{\phi},\phi]e^{-(\Delta\vec{\phi}^{\dagger}\mathcal{S}^{(2)}\Delta\vec{\phi}+\mathcal{S}^{\text{int}})}\label{eq:pertgenerating}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\int\mathcal{D}[\bar{\phi},\phi]=\int\mathcal{D}\bar{W}\mathcal{D}W\mathcal{D}\lambda
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first factor of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:pertgenerating"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ represents the partition functional within the saddle point approximation,
+ while the second term is the contribution from the fluctuations of the
+ auxiliary fields.
+ This form is standard for perturbative calculations in field theory.
+ The quadratic term 
+\begin_inset Formula $\mathcal{S}^{(2)}$
+\end_inset
+
+ describes the Gaussian fluctuations around the saddle point, whose elements
+ define the fluctuating matrix:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{S}_{\alpha_{1},\alpha_{2}}^{(2)} & =\frac{1}{2}\frac{\partial^{2}\mathcal{S}_{0}^{(2)}}{\partial\phi_{\alpha_{1}}\partial\phi_{\alpha_{2}}}-\frac{1}{4}\sum_{\alpha_{1}\alpha_{2}}\Tr\bigg(\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{2}}\bigg)\\
+ & =(\Pi_{0}-\Pi)_{\alpha_{1}\alpha_{2}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Pi_{0}$
+\end_inset
+
+ is a diagonal matrix containing the coupling constant 
+\begin_inset Formula $J_{\bm{\delta}}$
+\end_inset
+
+ in the 
+\begin_inset Formula $WW$
+\end_inset
+
+ fields and zero in 
+\begin_inset Formula $\lambda\lambda$
+\end_inset
+
+ element, 
+\begin_inset Formula $\Pi$
+\end_inset
+
+ is also known as the polarization matrix, whose detail form will be derived
+ later.
+ 
+\end_layout
+
+\begin_layout Subsection
+Saddle point dynamical matrix
+\end_layout
+
+\begin_layout Standard
+The saddle point requires 
+\begin_inset Formula $\mathcal{S}_{\alpha}^{(1)}=0$
+\end_inset
+
+, 
+\shape italic
+i.e.
+ 
+\emph on
+(according to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:effectivexpansion"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\left.\frac{\partial\mathcal{S}_{\text{eff}}}{\partial\phi_{\alpha}}\right\vert _{\text{sp}} & =\left.\frac{\partial\mathcal{S}_{0}^{(0)}}{\partial\phi_{\alpha}}\right\vert _{\text{sp}}+\left.\frac{\partial\mathcal{S}_{\text{bos}}}{\partial\phi_{\alpha}}\right\vert _{\text{sp}}\nonumber \\
+ & =\left.\frac{\partial\mathcal{S}_{0}^{(0)}}{\partial\phi_{\alpha}}\right\vert _{\text{sp}}+\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial\phi_{\alpha}}\bigg]=0\label{eq:saddlepointeGreenself}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The trace goes over all 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ indices (fields and Nambu).
+ On the other hand, we can represent the traces above by some Gaussian integrals.
+ According to 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:defofaction1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{S}_{\text{bos}}=-\ln e^{\int_{0}^{\beta}\dd\tau\sum_{\bm{i}}\bar{b}_{\bm{i}}^{\tau}\mathcal{G}_{\text{}}^{-1}[\phi]b_{\bm{i}}^{\tau}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\frac{\partial\mathcal{S}_{\text{bos}}}{\partial\phi_{\alpha}} & \bigg|_{\text{sp}}=-\frac{\int\mathcal{D}^{2}\bm{b}(\partial\mathcal{G}^{-1}[\phi]/\partial\phi_{\alpha})e^{\int_{0}^{\beta}\dd\tau\sum_{\bm{i}}\bar{b}_{\bm{i}}^{\tau}\mathcal{G}_{\text{}}^{-1}[\phi]b_{\bm{i}}^{\tau}}}{e^{\int_{0}^{\beta}\dd\tau\sum_{\bm{i}}\bar{b}_{\bm{i}}^{\tau}\mathcal{G}_{\text{}}^{-1}[\phi]b_{\bm{i}}^{\tau}}}\bigg|_{\text{sp}}\\
+ & =-\frac{1}{Z_{\text{sp}}}\int\mathcal{D}^{2}\bm{b}e^{\int_{0}^{\beta}\dd\tau\sum_{\bm{i}}\bar{b}_{\bm{i}}^{\tau}\mathcal{G}_{\text{}}^{-1}[\phi]b_{\bm{i}}^{\tau}}\frac{\partial\mathcal{G}^{-1}[\phi]}{\partial\phi_{\alpha}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\left.\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}\right\vert _{\text{sp}} & =-\left.\expval{B_{\bm{i},\bm{\delta}}^{\tau}}\right\vert _{\text{sp}}\nonumber \\
+\left.W_{\bm{i},\bm{\delta}}^{(B)\tau}\right\vert _{\text{sp}} & =+\left.\expval{\bar{B}_{\bm{i},\bm{\delta}}^{\tau}}\right\vert _{\text{sp}}\nonumber \\
+\left.\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}\right\vert _{\text{sp}} & =+\left.\expval{A_{\bm{i},\bm{\delta}}^{\tau}}\right\vert _{\text{sp}}\nonumber \\
+\left.W_{\bm{i},\bm{\delta}}^{(A)\tau}\right\vert _{\text{sp}} & =+\left.\expval{\bar{A}_{\bm{i},\bm{\delta}}^{\tau}}\right\vert _{\text{sp}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left.\expval{\mathcal{O}}\right\vert _{\text{sp}}=Z_{\text{sp}}^{-1}\int\mathcal{D}^{2}\bm{b}\mathcal{O}(\bm{r},\tau)e^{-\mathcal{S}_{\text{sp}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We assume that the auxiliary fields are 
+\series bold
+static
+\series default
+ and 
+\series bold
+homogeneous
+\series default
+ at the saddle point.
+ Consider the following 
+\emph on
+ansatz
+\emph default
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\left.\bar{W}_{\bm{\delta}}^{(B)}\right\vert _{\text{sp}} & =B_{\bm{\delta}} & \left.W_{\bm{\delta}}^{(B)}\right\vert _{\text{sp}} & =-B_{\bm{\delta}} & \left.\bar{W}_{\bm{\delta}}^{(A)}\right\vert _{\text{sp}} & =-i{A_{\bm{\delta}}} & \left.W_{\bm{\delta}}^{(A)}\right\vert _{\text{sp}} & =iA_{\bm{\delta}} & \left.\lambda\right\vert _{\text{sp}} & =-i\lambda
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $A_{\bm{\delta}}$
+\end_inset
+
+, 
+\begin_inset Formula $B_{\bm{\delta}}$
+\end_inset
+
+, and 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ are real.
+ The Fourier transforms are
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\phi_{\bm{k}}^{\omega}\big|_{\text{sp}}=\sqrt{\mathcal{N\beta}}\phi\delta_{\bm{k},0}\delta_{\omega,0}\quad\text{for}\ \phi=\bar{W}_{\bm{\delta}}^{(r)},W_{\bm{\delta}}^{(r)},\lambda
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The effective action at saddle point now describes non-interacting bosons.
+ The corresponding dynamical matrix 
+\begin_inset Formula $\mathcal{M}_{\bm{k},\omega}^{\text{sp}}$
+\end_inset
+
+ takes the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{pmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -h/2 & 0\\[1em]
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0 & -h/2\\[1em]
+-h/2 & 0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\[1em]
+0 & -h/2 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\gamma_{\bm{k}}^{A} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}>0}J_{\bm{\delta}}A_{\bm{\delta}}\sin(\bm{k}\cdot\bm{\delta})\\
+\gamma_{\bm{k}}^{B} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}>0}J_{\bm{\delta}}B_{\bm{\delta}}\cos(\bm{k}\cdot\bm{\delta})
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The action 
+\begin_inset Formula $\mathcal{S}_{0}^{(0)}$
+\end_inset
+
+ at the saddle point is written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{S}_{0}^{(0)}=\beta\mathcal{N}\bigg(\sum_{\bm{\delta}>0}J_{\bm{\delta}}(A_{\bm{\delta}}^{2}-B_{\bm{\delta}}^{2})-2\lambda S\bigg)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Saddle point Green function
+\end_layout
+
+\begin_layout Standard
+The dispersion relations of 
+\shape italic
+free
+\shape default
+ Schwinger bosons (spinons) are given by the 
+\series bold
+poles
+\series default
+ of (Matsubara) Green function, which is the inverse of the dynamical matrix
+ at the saddle point.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{G}_{\bm{k},\omega}^{\text{sp}}=(\mathcal{M}_{\bm{k},\omega}^{\text{sp}})^{-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We expect two bands of dispersion relations because the external field lifts
+ the degeneracy of two types of spinons.
+ Furthermore, the spinons propagate both forwards and backwards in imaginary
+ time.
+ In summary, the saddle point Green function should take the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{G}_{\bm{k},\omega}^{\text{sp}}(\bm{k},i\omega)=\bigg[\frac{g_{\bm{k}}^{-+}}{i\omega-\epsilon_{\bm{k},+}}+\frac{g_{\bm{k}}^{++}}{i\omega+\epsilon_{\bm{k},+}}+\frac{g_{\bm{k}}^{--}}{i\omega-\epsilon_{\bm{k},-}}+\frac{g_{\bm{k}}^{+-}}{i\omega+\epsilon_{\bm{k},-}}\bigg]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\epsilon_{\bm{k},\sigma}$
+\end_inset
+
+ are the dispersion relations, and 
+\begin_inset Formula $g_{\bm{k}}^{\sigma\sigma'}$
+\end_inset
+
+ are 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ matrices yet to be determined.
+ The inverse of a general matrix can be calculated as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{G}=\mathcal{M}^{-1}=\frac{1}{\det(\mathcal{M})}\mathcal{C}^{T}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ is the co-factor matrix of 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+.
+ Thus the poles can be determined by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\det\mathcal{M}_{\bm{k},\omega}^{\text{sp}}(i\omega)=0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The dispersion relations take the form (for detail calculation see A.1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\epsilon_{\bm{k},\pm}=\sqrt{\frac{1}{2}\bigg[\big(\alpha_{\bm{k}+\frac{\bm{Q}}{2}}^{2}+\alpha_{-\bm{k}+\frac{\bm{Q}}{2}}^{2}+\frac{h^{2}}{2}\big)\pm\Delta_{\bm{k}}^{2}\bigg]}\label{eq:dispersion}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta_{\bm{k}}^{2}=\sqrt{\big(\alpha_{\bm{k}+\frac{\bm{Q}}{2}}^{2}-\alpha_{-\bm{k}+\frac{\bm{Q}}{2}}^{2})^{2}+\bigg[\bigg((\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})+(\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})\bigg)^{2}-(\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A}-\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A})^{2}\bigg]h^{2}}\label{eq:g_sigma}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ matrices 
+\begin_inset Formula $g_{\bm{k}}^{\pm\sigma}$
+\end_inset
+
+ (
+\begin_inset Formula $\sigma=\pm)$
+\end_inset
+
+ are (for detail calculation see A.2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+g_{\bm{k}}^{-\sigma}=-\begin{pmatrix}A_{\bm{k},\sigma} & C_{\bm{k},\sigma} & B_{\bm{k},\sigma} & D_{\bm{k},\sigma}\\
+C_{\bm{k},\sigma} & E_{\bm{k},\sigma} & D_{\bm{-k},\sigma} & F_{\bm{k},\sigma}\\
+B_{\bm{k},\sigma} & D_{\bm{-k},\sigma} & A_{\bm{-k},\sigma} & C_{\bm{-k},\sigma}\\
+D_{\bm{k},\sigma} & F_{\bm{k},\sigma} & C_{\bm{-k},\sigma} & E_{\bm{-k},\sigma}
+\end{pmatrix}\label{eq:greensaddleplus}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+g_{\bm{k}}^{+\sigma}=\begin{pmatrix}E_{\bm{k},\sigma} & C_{\bm{k},\sigma} & F_{\bm{k},\sigma} & D_{\bm{-k},\sigma}\\
+C_{\bm{k},\sigma} & A_{\bm{k},\sigma} & D_{\bm{k},\sigma} & B_{\bm{k},\sigma}\\
+F_{\bm{k},\sigma} & D_{\bm{k},\sigma} & E_{\bm{-k},\sigma} & C_{\bm{-k},\sigma}\\
+D_{\bm{-k},\sigma} & B_{\bm{k},\sigma} & C_{\bm{-k},\sigma} & A_{\bm{-k},\sigma}
+\end{pmatrix}\label{eq:greensaddleminus}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+A_{\bm{k},\sigma} & =v_{\bm{k},\sigma}^{2}\frac{\Delta_{-\bm{k},\sigma}^{2}}{\Delta_{\bm{k}}^{2}}+\sigma u_{-\bm{k},\sigma}^{2}\frac{h^{2}}{4\Delta_{\bm{k}}^{2}}\\
+B_{\bm{k},\sigma} & =-\sigma\epsilon_{\bm{k},\sigma}\bigg[v_{\bm{k},\sigma}^{2}v_{-\bm{k,}\sigma}^{2}+z_{\bm{k},\sigma}z_{-\bm{k},\sigma}-\bigg(\frac{h}{4\epsilon_{\bm{k},\sigma}}\bigg)^{2}\bigg]\frac{h}{\Delta_{\bm{k}}^{2}}\\
+C_{\bm{k},\sigma} & =z_{\bm{k},\sigma}\frac{\Delta_{-\bm{k},\sigma}^{2}}{\Delta_{\bm{k}}^{2}}-\sigma z_{-\bm{k},\sigma}\frac{h^{2}}{4\Delta_{\bm{k}}^{2}}\\
+D_{\bm{k},\sigma} & =-\sigma\epsilon_{\bm{k},\sigma}\bigg[v_{\bm{k},\sigma}^{2}z_{-\bm{k},\sigma}+u_{-\bm{k},\sigma}^{2}z_{\bm{k},\sigma}\bigg]\frac{h}{2\Delta_{\bm{k}}^{2}}\\
+E_{\bm{k},\sigma} & =u_{\bm{k},\sigma}^{2}\frac{\Delta_{-\bm{k},\sigma}^{2}}{\Delta_{\bm{k}}^{2}}+\sigma v_{-\bm{k},\sigma}^{2}\frac{h^{2}}{4\Delta_{\bm{k}}^{2}}\\
+F_{\bm{k},\sigma} & =-\sigma\epsilon_{\bm{k},\sigma}\bigg[u_{\bm{k},\sigma}^{2}u_{-\bm{k},\sigma}^{2}+z_{\bm{k},\sigma}z_{-\bm{k},\sigma}-\bigg(\frac{h}{4\epsilon_{\bm{k},\sigma}}\bigg)^{2}\bigg]\frac{h}{\Delta_{\bm{k}}^{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+u_{\bm{k},\sigma}^{2} & =\frac{\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B}}{2\epsilon_{\bm{k},\sigma}}+\frac{1}{2}\nonumber \\
+v_{\bm{k},\sigma}^{2} & =\frac{\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B}}{2\epsilon_{\bm{k},\sigma}}-\frac{1}{2}\nonumber \\
+z_{\bm{k},\sigma} & =\frac{\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A}}{2\epsilon_{\bm{k},\sigma}}\nonumber \\
+\Delta_{\bm{k},\sigma}^{2} & =\sigma\big(\epsilon_{\bm{k},\sigma}^{2}-\alpha_{\bm{k}+\frac{\bm{Q}}{2}}^{2}\big)\label{eq:allresults}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Saddle point equations
+\end_layout
+
+\begin_layout Standard
+We will use (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:saddlepointeGreenself"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) to write down the saddle point equations explicitly.
+ 
+\end_layout
+
+\begin_layout Standard
+First consider the 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-field, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\mathcal{G}^{-1}}{\partial\lambda}=\begin{pmatrix}e^{-i\omega0^{+}}\\
+ & e^{i\omega0^{+}}\\
+ &  & e^{-i\omega0^{+}}\\
+ &  &  & e^{i\omega0^{+}}
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second term of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:saddlepointeGreenself"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) can be calculated as following,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial\lambda}\bigg] & =\frac{1}{2}\sum_{\bm{k}}\sum_{\omega}\bigg[-\frac{1}{i\omega-\epsilon_{\bm{k},+}}\bigg(A_{\bm{k},+}e^{-i\omega0^{+}}+E_{\bm{k},+}e^{i\omega0^{+}}+A_{-\bm{k},+}e^{-i\omega0+}+E_{\bm{-k},+}e^{i\omega0^{+}}\bigg)\nonumber \\
+ & +\frac{1}{i\omega+\epsilon_{\bm{k},+}}\bigg(E_{\bm{k},+}e^{-i\omega0^{+}}+A_{\bm{k},+}e^{i\omega0^{+}}+E_{-\bm{k},+}e^{-i\omega0+}+A_{\bm{-k},+}e^{i\omega0^{+}}\bigg)\nonumber \\
+ & -\frac{1}{i\omega-\epsilon_{\bm{k},-}}\bigg(A_{\bm{k},-}e^{-i\omega0^{+}}+E_{\bm{k},-}e^{i\omega0^{+}}+A_{-\bm{k},-}e^{-i\omega0+}+E_{\bm{-k},-}e^{i\omega0^{+}}\bigg)\nonumber \\
+ & +\frac{1}{i\omega+\epsilon_{\bm{k},-}}\bigg(E_{\bm{k},-}e^{-i\omega0^{+}}+A_{\bm{k},-}e^{i\omega0^{+}}+E_{-\bm{k},-}e^{-i\omega0+}+A_{\bm{-k},-}e^{i\omega0^{+}}\bigg)\bigg]\label{eq:lambdasum}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are four types of Matsubara sums in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:lambdasum"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ This step elucidates the reason to keep the convergence factor: 1.
+ the sum diverges without the factor; 2.
+ the value of the summation depends on the sign (in the exponential) of
+ the factor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\sum_{\omega}\frac{e^{i\omega0+}}{i\omega-\epsilon} & =-\beta\frac{1}{e^{\beta\epsilon}-1}=-\beta n(\epsilon)\\
+\sum_{\omega}\frac{e^{i\omega0+}}{i\omega+\epsilon} & =\beta\big(n(\epsilon)+1\big)\\
+\sum_{\omega}\frac{e^{-i\omega0^{+}}}{i\omega-\epsilon} & =-\beta\big(n(\epsilon)+1\big)\\
+\sum_{\omega}\frac{e^{-i\omega0+}}{i\omega+\epsilon} & =\beta n(\epsilon)\label{eq:matsums}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:lambdasum"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) after Matsubara sum is given by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial\lambda}\bigg] & =\beta\sum_{\bm{k}}\bigg((A_{\bm{k},+}+A_{\bm{-k},+})\big(n(\epsilon_{\bm{k},+})+1\big)+(E_{\bm{k},+}+E_{\bm{-k},+})n(\epsilon_{\bm{k},+})\\
+ & +(A_{\bm{k},-}+A_{\bm{-k},-})\big(n(\epsilon_{\bm{k},-})+1\big)+(E_{\bm{k},-}+E_{\bm{-k},-})n(\epsilon_{\bm{k},-})\bigg)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $T=0$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lim_{\beta\rightarrow\infty}\beta n(\epsilon)=0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\lim_{\beta\rightarrow\infty}\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial\lambda}\bigg] & =\beta\sum_{\bm{k}}\bigg(A_{\bm{k},+}+A_{\bm{-k},+}+A_{\bm{k},-}+A_{\bm{-k},-}\bigg)\\
+ & =2\beta\sum_{\bm{k}}\sum_{\sigma}A_{\bm{k},\sigma}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left.\frac{\partial\mathcal{S}_{0}^{(0)}}{\partial\lambda}\right\vert _{\text{sp}}=-2\mathcal{N\beta}S
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The saddle point equation for the 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-field takes the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\boxed{{S=\frac{1}{\mathcal{N}}\sum_{\bm{k}}\sum_{\sigma}A_{\bm{k},\sigma}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The derivative of the dynamical matrix with respect to 
+\begin_inset Formula $A_{\bm{\bm{\delta}}}$
+\end_inset
+
+ is given by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\mathcal{G}^{-1}}{\partial A_{\bm{\delta}}}=\begin{pmatrix}A_{11} & 0\\
+0 & A_{22}
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+A_{11} & =\begin{pmatrix}0 & -J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\\
+-J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg) & 0
+\end{pmatrix}\\
+A_{22} & =\begin{pmatrix}0 & -J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\\
+-J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg) & 0
+\end{pmatrix}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second term of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:saddlepointeGreenself"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) can be calculated as following,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial A_{\bm{\delta}}}\bigg] & =-\sum_{\bm{k}}\sum_{\bm{\omega}}\bigg\{-\frac{1}{i\omega-\epsilon_{\bm{k},+}}\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k},+}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k},+}\bigg]\nonumber \\
+ & +\frac{1}{i\omega+\epsilon_{\bm{k},+}}\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k},+}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k},+}\bigg]\nonumber \\
+ & -\frac{1}{i\omega-\epsilon_{\bm{k},-}}\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k},-}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k},-}\bigg]\nonumber \\
+ & +\frac{1}{i\omega+\epsilon_{\bm{k},-}}\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k},-}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k},-}\bigg]\bigg\}\nonumber \\
+ & =-\frac{1}{2}\sum_{\bm{k}}\sum_{\bm{\omega}}\bigg\{\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k},+}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k},+}\bigg]\bigg(\frac{1}{i\omega+\epsilon_{\bm{k},+}}-\frac{1}{i\omega-\epsilon_{\bm{k},+}}\bigg)\nonumber \\
+ & +\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k},-}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k},-}\bigg]\bigg(\frac{1}{i\omega+\epsilon_{\bm{k},-}}-\frac{1}{i\omega-\epsilon_{\bm{k},-}}\bigg)\bigg\}\label{eq:saddletraceA}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Matsubara sums are given by: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sum_{\omega}\bigg(\frac{1}{i\omega+\epsilon}-\frac{1}{i\omega-\epsilon}\bigg)=\beta\big(1+2n(\epsilon)\big)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At 
+\begin_inset Formula $T=0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\lim_{\beta\rightarrow\infty}\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial A_{\bm{\delta}}}\bigg] & =-\beta J_{\bm{\delta}}\sum_{\bm{k}}\bigg[\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)(C_{\bm{k},+}+C_{\bm{k},-})+\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)(C_{\bm{-k},+}+C_{-\bm{k},-})\bigg]\\
+ & =-2\beta J_{\bm{\delta}}\sum_{\bm{k}}\sum_{\sigma}\big[\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k},\sigma}\big]
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\mathcal{S}_{0}^{(0)}}{\partial A_{\bm{\delta}}}=2\beta\mathcal{N}J_{\bm{\delta}}A_{\bm{\delta}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus the saddle point equations for 
+\begin_inset Formula $A_{\bm{\delta}}$
+\end_inset
+
+-fields are
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\boxed{A_{\bm{\delta}}=\frac{1}{\mathcal{N}}\sum_{\bm{k}}\sum_{\sigma}C_{\bm{k},\sigma}\sin\bigg((\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}\bigg)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider the 
+\begin_inset Formula $B_{\bm{\delta}}$
+\end_inset
+
+ - fields, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\mathcal{G}^{-1}}{\partial B_{\bm{\delta}}}=\begin{pmatrix}B_{11} & 0\\
+0 & B_{22}
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+B_{11} & =\begin{pmatrix}J_{\bm{\delta}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)e^{-i\omega0^{+}} & 0\\
+0 & J_{\bm{\delta}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)e^{i\omega0^{+}}
+\end{pmatrix}\\
+B_{22} & =\begin{pmatrix}J_{\bm{\delta}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)e^{-i\omega0^{+}} & 0\\
+0 & J_{\bm{\delta}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)e^{i\omega0^{+}}
+\end{pmatrix}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second term of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:saddlepointeGreenself"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) can be calculated as following,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial B_{\bm{\delta}}}\bigg] & =\frac{1}{2}J_{\bm{\delta}}\sum_{\bm{k}}\sum_{\omega}\bigg\{-\frac{1}{i\omega-\epsilon_{\bm{k},+}}\bigg[A_{\bm{k},+}e^{-i\omega0^{+}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)+E_{\bm{k},+}e^{i\omega0^{+}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\\
+ & +A_{-\bm{k},+}e^{-i\omega0^{+}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)+E_{-\bm{k},+}e^{i\omega0^{+}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\bigg]\\
+ & -\frac{1}{i\omega-\epsilon_{\bm{k},-}}\bigg[A_{\bm{k},-}e^{-i\omega0^{+}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)+E_{\bm{k},-}e^{i\omega0^{+}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\\
+ & +A_{-\bm{k},-}e^{-i\omega0^{+}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)+E_{-\bm{k},-}e^{i\omega0^{+}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\bigg]\\
+ & +\frac{1}{i\omega+\epsilon_{\bm{k},+}}\bigg[E_{\bm{k},+}e^{-i\omega0^{+}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)+A_{\bm{k},+}e^{i\omega0^{+}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\\
+ & +E_{-\bm{k},+}e^{-i\omega0^{+}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)+A_{-\bm{k},+}e^{i\omega0^{+}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\bigg]\\
+ & +\frac{1}{i\omega+\epsilon_{\bm{k},-}}\bigg[E_{\bm{k},-}e^{-i\omega0^{+}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)+A_{\bm{k},-}e^{i\omega0^{+}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\\
+ & +E_{-\bm{k},-}e^{-i\omega0^{+}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)+A_{-\bm{k},-}e^{i\omega0^{+}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\bigg]\\
+ & =\beta J_{\bm{\delta}}\sum_{\bm{k}}\bigg\{\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)A_{\bm{k},+}\big[n(\epsilon_{\bm{k},+})+1\big]+\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)A_{-\bm{k},+}\big[n(\epsilon_{-\bm{k},+})+1\big]\\
+ & +\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)A_{\bm{k},-}\big[n(\epsilon_{\bm{k},-})+1\big]+\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)A_{-\bm{k},-}\big[n(\epsilon_{-\bm{k},-})+1\big]\\
+ & +\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)E_{\bm{k},+}n(\epsilon_{\bm{k},+})+\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)E_{-\bm{k},+}n(\epsilon_{-\bm{k},+})\\
+ & +\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)E_{\bm{k},-}n(\epsilon_{\bm{k},-})+\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)E_{-\bm{k},-}n(\epsilon_{-\bm{k},-})\bigg\}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At 
+\begin_inset Formula $T=0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\lim_{\beta\rightarrow\infty}\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial B_{\bm{\delta}}}\bigg] & =2\beta J_{\bm{\delta}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\sum_{\bm{k}}\sum_{\sigma}A_{\bm{k},\sigma}
+\end{align}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+While
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\mathcal{S}_{0}^{(0)}}{\partial B_{\bm{\delta}}}=-2\beta\mathcal{N}J_{\bm{\delta}}B_{\bm{\delta}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The saddle point equations for 
+\begin_inset Formula $B_{\bm{\delta}}$
+\end_inset
+
+-fields are
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\boxed{B_{\bm{\delta}}=\frac{1}{\mathcal{N}}\sum_{\bm{k}}\sum_{\sigma}A_{\bm{k},\sigma}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The saddle point equations are solved self-consistently for later calculations.
+ 
+\end_layout
+
+\begin_layout Section
+Dynamical structure factor
+\end_layout
+
+\begin_layout Standard
+The dynamical structure factor is related to the real-time spin susceptibility
+ through fluctuation-dissipation theorem:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+S(\bm{q},\omega)=-\frac{2}{1-e^{-\beta\omega}}\Im\chi_{\mu\nu}^{(\text{r})}(\bm{q},\omega)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\chi_{\mu\nu}^{(\text{r)}}(\bm{q},\omega+i0^{+})$
+\end_inset
+
+ can be obtained from the imaginary-time 
+\begin_inset Formula $\chi_{\mu\nu}(\bm{q},i\omega_{n})$
+\end_inset
+
+ through an analytic continuation 
+\begin_inset Formula $i\omega\rightarrow\omega+i0^{+}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Imaginary-time spin susceptibility
+\end_layout
+
+\begin_layout Standard
+The imaginary-time spin susceptibility is defined as the Fourier transform
+ of time-ordered spin correlation function:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\chi_{\mu\nu}(\bm{q};i\omega_{n}) & =-\frac{1}{\mathcal{N}}\int_{0}^{\beta}\dd\tau\sum_{i}e^{i(\omega_{n}\tau-\bm{q}\cdot\bm{x}_{i})}\expval{\mathcal{T}_{\tau}[S_{\mu}(\bm{x}_{i},\tau)S_{\nu}(0,0)]}\\
+ & =-\frac{1}{4\mathcal{N}}\int_{0}^{\beta}\dd\tau\sum_{i}e^{i(\omega_{n}\tau-\bm{q}\cdot\bm{x}_{i})}\expval{\mathcal{T}_{\tau}[b_{\bm{i}\sigma}^{\tau\dagger}\sigma_{\sigma\sigma'}^{\mu}b_{\bm{i}\sigma'}^{\tau}b_{0\eta}^{0\dagger}\sigma_{\eta\eta'}^{\nu}b_{0\eta'}^{0}]}\\
+ & =-\frac{1}{\mathcal{N}}\int_{0}^{\beta}\dd\tau\sum_{i}e^{i(\omega_{n}\tau-\bm{q}\cdot\bm{x}_{i})}\bigg(\frac{\delta^{2}\ln Z}{\delta j_{\bm{i}}^{\tau\mu}\delta j_{0}^{0\nu}}\bigg|_{j=0}+\frac{1}{Z}\frac{\delta\ln Z}{\delta j_{1}^{\tau\mu}}\bigg|_{j=0}\frac{1}{Z}\frac{\delta\ln Z}{\delta j_{0}^{0\nu}}\bigg|_{j=0}\bigg)\\
+ & =-\frac{1}{\mathcal{N}}\int_{0}^{\beta}\dd\tau\sum_{i}e^{i(\omega_{n}\tau-\bm{q}\cdot\bm{x}_{i})}\frac{\delta^{2}\ln Z}{\delta j_{\bm{i}}^{\tau\mu}\delta j_{0}^{0\nu}}\bigg|_{j=0}+\expval{S_{\mu}}\expval{S_{\nu}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\expval{...}$
+\end_inset
+
+ represents the 
+\emph on
+ensemble average
+\emph default
+.
+ The second term corresponds to the ensemble average of single spin operators,
+ which is non-zero when the symmetry in the ground state is broken.
+ This term accounts for the observed elastic Bragg peak in neutron scattering.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\chi_{\mu\nu}(\bm{q};i\omega_{n}) & =-\frac{1}{\mathcal{N}}\int_{0}^{\beta}\dd\tau\sum_{i}e^{i(\omega_{n}\tau-\bm{q}\cdot\bm{x}_{i})}\frac{\delta^{2}\ln Z}{\delta j_{\bm{i}}^{\tau\mu}\delta j_{0}^{0\nu}}\bigg|_{j=0}+\expval{S_{\mu}}\expval{S_{\nu}}\\
+ & =-\frac{\delta^{2}\ln Z}{\delta j_{\bm{q}}^{i\omega_{n},\mu}\delta j_{-\bm{q}}^{-i\omega_{n},\nu}}\bigg|_{j=0}+\expval{S_{\mu}}\expval{S_{\nu}}\\
+ & =\frac{1}{Z[j=0]}\int\mathcal{D}[\phi,\bar{\phi}]\bigg(\frac{\delta^{2}\mathcal{S}_{\text{eff}}}{\delta j_{\bm{q}}^{i\omega_{n},\mu}\delta j_{-\bm{q}}^{-i\omega_{n},\nu}}\bigg|_{j=0}-\frac{\delta\mathcal{S}_{\text{eff}}}{\delta j_{\bm{q}}^{i\omega_{n},\mu}}\frac{\delta\mathcal{S}_{\text{eff}}}{\delta j_{-\bm{q}}^{-i\omega_{n},\nu}}\bigg|_{j=0}\bigg)e^{-\mathcal{S}_{\text{eff}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similar to the derivative of the effective action with the auxiliary fields,
+ we also assume that the effective action with external current can be expanded
+ near the effective action without current.
+ The calculations are similar to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:expand1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:expand2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:expand3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, which will not be displayed again.
+ In concrete, we have,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{S}_{\text{eff}}[j]-\mathcal{S}_{\text{eff}}[j & =0]=\frac{1}{2}\Tr\ln\big[1-\mathcal{G}[j=0]\sum_{\alpha}j_{\alpha}\hat{u}_{\alpha}\big]\\
+ & =-\frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{n!}\sum_{\alpha_{1},...,\alpha_{n}}j_{\alpha_{1}}...j_{\alpha_{n}}\sum_{P(\alpha_{1},...,\alpha_{n})}\Tr\bigg(\mathcal{G}[j=0]\hat{u}_{\alpha_{1}}...\mathcal{G}[j=0]\hat{u}_{\alpha_{n}}\bigg)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the index 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ again goes over Nambu indices and spin components and 
+\begin_inset Formula $\hat{u}_{\alpha}$
+\end_inset
+
+ is the external vertex, defined as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\hat{u}_{\alpha} & =\frac{\partial\mathcal{G}^{-1}[j]}{\partial j_{\alpha}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{G}^{-1}[j]-\mathcal{G}^{-1}[j=0]=-\hat{j}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We are interested in the first two derivatives:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\frac{\delta\mathcal{S}_{\text{eff}}}{\delta j^{\alpha}} & =-\frac{1}{2}\Tr\bigg(\mathcal{G}[j=0]\hat{u}_{\alpha}\bigg)\\
+\frac{\delta^{2}\mathcal{S}_{\text{eff}}}{\delta j^{\alpha}\delta j^{\beta}} & =-\frac{1}{4}\Tr\bigg(\mathcal{G}[j=0]\hat{u}_{\alpha}\mathcal{G}[j=0]\hat{u}_{\beta}\bigg)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In summary, the dynamical susceptibility is divided into two terms,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\mu\nu}(\bm{q};i\omega_{n})=\chi_{\mu\nu}^{\text{{\rom{1}}}}(\bm{q},i\omega_{n})+\chi_{\mu\nu}^{\text{\rom{2}}}(\bm{q},i\omega_{n})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\chi_{\mu\nu}^{\text{{\rom{1}}}} & (\bm{q},i\omega_{n})=-\frac{1}{4Z[j=0]}\int\mathcal{D}[\phi,\bar{\phi}]\Tr\bigg(\mathcal{G}[j=0]\hat{u}^{\mu}(\bm{q},i\omega_{n})\mathcal{G}[j=0]\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\bigg)e^{-\mathcal{S}_{\text{eff}}[j=0]}\\
+\chi_{\mu\nu}^{\text{\rom{2}}}(\bm{q},i\omega_{n}) & =-\frac{1}{4Z[j=0]}\int\mathcal{D}[\phi,\bar{\phi}]\Tr\bigg(\mathcal{G}[j=0]\hat{u}^{\mu}(\bm{q},i\omega_{n})\bigg)\Tr\bigg(\mathcal{G}[j=0]\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\bigg)e^{-\mathcal{S}[j=0]}\label{eq:twogeneratingdef}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diagrammatic method
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathcal{G}[j=0]$
+\end_inset
+
+ in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:twogeneratingdef"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ represents the exact Green function without external current, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathcal{G}^{-1}[j=0] & =\mathcal{G}_{\text{sp}}^{-1}[j=0]+\sum_{\alpha}\Delta\phi_{\alpha}\hat{v}_{\alpha}\\
+ & =\mathcal{G}_{\text{sp}}^{-1}[j=0]\big(1+\mathcal{G}_{\text{sp}}[j=0]\sum_{\alpha}\Delta\phi_{\alpha}\hat{v}_{\alpha}\big)\\
+\mathcal{G}[j=0] & =\mathcal{G}_{\text{sp}}\big(1+\mathcal{G}_{\text{sp}}[j=0]\sum_{\alpha}\Delta\phi_{\alpha}\hat{v}_{\alpha}\big)^{-1}\\
+ & =\mathcal{G}_{\text{sp}}\sum_{n=0}^{\infty}(-1)^{n}\big[\mathcal{G}_{\text{sp}}\sum_{\alpha}\Delta\phi_{\alpha}\hat{v}_{\alpha}\big]^{n}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We replace the effective action 
+\begin_inset Formula $\mathcal{S}_{\text{eff}}$
+\end_inset
+
+ order by order as given in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:effectivexpansion"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The dynamical susceptibility takes the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\chi_{\mu\nu}^{\text{{\rom{1}}}}(\bm{q},i\omega_{n}) & =-\frac{1}{4Z[j=0]}\int\mathcal{D}[\phi,\bar{\phi}]\Tr\bigg(\bigg[\sum_{m=0}^{\infty}\sum_{\alpha_{1}}(-1)^{m}\mathcal{G}_{\text{sp}}(\Delta\phi_{\alpha_{1}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}})^{m}\bigg]\hat{u}^{\mu}(\bm{q},i\omega_{n})\\
+ & *\bigg[\sum_{m=0}^{\infty}\sum_{\alpha_{2}}(-1)^{m}\mathcal{G}_{\text{sp}}(\Delta\phi_{\alpha_{2}}\hat{v}_{\alpha_{2}}\mathcal{G}_{\text{sp}})^{m}\bigg]\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\bigg)e^{-(\mathcal{S}_{\text{sp}}+\sum_{\beta_{1}\beta_{2}}\Delta\phi_{\beta_{1}}\mathcal{S}_{\beta_{1}\beta_{2}}^{(2)}\Delta\phi_{\beta_{2}})}e^{-\sum_{n}\sum_{\beta_{1}...\beta_{n}}\Delta\phi_{\beta_{1}}...\Delta\phi_{\beta_{n}}\mathcal{S}_{\beta_{1}\beta_{2}}^{(n)}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\chi_{\mu\nu}^{\text{\rom{2}}}(\bm{q},i\omega_{n}) & =-\frac{1}{4Z[j=0]}\int\mathcal{D}[\phi,\bar{\phi}]\Tr\bigg(\bigg[\sum_{m=0}^{\infty}\sum_{\alpha_{1}}(-1)^{m}\mathcal{G}_{\text{sp}}(\Delta\phi_{\alpha_{1}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}})^{m}\bigg]\hat{u}^{\mu}(\bm{q},i\omega_{n})\bigg)\\
+ & *\Tr\bigg(\bigg[\sum_{m=0}^{\infty}\sum_{\alpha_{2}}(-1)^{m}\mathcal{G}_{\text{sp}}(\Delta\phi_{\alpha_{2}}\hat{v}_{\alpha_{2}}\mathcal{G}_{\text{sp}})^{m}\bigg]\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\bigg)\\
+ & *e^{-(\mathcal{S}_{\text{sp}}+\sum_{\beta_{1}\beta_{2}}\Delta\phi_{\beta_{1}}\mathcal{S}_{\beta_{1}\beta_{2}}^{(2)}\Delta\phi_{\beta_{2}})}e^{-\sum_{n}\sum_{\beta_{1}...\beta_{n}}\Delta\phi_{\beta_{1}}...\Delta\phi_{\beta_{n}}\mathcal{S}_{\beta_{1}\beta_{2}}^{(n)}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We expand both 
+\begin_inset Formula $m$
+\end_inset
+
+ in the traces and 
+\begin_inset Formula $n$
+\end_inset
+
+ in the exponential, where the group index 
+\begin_inset Quotes eld
+\end_inset
+
+2
+\begin_inset Quotes erd
+\end_inset
+
+ of 
+\begin_inset Formula $SU(2)$
+\end_inset
+
+ in the exponential is assumed to be 
+\begin_inset Quotes eld
+\end_inset
+
+large
+\begin_inset Quotes erd
+\end_inset
+
+ to guarantee the validity of expansions.
+ We are left to calculate some Gaussian-like integrals.
+ According to Wick's theorem, Gaussian integrals can be written in pairs
+ of product of 
+\emph on
+contraction
+\emph default
+, which is defined as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\overbrace{\Delta\phi_{\alpha_{1}}\Delta\phi_{\alpha_{2}}} & \equiv\frac{1}{Z[j=0]}\int\mathcal{D}[\phi,\bar{\phi}]\Delta\phi_{\alpha_{1}}\Delta\phi_{\alpha_{2}}\exp\bigg(-\sum_{\beta_{1}\beta_{2}}\Delta\phi_{\beta_{1}}\mathcal{S}_{\beta_{1},\beta_{2}}^{(2)}\Delta\phi_{\beta_{2}}\bigg)\nonumber \\
+ & =\frac{1}{Z[j=0]}\int\mathcal{D}[\phi,\bar{\phi}]\Delta\phi_{\alpha_{1}}\Delta\phi_{\alpha_{2}}\exp\bigg(-\sum_{\beta_{1}\beta_{2}}\Delta\phi_{\beta_{1}}\mathcal{D}_{\beta_{1},\beta_{2}}^{-1}\Delta\phi_{\beta_{2}}\bigg)\nonumber \\
+ & =\mathcal{D}_{\alpha_{1},\alpha_{2}}\label{eq:contractionofRPA}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the propagator of fluctuating auxiliary fields in the random phase
+ approximation (RPA) is defined as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{D}_{\alpha_{1},\alpha_{2}}=\big[\mathcal{S}_{\alpha_{1},\alpha_{2}}^{(2)}\big]^{-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The calculation of Gaussian integrals can be represented by diagrams.
+ Because of the 
+\begin_inset Formula $Z^{-1}[j=0]$
+\end_inset
+
+ factor in the denominator, we just need to consider 
+\series bold
+connected
+\series default
+ 
+\series bold
+diagrams
+\series default
+ according the 
+\emph on
+linked-cluster theorem
+\emph default
+.
+ Since the trace is invariant under cyclic permutations, we will represent
+ it by loop diagrams.
+ The traces containing external vertices are called 
+\emph on
+external loops
+\emph default
+, while the traces coming from the expansion of the exponential are called
+ 
+\emph on
+internal loops
+\emph default
+.
+ Furthermore, we will use dot lines to represent external currents, wavy
+ lines to represent fluctuating auxiliary fields, solid lines to represent
+ the saddle point propagator of spinons, circle with cross for external
+ vertex, and solid circle for internal vertex.
+ 
+\end_layout
+
+\begin_layout Standard
+The recipes for the calculation of 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{{\rom{1}}}}(\bm{q},i\omega_{n})$
+\end_inset
+
+ are given as following: 1.
+ Choose one external loop with two external vertices with some internal
+ vertices; 2.
+ Choose 
+\begin_inset Formula $I$
+\end_inset
+
+ internal loops (
+\emph on
+e.g.
+
+\emph default
+ 
+\begin_inset Formula $I=1$
+\end_inset
+
+ , we have one internal loop with three internal vertices; 
+\begin_inset Formula $I=2$
+\end_inset
+
+ , we have one additional internal loop with four internal vertices...); 3.
+ Contract all wavy lines.
+ The recipes for 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{\rom{2}}}(\bm{q},i\omega_{n})$
+\end_inset
+
+ are the same as those for 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{{\rom{1}}}}(\bm{q},i\omega_{n})$
+\end_inset
+
+ , except step 1: Choose two external loops with one external vertex.
+ 
+\end_layout
+
+\begin_layout Standard
+Of course, we are expecting the lowest order diagrams to produce some meaningful
+ results.
+ Then it's useful to figure out the order in 
+\begin_inset Formula $1/N$
+\end_inset
+
+ of a specific diagram.
+ We note that the external loops are of the order 
+\begin_inset Formula $\mathcal{O}(N^{0})$
+\end_inset
+
+ , while the internal loops are of the order 
+\begin_inset Formula $\mathcal{O}(N)$
+\end_inset
+
+ (because of the 
+\begin_inset Quotes eld
+\end_inset
+
+2
+\begin_inset Quotes erd
+\end_inset
+
+ in the exponential), and the contractions are of the order 
+\begin_inset Formula $\mathcal{O}(1/N)$
+\end_inset
+
+ as evident in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:contractionofRPA"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ .
+ In summary, the order 
+\begin_inset Formula $p$
+\end_inset
+
+ of a specific diagram with 
+\begin_inset Formula $I$
+\end_inset
+
+ internal loops and 
+\begin_inset Formula $C$
+\end_inset
+
+ contractions is given by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\bigg(\frac{1}{N}\bigg)^{p}=\bigg(\frac{1}{N}\bigg)^{C-I}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Actually, given the number of internal loops 
+\begin_inset Formula $I$
+\end_inset
+
+ , we know the number of contractions 
+\begin_inset Formula $C$
+\end_inset
+
+ .
+ The number of wavy lines coming from the internal loops is given by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{I}=\frac{1}{2}\bigg(3I+\frac{I(I-1)}{2}\bigg)\quad\text{from}\ 3+4+5....\label{eq:internalsum}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Keep in mind that we need to contract 
+\series bold
+all
+\series default
+ wavy lines.
+ Consider the case for 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{{\rom{1}}}}(\bm{q},i\omega_{n})$
+\end_inset
+
+: if 
+\begin_inset Formula $\tilde{I}$
+\end_inset
+
+ is odd, the minimum number of wavy lines in the external loop (equivalent
+ to expansion in 
+\begin_inset Formula $m$
+\end_inset
+
+) is one; whereas if 
+\begin_inset Formula $\tilde{I}$
+\end_inset
+
+ is even, the external loop must have even number of wavy lines, the minimum
+ even number is zero; The minimum number of contraction is then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+C_{\text{min}}=\begin{cases}
+\frac{1}{2}\bigg(3I+\frac{I(I-1)}{2}+1\bigg) & \text{odd }\tilde{I}\\
+\frac{1}{2}\bigg(3I+\frac{I(I-1)}{2}\bigg) & \text{even \ \ensuremath{\tilde{I}}}
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $I+p=C\geq C_{\text{min}}$
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+I^{2}+I+2-4p\leq0 & \text{odd }\tilde{I}\\
+I^{2}+I-4p\leq0 & \text{even \ \ensuremath{\tilde{I}}}
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Keep in mind that 
+\begin_inset Formula $I$
+\end_inset
+
+ is an integer.
+ We will calculate the contribution up to 
+\begin_inset Formula $1/N$
+\end_inset
+
+ .
+ When 
+\begin_inset Formula $p=0$
+\end_inset
+
+ , 
+\begin_inset Formula $I=0$
+\end_inset
+
+ , the contributing diagram has 
+\begin_inset Formula $(C,I)=(0,0)$
+\end_inset
+
+; When 
+\begin_inset Formula $p=1$
+\end_inset
+
+ , 
+\begin_inset Formula $I=0$
+\end_inset
+
+ from even 
+\begin_inset Formula $\tilde{I}$
+\end_inset
+
+ and 
+\begin_inset Formula $I=1$
+\end_inset
+
+ from odd 
+\begin_inset Formula $\tilde{I}$
+\end_inset
+
+.
+ The contributing diagrams have 
+\begin_inset Formula $(C,I)=(1,0)$
+\end_inset
+
+ and 
+\begin_inset Formula $(C,I)=(2,1)$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+Consider the case for 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{\rom{2}}}(\bm{q},i\omega_{n})$
+\end_inset
+
+ : the number of wavy lines coming from the internal loops must be even
+ to contract even number of wavy lines coming from the external loops.
+ Thus when 
+\begin_inset Formula $p=0$
+\end_inset
+
+ , 
+\begin_inset Formula $I=0$
+\end_inset
+
+ , the contributing diagram has 
+\begin_inset Formula $(C,I)=(0,0)$
+\end_inset
+
+; When 
+\begin_inset Formula $p=1$
+\end_inset
+
+ , 
+\begin_inset Formula $(C,I)=(1,0)$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename chi_1_sp-crop.pdf
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The saddle point diagram contributing to 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{{\rom{1}}}}(\bm{q},i\omega_{n})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename chi_1_10_2-crop.pdf
+	lyxscale 25
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename chi1_10_1-crop.pdf
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The diagrams with 
+\begin_inset Formula $(C,I)=(1,0)$
+\end_inset
+
+ for 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{{\rom{1}}}}(\bm{q},i\omega_{n})$
+\end_inset
+
+: (a) corresponds to the correction of the single-spinon propagator; (b)
+ corresponds to a vertex correction relative to Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:sp"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:chi1fl"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename chi_1_21-crop.pdf
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The diagram with 
+\begin_inset Formula $(C,I)=(2,1)$
+\end_inset
+
+ for 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{{\rom{1}}}}(\bm{q},i\omega_{n})$
+\end_inset
+
+ which corresponds to a higher order correction of the single-spinon propagator.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:chi1fl2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename chi_2-crop.pdf
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The diagram with 
+\begin_inset Formula $(C,I)=(1,0)$
+\end_inset
+
+ for 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{\rom{2}}}(\bm{q},i\omega_{n})$
+\end_inset
+
+ : we only include the calculation of this diagram in this note.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:chi2fl"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Saddle point dynamical susceptibility
+\end_layout
+
+\begin_layout Standard
+The dynamical susceptibility at the saddle point is given by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\mu\nu}^{\text{sp}}=\chi_{\mu\nu}^{\text{{\rom{1},sp}}}+\chi_{\mu\nu}^{\text{\rom{2}},\text{sp}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\begin{align}
+\chi_{\mu\nu}^{\text{{\rom{1},sp}}}(\bm{q},i\omega_{n}) & =-\frac{1}{4}\Tr\big[\mathcal{G}_{\text{sp}}\hat{u}^{\mu}(\bm{q},i\omega_{n})\mathcal{G}_{\text{sp}}\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\big]\\
+\chi_{\mu\nu}^{\text{\rom{2}},\text{sp}}(\bm{q},i\omega_{n}) & =-\frac{1}{4}\Tr\big[\mathcal{G}_{\text{sp}}\hat{u}^{\mu}(\bm{q},i\omega_{n})\big]\Tr\big[\mathcal{G}_{\text{sp}}\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\big]
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will display the calculations of the external vertices explicitly.
+ The contribution from the external currents to the exact inverse Green
+ function 
+\begin_inset Formula $\mathcal{G}^{-1}$
+\end_inset
+
+ is denoted by 
+\begin_inset Formula $\hat{j}$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\hat{j} & =-\frac{1}{2}\int_{0}^{\beta}\dd\tau\sum_{\bm{i}}\sum_{\sigma\sigma'}j_{\bm{i}}^{\tau\mu}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma'}^{\tau}\sigma_{\sigma\sigma'}^{\mu}\\
+ & =-\frac{1}{4(\mathcal{N}\beta)^{3/2}}\int_{0}^{\beta}\dd\tau\sum_{\bm{i}}\sum_{\sigma\sigma'}\sum_{\bm{q}\bm{k}\bm{k}'}\sum_{\omega_{n}\omega\omega'}j_{\bm{q}}^{\omega_{n}\mu}\sigma_{\sigma\sigma'}^{\mu}\bigg[\bar{b}_{\bm{k}\sigma}^{\omega}b_{\bm{k}'\sigma'}^{\omega'}e^{i(\bm{k}-\bm{k}'-\bm{q})\cdot\bm{r}_{\bm{i}}}e^{i(-\omega+\omega'+\omega_{n})\tau}\\
+ & +\bar{b}_{-\bm{k}'\sigma}^{-\omega'}b_{-\bm{k}\sigma'}^{-\omega}e^{i(-\bm{k}'+\bm{k}-\bm{q})\cdot\bm{r}_{\bm{i}}}e^{i(\omega'-\omega+\omega_{n})\tau}\bigg]\\
+ & =-\frac{1}{4(\mathcal{N}\beta)^{3/2}}\sum_{\sigma\sigma'}\sum_{\bm{q}\bm{k}\bm{k}'}\sum_{\omega_{n}\omega\omega'}j_{\bm{q}}^{\omega_{n}\mu}\sigma_{\sigma\sigma'}^{\mu}\bigg[\bar{b}_{\bm{k}\sigma}^{\omega}b_{\bm{k}'\sigma'}^{\omega'}\delta_{\bm{q},(\bm{k}-\bm{k}')}\delta_{\omega_{n},(\omega-\omega')}+\bar{b}_{-\bm{k}'\sigma}^{-\omega'}b_{-\bm{k}\sigma'}^{-\omega}\delta_{\bm{q},(\bm{k}-\bm{k}')}\delta_{\omega_{n},(\omega-\omega')}\bigg]\\
+ & =-\frac{1}{4\sqrt{\mathcal{N}\beta}}\sum_{\sigma\sigma'}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}j_{(\bm{k}-\bm{k}')}^{(\omega-\omega')\mu}\sigma_{\sigma\sigma'}^{\mu}\bigg[\bar{b}_{\bm{k}\sigma}^{\omega}b_{\bm{k}'\sigma'}^{\omega'}+\bar{b}_{-\bm{k}'\sigma}^{-\omega'}b_{-\bm{k}\sigma'}^{-\omega}\bigg]
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+\color red
+external vertices
+\series default
+\color inherit
+ are given by the derivative of the inverse Green function with respect
+ to the external current, which takes the following form in the Nambu representa
+tion:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\hat{u}_{\bm{k},\bm{k'}}^{\mu}(\bm{q},i\omega_{n}) & =\frac{\partial\mathcal{G}^{-1}}{\partial j_{\bm{q}}^{\omega_{n}\mu}}=-\frac{1}{4\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\delta_{(\bm{k}-\bm{k}'),\bm{q}}\delta_{(\omega-\omega'),\omega_{n}}\begin{pmatrix}\sigma_{++}^{\mu} & 0 & \sigma_{+-}^{\mu} & 0\\
+0 & \sigma_{--}^{\mu} & 0 & \sigma_{-+}^{\mu}\\
+\sigma_{-+}^{\mu} & 0 & \sigma_{--}^{\mu} & 0\\
+0 & \sigma_{+-}^{\mu} & 0 & \sigma_{++}^{\mu}
+\end{pmatrix}\label{eq:externalver}\\
+ & =-\frac{1}{4\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\delta_{(\bm{k}-\bm{k}'),\bm{q}}\delta_{(\omega-\omega'),\omega_{n}}\hat{u}^{\mu}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{u}^{x}=\begin{pmatrix}0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\\
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0
+\end{pmatrix}\quad\hat{u}^{y}=i\begin{pmatrix}0 & 0 & -1 & 0\\
+0 & 0 & 0 & 1\\
+1 & 0 & 0 & 0\\
+0 & -1 & 0 & 0
+\end{pmatrix}\quad\hat{u}^{z}=\begin{pmatrix}1\\
+ & -1\\
+ &  & -1\\
+ &  &  & 1
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\chi_{\mu\nu}^{\text{{\rom{1},sp}}}(\bm{q},i\omega_{n}) & =-\frac{1}{64\mathcal{N}\beta}\sum_{\bm{k}}\sum_{\omega}\Tr\big[\mathcal{G}_{\bm{k}+\bm{q},i(\omega+\omega_{n})}^{\text{sp}}\hat{u}^{\mu}\mathcal{G}_{\bm{k},i\omega}^{\text{sp}}\hat{u}^{\nu}\big]\\
+\chi_{\mu\nu}^{\text{\rom{2}},\text{sp}}(\bm{q},i\omega_{n}) & =-\frac{1}{64\mathcal{N}\beta}\bigg(\sum_{\bm{k}}\sum_{\omega}\Tr\mathcal{G}_{\bm{k}+\bm{q},i(\omega+\omega_{n})}^{\text{sp}}\hat{u}^{\mu}\bigg)\bigg(\sum_{\bm{k}'}\sum_{\omega'}\Tr\mathcal{G}_{\bm{k}'-\bm{q}',i(\omega'-\omega_{n})}^{\text{sp}}\hat{u}^{\nu}\bigg)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The saddle point Green function can be written as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{G}_{\bm{k},i\omega}^{\text{sp}}=\sum_{\sigma}\bigg[\frac{g_{\bm{k}}^{+\sigma}}{i\omega+\epsilon_{\bm{k},\sigma}}+\frac{g_{\bm{k}}^{-\sigma}}{i\omega-\epsilon_{\bm{k},\sigma}}\bigg]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We first calculate for 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{\rom{2}},\text{sp}}(\bm{q},i\omega_{n})$
+\end_inset
+
+ : 
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $\mu=z$
+\end_inset
+
+ , 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\sum_{\bm{k}}\sum_{\omega}\Tr\big[\mathcal{G}_{\bm{k},i\omega}\hat{u}^{z}\big] & =\sum_{\bm{k}}\sum_{\omega}\sum_{\sigma}\bigg\{\bigg(\frac{1}{i\omega-\epsilon_{\bm{k},\sigma}}+\frac{1}{i\omega+\epsilon_{\bm{k},\sigma}}\bigg)\big(-A_{\bm{k},\sigma}+A_{-\bm{k},\sigma}+E_{\bm{k},\sigma}-E_{-\bm{k},\sigma}\big)\bigg\}\\
+ & =\beta\sum_{\bm{k}}\sum_{\sigma}\big(-A_{\bm{k},\sigma}+A_{-\bm{k},\sigma}+E_{\bm{k},\sigma}-E_{-\bm{k},\sigma}\big)\\
+ & =\beta\sum_{\bm{k}}\sum_{\sigma}\big(-A_{\bm{k},\sigma}+A_{\bm{k},\sigma}+E_{\bm{k},\sigma}-E_{\bm{k},\sigma}\big)\\
+ & =0
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the second last step is given by change of variable 
+\begin_inset Formula $\bm{k}\rightarrow-\bm{k}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $\mu=y$
+\end_inset
+
+ , one can verify easily that the trace of the matrices is zero.
+ We conclude that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sum_{\bm{k}}\sum_{\omega}\Tr\big[\mathcal{G}_{\bm{k},i\omega}\hat{u}^{y}\big]=0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $\mu=x$
+\end_inset
+
+ , 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\sum_{\bm{k}}\sum_{\omega}\Tr\big[\mathcal{G}_{\bm{k},i\omega}\hat{u}^{x}\big] & =2\sum_{\bm{k}}\sum_{\omega}\sum_{\sigma}\bigg\{\bigg(\frac{1}{i\omega+\epsilon_{\bm{k},\sigma}}-\frac{1}{i\omega-\epsilon_{\bm{k},\sigma}}\bigg)(B_{\bm{k},\sigma}+F_{\bm{k},\sigma})\bigg\}\\
+ & =2\sum_{\bm{k}}\sum_{\sigma}\big(2\beta n(\epsilon_{\bm{k},\sigma})+\beta\big)(B_{\bm{k},\sigma}+F_{\bm{k},\sigma})\\
+ & \xrightarrow[T\rightarrow0]{\beta\rightarrow\infty}2\beta\sum_{\bm{k}}\sum_{\sigma}(B_{\bm{k},\sigma}+F_{\bm{k},\sigma})
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color red
+which does not seem to vanish, but the result does not depend on 
+\begin_inset Formula $\omega$
+\end_inset
+
+, thus it does not contribute to the inelastic neutron scattering.
+ 
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{{\rom{1},sp}}}(\bm{q},i\omega_{n})$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\chi_{\mu\nu}^{\text{{\rom{1},sp}}}(\bm{q},i\omega_{n}) & =-\frac{1}{64\mathcal{N}\beta}\sum_{\bm{k}}\sum_{\omega}\Tr\big[\mathcal{G}_{\bm{k}+\bm{q},i(\omega+\omega_{n})}^{\text{sp}}\hat{u}^{\mu}\mathcal{G}_{\bm{k},i\omega}^{\text{sp}}\hat{u}^{\nu}\big]\\
+ & =-\frac{1}{64\mathcal{N}\beta}\sum_{\bm{k}}\sum_{\omega}\sum_{\sigma\sigma'}\Tr\bigg\{\bigg(\frac{g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{\mu}}{i\omega+i\omega_{n}+\epsilon_{\bm{k}+\bm{q},\sigma}}+\frac{g_{\bm{k}+\bm{q}}^{-\sigma}\hat{u}^{\mu}}{i\omega+i\omega_{n}-\epsilon_{\bm{k}+\bm{q},\sigma}}\bigg)\\
+ & *\bigg(\frac{g_{\bm{k}}^{+\sigma'}\hat{u}^{\nu}}{i\omega+\epsilon_{\bm{k},\sigma'}}+\frac{g_{\bm{k}}^{-\sigma'}\hat{u}^{\nu}}{i\omega-\epsilon_{\bm{k},\sigma'}}\bigg)\bigg\}\\
+ & =-\frac{1}{64\mathcal{N}\beta}\sum_{\bm{k}}\sum_{\sigma\sigma'}\sum_{\omega}\bigg\{\frac{\Tr\big[g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{\mu}g_{\bm{k}}^{+\sigma'}\hat{u}^{\nu}\big]}{(i\omega+i\omega_{n}+\epsilon_{\bm{k}+\bm{q},\sigma})(i\omega+\epsilon_{\bm{k},\sigma'})}+\frac{\Tr\big[g_{\bm{k}+\bm{q}}^{-\sigma}\hat{u}^{\mu}g_{\bm{k}}^{-\sigma'}\hat{u}^{\nu}\big]}{(i\omega+i\omega_{n}-\epsilon_{\bm{k}+\bm{q},\sigma})(i\omega-\epsilon_{\bm{k},\sigma'})}\\
+ & +\frac{\Tr\big[g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{\mu}g_{\bm{k}}^{-\sigma'}\hat{u}^{\nu}\big]}{(i\omega+i\omega_{n}+\epsilon_{\bm{k}+\bm{q},\sigma})(i\omega-\epsilon_{\bm{k},\sigma'})}+\frac{\Tr\big[g_{\bm{k}+\bm{q}}^{-\sigma}\hat{u}^{\mu}g_{\bm{k}}^{+\sigma'}\hat{u}^{\nu}\big]}{(i\omega+i\omega_{n}-\epsilon_{\bm{k}+\bm{q},\sigma})(i\omega+\epsilon_{\bm{k},\sigma'})}\bigg\}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have the following Matsubara sums 
+\begin_inset Formula $\text{S}_{\sigma\sigma'}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\text{S}_{\xi\xi'} & =\sum_{\omega}\frac{1}{(i\omega+i\omega_{n}+\xi\epsilon_{\bm{k}+\bm{q},\sigma})(i\omega+\xi'\epsilon_{\bm{k},\sigma'})}\\
+ & =-\sum_{p}\Res\bigg(\frac{1}{(z+i\omega_{n}+\xi\epsilon_{\bm{k}+\bm{q},\sigma})(z+\xi'\epsilon_{\bm{k},\sigma'})}\bigg)\bigg|_{z=z_{p}}\\
+ & =-\bigg[\frac{1}{-\xi'\epsilon_{\bm{k},\sigma'}+i\omega_{n}+\xi\epsilon_{\bm{k}+\bm{q},\sigma}}\frac{\beta}{e^{-\beta\xi'\epsilon_{\bm{k},\sigma'}}-1}\\
+ & +\frac{1}{-i\omega_{n}-\xi\epsilon_{\bm{k}+\bm{q},\sigma}+\xi'\epsilon_{\bm{k},\sigma'}}\frac{\beta}{e^{\beta(-i\omega_{n}-\xi\epsilon_{\bm{k}+\bm{q},\sigma})}-1}\bigg]\\
+ & =\frac{\beta}{\xi\epsilon_{\bm{k}+\bm{q},\sigma}-\xi'\epsilon_{\bm{k},\sigma'}+i\omega_{n}}\bigg(\frac{1}{e^{-\beta\xi\epsilon_{\bm{k}+\bm{q},\sigma}}-1}-\frac{1}{e^{-\beta\xi'\epsilon_{\bm{k},\sigma'}}-1}\bigg)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $z_{p}$
+\end_inset
+
+ denotes the poles of Matsubara function and we have also used the fact
+ that 
+\begin_inset Formula $e^{-i\omega_{n}\beta}=1$
+\end_inset
+
+ because of the periodicity in imaginary time.
+ After the Matsubara sum, the dynamical susceptibility is written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\mu\nu}^{\text{{\rom{1},sp}}}(\bm{q},i\omega_{n})=-\frac{1}{64\mathcal{N}}\sum_{\bm{k}}\sum_{\xi\xi'}\sum_{\sigma\sigma'}\frac{\Tr\big[g_{\bm{k}+\bm{q}}^{\xi\sigma}\hat{u}^{\mu}g_{\bm{k}}^{\xi'\sigma'}\hat{u}^{\nu}\big]}{\xi\epsilon_{\bm{k}+\bm{q},\sigma}-\xi'\epsilon_{\bm{k},\sigma'}+i\omega_{n}}\bigg(\frac{1}{e^{-\beta\xi\epsilon_{\bm{k}+\bm{q},\sigma}}-1}-\frac{1}{e^{-\beta\xi'\epsilon_{\bm{k},\sigma'}}-1}\bigg)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Again, we are interested in the 
+\begin_inset Formula $T=0$
+\end_inset
+
+ physics, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lim_{\beta\rightarrow\infty}\frac{1}{e^{-\beta\xi\epsilon_{\bm{k}+\bm{q},\sigma}}-1}=\begin{cases}
+-1 & \xi=+\\
+0 & \xi=-
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lim_{T\rightarrow0}\chi_{\mu\nu}^{\text{{\rom{1},sp}}}(\bm{q},i\omega_{n})=\frac{1}{64\mathcal{N}}\sum_{\bm{k}}\sum_{\sigma\sigma'}\bigg\{\frac{\Tr\big[g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{\mu}g_{\bm{k}}^{-\sigma'}\hat{u}^{\nu}\big]}{\epsilon_{\bm{k}+\bm{q},\sigma}+\epsilon_{\bm{k},\sigma'}+i\omega_{n}}+\frac{\Tr\big[g_{\bm{k}+\bm{q}}^{-\sigma}\hat{u}^{\mu}g_{\bm{k}}^{+\sigma'}\hat{u}^{\nu}\big]}{\epsilon_{\bm{k}+\bm{q},\sigma}+\epsilon_{\bm{k},\sigma'}-i\omega_{n}}\bigg\}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $zz$
+\end_inset
+
+ traces are:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\Tr\big[g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{z}g_{\bm{k}}^{-\sigma'}\hat{u}^{z}\big] & =-E_{\bm{k}+\bm{q},\sigma}A_{\bm{k},\sigma'}-E_{-\bm{k}+\bm{q},\sigma}A_{-\bm{k},\sigma'}+2F_{\bm{k}+\bm{q},\sigma}B_{\bm{k},\sigma'}+2C_{\bm{k}+\bm{q},\sigma}C_{\bm{k},\sigma}\\
+ & +2C_{-\bm{k}+\bm{q},\sigma}C_{\bm{k},\sigma}-2D_{-\bm{k}+\bm{q},\sigma}D_{\bm{k},\sigma'}-2D_{\bm{k}+\bm{q},\sigma}D_{-\bm{k},\sigma'}\\
+ & -A_{\bm{k}+\bm{q},\sigma}E_{\bm{k},\sigma'}-A_{-\bm{k}+\bm{q},\sigma}E_{-\bm{k},\sigma'}+2B_{\bm{k}+\bm{q},\sigma}F_{\bm{k},\sigma'}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Tr\big[g_{\bm{k}+\bm{q}}^{-\sigma}\hat{u}^{z}g_{\bm{k}}^{+\sigma'}\hat{u}^{z}\big]=\Tr\big[g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{z}g_{\bm{k}}^{-\sigma'}\hat{u}^{z}\big]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $xx$
+\end_inset
+
+ traces are:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\Tr\big[g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{x}g_{\bm{k}}^{-\sigma'}\hat{u}^{x}\big] & =-E_{-\bm{k}+\bm{q},\sigma}A_{\bm{k},\sigma'}-E_{\bm{k}+\bm{q},\sigma}A_{-\bm{k},\sigma'}-2F_{\bm{k}+\bm{q},\sigma}B_{\bm{k},\sigma'}\\
+ & -2C_{-\bm{k}+\bm{q},\sigma}C_{\bm{k},\sigma'}-2C_{\bm{k}+\bm{q},\sigma}C_{-\bm{k},\sigma'}-2D_{\bm{k}+\bm{q},\sigma}D_{\bm{k},\sigma'}\\
+ & -2D_{-\bm{k}+\bm{q},\sigma}D_{-\bm{k},\sigma'}-A_{-\bm{k}+\bm{q},\sigma}E_{\bm{k},\sigma'}-A_{\bm{k}+\bm{q},\sigma}E_{-\bm{k},\sigma'}-2B_{\bm{k}+\bm{q},\sigma}F_{\bm{k},\sigma'}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Tr\big[g_{\bm{k}+\bm{q}}^{-\sigma}\hat{u}^{x}g_{\bm{k}}^{+\sigma'}\hat{u}^{x}\big]=\Tr\big[g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{x}g_{\bm{k}}^{-\sigma'}\hat{u}^{x}\big]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $yy$
+\end_inset
+
+ traces are: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\Tr\big[g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{y}g_{\bm{k}}^{-\sigma'}\hat{u}^{y}\big] & =-E_{-\bm{k}+\bm{q},\sigma}A_{\bm{k},\sigma'}-E_{\bm{k}+\bm{q},\sigma}A_{-\bm{k},\sigma'}+2F_{\bm{k}+\bm{q},\sigma}B_{\bm{k},\sigma'}\\
+ & +2C_{-\bm{k}+\bm{q},\sigma}C_{\bm{k},\sigma'}+2C_{\bm{k}+\bm{q},\sigma}C_{-\bm{k},\sigma'}-2D_{\bm{k}+\bm{q},\sigma}D_{\bm{k},\sigma'}\\
+ & -2D_{-\bm{k}+\bm{q},\sigma}D_{-\bm{k},\sigma'}-A_{-\bm{k}+\bm{q},\sigma}E_{\bm{k},\sigma'}-A_{\bm{k}+\bm{q},\sigma}E_{-\bm{k},\sigma'}+2B_{\bm{k}+\bm{q},\sigma}F_{\bm{k},\sigma'}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Tr\big[g_{\bm{k}+\bm{q}}^{-\sigma}\hat{u}^{y}g_{\bm{k}}^{+\sigma'}\hat{u}^{y}\big]=\Tr\big[g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{y}g_{\bm{k}}^{-\sigma'}\hat{u}^{y}\big]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In summary, the 
+\begin_inset Formula $T=0$
+\end_inset
+
+ dynamical susceptibility at the saddle point is given by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\mu\mu}^{\text{{\rom{1},sp}}}(\bm{q},i\omega_{n})=-\frac{1}{64\mathcal{N}}\sum_{\bm{k}}\sum_{\sigma\sigma'}\Tr\big[g_{\bm{k}+\bm{q}}^{+\sigma}\hat{u}^{\mu}g_{\bm{k}}^{-\sigma'}\hat{u}^{\mu}\big]\bigg(\frac{1}{\epsilon_{\bm{k}+\bm{q},\sigma}+\epsilon_{\bm{k},\sigma'}+i\omega_{n}}+\frac{1}{\epsilon_{\bm{k}+\bm{q},\sigma}+\epsilon_{\bm{k},\sigma'}-i\omega_{n}}\bigg)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $1/N$
+\end_inset
+
+ correction to the dynamical susceptibility
+\end_layout
+
+\begin_layout Standard
+One weakness of the saddle point solution is that it does not support magnon
+ excitations, since the saddle point corresponds to non-interacting spinons
+ (Schwinger bosons).
+ We expect the coupling between the spinons and the gauge fields to give
+ a rise to the binding of two spinons into a magnon at the 
+\begin_inset Formula $1/N$
+\end_inset
+
+ order.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $1/N$
+\end_inset
+
+ correction to 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{I,fl}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+According to the above discussion, the 
+\begin_inset Formula $1/N$
+\end_inset
+
+ correction of 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{{\rom{1}}}}$
+\end_inset
+
+ consists of three diagrams: 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:chi1fl"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:chi1fl2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ We will write them down explicitly.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\begin_inset Formula $(C,I)=(1,0)$
+\end_inset
+
+, one contraction no internal loop, there are three terms: 1).
+ expand in both 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $m$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ to the first order then contract; 2).
+ choose one 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $m$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ to expand up to the second order and another 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $m$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ to the zeroth order.
+\end_layout
+
+\begin_layout Standard
+Consider case 
+\begin_inset Formula $1)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+ & \frac{1}{4Z^{(2)}}\int\mathcal{D}[\bar{\phi},\phi]\sum_{\alpha_{1}\alpha_{2}}\Delta\phi_{\alpha_{1}}\Delta\phi_{\alpha_{2}}\Tr\big[\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}}\hat{{u}}^{\mu}(\bm{q},i\omega_{n})\mathcal{G}_{\text{sp}}\hat{{v}}_{\alpha_{2}}\mathcal{G}_{\text{sp}}\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\big]\\
+ & *e^{-\sum_{\beta_{1}\beta_{2}}\Delta\phi_{\beta_{1}}\mathcal{S}_{\beta_{1}\beta_{2}}^{(2)}\Delta\phi_{\beta_{2}}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which corresponds to Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:chi1fl"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ (b) .
+ 
+\end_layout
+
+\begin_layout Standard
+Consider case 2):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+ & \frac{1}{4Z^{(2)}}\int\mathcal{D}[\phi,\bar{\phi}]\sum_{\alpha_{1}\alpha_{2}}\Delta\phi_{\alpha_{1}}\Delta\phi_{\alpha_{2}}\bigg(\Tr\big[\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{2}}\mathcal{G}_{\text{sp}}\hat{u}^{\mu}(\bm{q},i\omega_{n})\mathcal{G}_{\text{sp}}\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\big]\\
+ & +\Tr\big[\mathcal{G}_{\text{sp}}\hat{u}^{\mu}(\bm{q},i\omega_{n})\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{2}}\mathcal{G}_{\text{sp}}\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\big]\bigg)e^{-\sum_{\beta_{1}\beta_{2}}\Delta\phi_{\beta_{1}}\mathcal{S}_{\beta_{1}\beta_{2}}^{(2)}\Delta\phi_{\beta_{2}}}\\
+ & =\frac{1}{4Z^{(2)}}\int\mathcal{D}[\phi,\bar{\phi}]\sum_{\alpha_{1}\alpha_{2}}\Delta\phi_{\alpha_{1}}\Delta\phi_{\alpha_{2}}\bigg(\Tr\big[\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{2}}\mathcal{G}_{\text{sp}}\hat{u}^{\mu}(\bm{q},i\omega_{n})\mathcal{G}_{\text{sp}}\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\big]\\
+ & +\Tr\big[\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{2}}\mathcal{G}_{\text{sp}}\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\mathcal{G}_{\text{sp}}\hat{u}^{\mu}(\bm{q},i\omega_{n})\big]\bigg)e^{-\sum_{\beta_{1}\beta_{2}}\Delta\phi_{\beta_{1}}\mathcal{S}_{\beta_{1}\beta_{2}}^{(2)}\Delta\phi_{\beta_{2}}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where we have used the fact the the trace is invariant under cyclic permutation
+ in the last step.
+ The linear terms in expansion in 
+\begin_inset Formula $m$
+\end_inset
+
+ do not contribute because they correspond to odd integrand.
+ The two traces are represented by Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:chi1fl"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ (a).
+ In summary, we have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\mu\nu}^{\text{{\rom{1}},fl}(1,0)}(\bm{q},i\omega_{n})=\sum_{\alpha_{1}\alpha_{2}}D_{\alpha_{1}\alpha_{2}}(\bm{q},i\omega_{n})\big[\Gamma_{\alpha_{1}\mu\alpha_{2}\nu}+\Gamma_{\alpha_{1}\alpha_{2}\mu\nu}+\Gamma_{\alpha_{1}\alpha_{2}\nu\mu}\big]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+D_{\alpha_{1}\alpha_{2}}(\bm{q},i\omega_{n}) & =\frac{1}{Z^{(2)}}\int\mathcal{D}[\phi,\bar{\phi}]\Delta\phi_{\alpha_{1}}\Delta\phi_{\alpha_{2}}e^{-\sum_{\beta_{1}\beta_{2}}\Delta\phi_{\beta_{1}}\mathcal{S}_{\beta_{1}\beta_{2}}^{(2)}\Delta\phi_{\beta_{2}}}\\
+ & =\big[(\mathcal{S}^{(2)})^{-1}\big]_{\alpha_{1}\alpha_{2}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Gamma_{\alpha_{1}\mu\alpha_{2}\nu}=\frac{1}{4}\Tr\big[\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}}\hat{{u}}^{\mu}(\bm{q},i\omega_{n})\mathcal{G}_{\text{sp}}\hat{{v}}_{\alpha_{2}}\mathcal{G}_{\text{sp}}\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\big]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2.
+
+\series default
+ 
+\begin_inset Formula $(C,I)=(2,1)$
+\end_inset
+
+ : choose one 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $m$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ to expand to the first order, another 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $m$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ to the zeroth order, and expand the interaction to the first order, which
+ corresponds to Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:chi1fl2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\chi_{\mu\nu}^{\text{{\rom{1}},fl}(2,1)}(\bm{q},i\omega_{n}) & =\sum_{\alpha_{1}\beta_{1}\beta_{2}\beta_{3}}\big(D_{\alpha_{1}\beta_{1}}D_{\beta_{2}\beta_{3}}+D_{\alpha_{1}\beta_{2}}D_{\beta_{1}\beta_{3}}+D_{\alpha_{1}\beta_{3}}D_{\beta_{1}\beta_{2}}\big)\big(\Gamma_{\alpha_{1}\mu\nu}+\Gamma_{\mu\alpha_{1}\nu}\big)\mathcal{S}_{\beta_{1}\beta_{2}\beta_{3}}^{(3)}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Gamma_{\alpha_{1}\mu\nu}=\frac{1}{4}\Tr\big[\mathcal{G}_{\text{sp}}\hat{{v}}_{\alpha_{1}}\mathcal{G}_{\text{sp}}\hat{{u}}^{\mu}(\bm{q},i\omega_{n})\mathcal{G}_{\text{sp}}\hat{u}^{\nu}(-\bm{q},-i\omega_{n})\big]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $1/N$
+\end_inset
+
+ correction to 
+\begin_inset Formula $\chi_{\mu\nu}^{\text{\rom{2},fl}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The correction can be written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi^{\text{\rom{2},fl}}(\bm{q},i\omega_{n})=-\sum_{\alpha_{1}\alpha_{2}}\Lambda_{\alpha_{1}\mu}(\bm{q},i\omega_{n})D_{\alpha_{1}\alpha_{2}}\Lambda_{\alpha_{2}\nu}(-\bm{q},i\omega_{n})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Lambda_{\alpha_{1}\mu}(\bm{q},i\omega_{n})=\frac{1}{2}\Tr\big[\mathcal{G}_{\text{sp}}\hat{v}_{\alpha_{1}}\mathcal{G}_{\text{sp}}\hat{{u}}(\bm{q},i\omega_{n})\big]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The internal vertices 
+\end_layout
+
+\begin_layout Standard
+The internal vertices should contain 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ matrices with some additional geometric factors.
+ To display them explicitly, we will refer to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:gsumm"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and the matrix elements 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:m11"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:m41"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ .
+ Before detail calculations, let's give some labels to the quantities that
+ will be used in the calculation.
+ For the 
+\begin_inset Formula $J_{1}-J_{2}$
+\end_inset
+
+ model , there are in total 
+\begin_inset Formula $6$
+\end_inset
+
+ indistinguishable bonds:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\bm{\delta}_{1,1}=\big(1,0\big)\quad\bm{\delta}_{1,2}=\big(\frac{1}{2},\frac{\sqrt{3}}{2}\big)\quad\bm{\delta}_{1,3}=\big(-\frac{1}{2},\frac{\sqrt{3}}{2}\big)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\bm{\delta}_{2,1}=\big(\frac{3}{2},\frac{\sqrt{3}}{2}\big)\quad\bm{\delta}_{1,2}=\big(0,\sqrt{3}\big)\quad\bm{\delta}_{1,3}=\big(-\frac{3}{2},\frac{\sqrt{3}}{2}\big)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The corresponding bond auxiliary fields are 
+\begin_inset Formula $\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(r),\omega_{n}},W_{\bm{q},\bm{\delta}_{(i,j)}}^{(r),\omega_{n}}$
+\end_inset
+
+ , with 
+\begin_inset Formula $r=A,B$
+\end_inset
+
+ , 
+\begin_inset Formula $i=1,2$
+\end_inset
+
+ and 
+\begin_inset Formula $j=1,2,3$
+\end_inset
+
+ .
+ We have one more auxiliary field 
+\begin_inset Formula $\lambda_{\bm{q}}^{\omega_{n}}$
+\end_inset
+
+ which projects out the unphysical Fock space.
+ There are in total 
+\begin_inset Formula $13$
+\end_inset
+
+ auxiliary fields.
+ Below we display the internal vertices.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{v}_{\lambda_{\bm{q}}^{\omega_{n}}}=\frac{i}{2\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\begin{pmatrix}\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}\\
+ & \delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}\\
+ &  & \delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}\\
+ &  &  & \delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{v}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(A),\omega_{n}}}=\frac{J_{\bm{\delta}_{(i,j)}}}{4\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\hat{V}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(A),\omega_{n}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All the matrix elements for 
+\begin_inset Formula $\hat{V}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(A),\omega_{n}}}$
+\end_inset
+
+ vanish except for 
+\begin_inset Formula $(2,1)$
+\end_inset
+
+ and 
+\begin_inset Formula $(4,3)$
+\end_inset
+
+ elements: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\hat{V}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(A),\omega_{n}}}(2,1) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}\big(e^{-i(\bm{k}+\bm{q}+\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}-e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}\big)\\
+\hat{V}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(A),\omega_{n}}}(4,3) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}\big(e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}-e^{-i(\bm{k}+\bm{q}-\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}\big)e^{-i(\omega-\omega')0^{+}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{v}_{W_{\bm{q},\bm{\delta}_{(i,j)}}^{(A),\omega_{n}}}=\frac{J_{\bm{\delta}_{(i,j)}}}{4\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\hat{V}_{W_{\bm{q},\bm{\delta}_{(i,j)}}^{(A),\omega_{n}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Only 
+\begin_inset Formula $(1,2)$
+\end_inset
+
+ and 
+\begin_inset Formula $(3,4)$
+\end_inset
+
+ elements are non-vanishing: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{V}_{W_{\bm{q},\bm{\delta}_{(i,j)}}^{(A),\omega_{n}}}(1,2)=\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}\big(e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}-e^{-i(\bm{k}-\bm{q}+\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}\big)e^{-i(\omega-\omega')0^{+}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{V}_{W_{\bm{q},\bm{\delta}_{(i,j)}}^{(A),\omega_{n}}}(3,4)=\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}\big(e^{-i(\bm{k}-\bm{q}-\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}-e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}\big)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the 
+\begin_inset Formula $B$
+\end_inset
+
+ - fields
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{v}_{W_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}=-\frac{J_{\bm{\delta}_{(i,j)}}}{4\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\hat{V}_{W_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Only the diagonal elements are non-vanishing, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\hat{V}_{W_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}(1,1) & =\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}e^{-i(\bm{k}-\bm{q}+\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}\\
+\hat{V}_{W_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}(2,2) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}e^{-i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}\\
+\hat{V}_{W_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}(3,3) & =\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}e^{-i(\bm{k}-\bm{q}-\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}\\
+\hat{V}_{W_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}(4,4) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}e^{-i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{v}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}=\frac{J_{\bm{\delta}_{(i,j)}}}{4\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\hat{V}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\hat{V}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}(1,1) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}\\
+\hat{V}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}(2,2) & =\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}e^{i(\bm{k}-\bm{q}+\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}\\
+\hat{V}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}(3,3) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}\\
+\hat{V}_{\bar{W}_{\bm{q},\bm{\delta}_{(i,j)}}^{(B),\omega_{n}}}(4,4) & =\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}e^{i(\bm{k}-\bm{q}-\frac{\bm{Q}}{2})\cdot\bm{\delta}_{(i,j)}}
+\end{align}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+We have set 
+\begin_inset Formula $J_{\bm{\delta}_{(1,j)}}=J_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $J_{\bm{\delta}_{(2,j)}}=J_{2}$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Subsection
+Spontaneous 
+\begin_inset Formula $SU(2)$
+\end_inset
+
+ symmetry breaking and Bose-Einstein condensation
+\end_layout
+
+\begin_layout Standard
+We have added a symmetry breaking field 
+\begin_inset Formula $h$
+\end_inset
+
+ in our calculation to investigate the consequences of spontaneous 
+\begin_inset Formula $SU(2)$
+\end_inset
+
+ symmetry breaking.
+ To produce meaningful results on the dynamical susceptibility, we should
+ take thermodynamic limit in the right order, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{\chi}^{\text{\rom{2},fl}}(\bm{q},i\omega_{n})=\lim_{h\rightarrow0}\lim_{\mathcal{N}\rightarrow\infty}\chi^{\text{\rom{2},fl}}(\bm{q},i\omega_{n})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\tilde{\chi}^{\text{\rom{2},fl}}$
+\end_inset
+
+ represents the fluctuating part of the 
+\begin_inset Quotes eld
+\end_inset
+
+meaningful
+\begin_inset Quotes erd
+\end_inset
+
+ dynamical susceptibility.
+ Since the saddle point Green function is very important in our perturbative
+ calculations, we will compare the saddle point Green functions in the thermodyn
+amic limit with 
+\begin_inset Formula $h=0$
+\end_inset
+
+ and 
+\begin_inset Formula $h\neq0$
+\end_inset
+
+ to trace back the origin of the symmetry breaking contribution.
+ 
+\end_layout
+
+\begin_layout Standard
+At 
+\begin_inset Formula $T=0$
+\end_inset
+
+ , the bosons (spinons) condense.
+ Thus we can write the saddle point Green function in non-condensed contribution
+ and condensed contribution: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{G}^{\text{sp}}(\bm{k},i\omega)=\mathcal{G}_{\text{n}}^{\text{sp}}(\bm{k},i\omega)+\mathcal{G}_{\text{c}}^{\text{sp}}(\bm{k},i\omega)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The energy dispersion of condensed modes with momentum 
+\begin_inset Formula $\bm{k}$
+\end_inset
+
+ must satisfy 
+\begin_inset Formula $\epsilon_{\bm{k}}\simeq1/\mathcal{N}$
+\end_inset
+
+ , as required by the macroscopic occupation number, which is also evident
+ in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:matsums"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the frequency sums of the Green function is related to the occupation
+ number.
+ Therefore, the two thermodynamic limits 
+\series bold
+do
+\series default
+ 
+\series bold
+not
+\series default
+ commute for condensed bosons, because of the divergence 
+\begin_inset Formula $\epsilon_{\bm{k}}^{\text{c}}\simeq\mathcal{N}^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{G}_{\text{c}}^{\text{sp}}(\bm{k},i\omega)\simeq\mathcal{N}$
+\end_inset
+
+ .
+ Whereas for the non-condensed bosons, because the energies are finite,
+ the two thermodynamic limits 
+\series bold
+do commute
+\series default
+.
+ In summary, the symmetry breaking field only modifies 
+\begin_inset Formula $\mathcal{G}_{\text{c}}^{\text{sp}}(\bm{k},i\omega)$
+\end_inset
+
+ in the thermodynamic limit.
+ 
+\end_layout
+
+\begin_layout Standard
+Below, we show explicitly that the thermodynamic limits do not commutate
+ for condensed bosons.
+ We will first discuss the result of 
+\begin_inset Formula $\lim_{\mathcal{N}\rightarrow\infty}\lim_{h\rightarrow0}\mathcal{G}_{\text{c}}^{\text{sp}}(\bm{k},i\omega)$
+\end_inset
+
+ and then 
+\begin_inset Formula $\lim_{h\rightarrow0}\lim_{\mathcal{N}\rightarrow\infty}\mathcal{G}_{\text{c}}^{\text{sp}}(\bm{k},i\omega)$
+\end_inset
+
+ .
+ Of course, we will use the result from the second order of limits in our
+ calculations.
+\end_layout
+
+\begin_layout Standard
+The first order of limits gives us the 
+\begin_inset Formula $SU(2)$
+\end_inset
+
+ symmetric result.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{G}_{0}^{\text{sp}}(\bm{k},i\omega)=\lim_{\mathcal{N}\rightarrow\infty}\lim_{h\rightarrow0}\mathcal{G}^{\text{sp}}(\bm{k},i\omega)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From the expression of boson dispersion relation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:dispersion"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:g_sigma"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we see that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\epsilon_{0,\pm} & =\epsilon_{\pm\bm{Q},-}=\alpha_{\bm{Q}/2}\simeq1/\mathcal{N}\\
+\epsilon_{\pm\bm{Q},+} & =\alpha_{3\bm{Q}/2}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, we conclude that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{G}_{0,\text{c}}^{\text{sp}}(\bm{k},i\omega) & =\delta_{\bm{k},0}\bigg(\frac{g_{0}^{-}(\bm{k}=0)}{i\omega-\epsilon_{\bm{0}}}+\frac{g_{0}^{+}(\bm{k}=0)}{i\omega+\epsilon_{\bm{0}}}\bigg)\\
+ & +\delta_{\bm{k},\bm{Q}}\bigg(\frac{g_{0}^{-}(\bm{k}=\bm{Q})}{i\omega-\epsilon_{\bm{Q},-}}+\frac{g_{0}^{+}(\bm{k}=\bm{Q})}{i\omega+\epsilon_{\bm{Q},-}}\bigg)\\
+ & +\delta_{\bm{k},-\bm{Q}}\bigg(\frac{g_{0}^{-}(\bm{k}=-\bm{Q})}{i\omega-\epsilon_{-\bm{Q},-}}+\frac{g_{0}^{+}(\bm{k}=-\bm{Q})}{i\omega+\epsilon_{-\bm{Q},-}}\bigg)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Some simple algebras tell us that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+g_{0}^{-}(\bm{k}=0)=-\begin{pmatrix}v_{\bm{0}}^{2} & z_{\bm{0}} & 0 & 0\\
+z_{\bm{0}} & u_{\bm{0}}^{2} & 0 & 0\\
+0 & 0 & v_{\bm{0}}^{2} & z_{\bm{0}}\\
+0 & 0 & z_{\bm{0}} & u_{\bm{0}}^{2}
+\end{pmatrix}\quad g_{0}^{+}(\bm{k}=0)=\begin{pmatrix}u_{\bm{0}}^{2} & z_{\bm{0}} & 0 & 0\\
+z_{\bm{0}} & v_{\bm{0}}^{2} & 0 & 0\\
+0 & 0 & u_{\bm{0}}^{2} & z_{\bm{0}}\\
+0 & 0 & z_{\bm{0}} & v_{\bm{0}}^{2}
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $v_{\bm{0}}^{2}=\lim_{h\rightarrow0}v_{\bm{0}\pm}^{2}$
+\end_inset
+
+ , 
+\begin_inset Formula $u_{\bm{0}}^{2}=\lim_{h\rightarrow0}u_{\bm{0}\pm}^{2}$
+\end_inset
+
+ , 
+\begin_inset Formula $z_{\bm{0}}=\lim_{h\rightarrow0}z_{\bm{0}\pm}$
+\end_inset
+
+ , and 
+\begin_inset Formula $\epsilon_{\bm{0}}=\lim_{h\rightarrow0}\epsilon_{\bm{0},\pm}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+g_{0}^{-}(\bm{k}=\bm{Q})=-\begin{pmatrix}0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & v_{-\bm{Q},-}^{2} & z_{-\bm{Q},-}\\
+0 & 0 & z_{-\bm{Q},-} & u_{-\bm{Q},-}^{2}
+\end{pmatrix}\quad g_{0}^{+}(\bm{k}=\bm{Q})=\begin{pmatrix}0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & u_{-\bm{Q},-}^{2} & z_{-\bm{Q},-}\\
+0 & 0 & z_{-\bm{Q},-} & v_{-\bm{Q},-}^{2}
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+g_{0}^{-}(\bm{k}=-\bm{Q})=-\begin{pmatrix}v_{-\bm{Q},-}^{2} & z_{-\bm{Q},-} & 0 & 0\\
+z_{-\bm{Q},-} & u_{-\bm{Q},-}^{2} & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{pmatrix}\quad g_{0}^{+}(\bm{k}=\bm{Q})=\begin{pmatrix}u_{-\bm{Q},-}^{2} & z_{-\bm{Q},-} & 0 & 0\\
+z_{-\bm{Q},-} & v_{-\bm{Q},-}^{2} & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider the case for a finite external field 
+\begin_inset Formula $h$
+\end_inset
+
+ , the condensation occurs only at the energy 
+\begin_inset Formula $\epsilon_{\bm{0},-}$
+\end_inset
+
+ ,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\epsilon_{\bm{0},-}^{2}=\alpha_{\bm{Q}/2}^{2}+\frac{h^{2}}{4}-\frac{\Delta_{\bm{0}}^{2}}{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta_{\bm{0}}^{2}=2(\lambda+\gamma_{\bm{Q}/2}^{B})h\quad\Delta_{\bm{0},-}^{2}=\alpha_{\bm{Q}/2}^{2}-\epsilon_{\bm{0},-}^{2}=\frac{\Delta_{\bm{0}}^{2}}{2}-\frac{h^{2}}{4}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The condensed contribution to the Green function can be written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{G}_{\text{sb-c}}^{\text{sp}}(\bm{k},i\omega)=\delta_{\bm{k},0}\bigg(\frac{g_{\text{sb-c}}^{-}(\bm{k}=0)}{i\omega-\epsilon_{\bm{0},-}}+\frac{g_{\text{sb-c}}^{+}(\bm{k}=0)}{i\omega+\epsilon_{\bm{0},-}}\bigg)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The matrix elements for the condensed bosons can be calculated as following:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+A_{\bm{0},-} & =v_{\bm{0},-}^{2}\frac{\Delta_{\bm{0},-}^{2}}{\Delta_{\bm{0}}^{2}}-u_{\bm{0},-}^{2}\frac{h^{2}}{4\Delta_{\bm{0}}^{2}}\\
+ & =v_{\bm{0},-}^{2}\bigg(\frac{1}{2}-\frac{h^{2}}{4\Delta_{\bm{0}}^{2}}\bigg)-u_{\bm{0},-}^{2}\frac{h^{2}}{4\Delta_{\bm{0}}^{2}}\\
+ & =\frac{1}{2}v_{\bm{0},-}^{2}-(v_{\bm{0},-}^{2}+u_{\bm{0},-}^{2})\frac{h^{2}}{4\Delta_{\bm{0}}^{2}}\\
+ & =\frac{1}{2}v_{\bm{0},-}^{2}-\frac{h}{8\epsilon_{\bm{0},-}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+B_{\bm{0},-} & =\frac{\epsilon_{\bm{0},-}h}{\Delta_{\bm{0}}^{2}}\bigg[\frac{(\lambda+\gamma_{\bm{Q}/2}^{B})^{2}}{4\epsilon_{\bm{0},-}^{2}}-\frac{1}{2}\frac{(\lambda+\gamma_{\bm{Q}/2}^{B})}{\epsilon_{\bm{0},-}}+\frac{1}{4}+\frac{(\gamma_{\bm{Q}/2}^{A})^{2}}{4\epsilon_{\bm{0},-}^{2}}-\frac{h^{2}}{16\epsilon_{\bm{0},-}^{2}}\bigg]\\
+ & =\frac{\epsilon_{\bm{0},-}}{2(\lambda+\gamma_{\bm{Q}/2}^{B})}\bigg[\frac{(\lambda+\gamma_{\bm{Q}/2}^{B})^{2}}{4\epsilon_{\bm{0},-}^{2}}-\frac{1}{2}\frac{(\lambda+\gamma_{\bm{Q}/2}^{B})}{\epsilon_{\bm{0},-}}+\frac{1}{4}+\frac{(\gamma_{\bm{Q}/2}^{A})^{2}}{4\epsilon_{\bm{0},-}^{2}}-\frac{h^{2}}{16\epsilon_{\bm{0},-}^{2}}\bigg]\\
+ & =\frac{\lambda+\gamma_{\bm{Q}/2}^{B}}{8\epsilon_{\bm{0},-}}-\frac{1}{4}+\frac{\epsilon_{\bm{0},-}+(\gamma_{\bm{Q}/2}^{A})^{2}-h^{2}/4}{8(\lambda+\gamma_{\bm{Q}/2}^{B})\epsilon_{\bm{0},-}}\\
+ & =\frac{\lambda+\gamma_{\bm{Q}/2}^{B}}{8\epsilon_{\bm{0},-}}-\frac{1}{4}+\frac{(\lambda+\gamma_{\bm{Q}/2}^{B})^{2}-(\lambda+\gamma_{\bm{Q}/2}^{B})h}{8(\lambda+\gamma_{\bm{Q}/2}^{B})\epsilon_{\bm{0},-}}\\
+ & =\frac{\lambda+\gamma_{\bm{Q}/2}^{B}}{4\epsilon_{\bm{0},-}}-\frac{1}{4}-\frac{h}{8\epsilon_{\bm{0},-}}\\
+ & =\frac{1}{2}v_{\bm{0},-}^{2}-\frac{h}{8\epsilon_{\bm{0},-}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+C_{\bm{0},-} & =\frac{z_{\bm{0},-}}{\Delta_{\bm{0}}^{2}}\bigg[\Delta_{\bm{0},-}^{2}+\frac{h^{2}}{4}\bigg]\\
+ & =\frac{z_{\bm{0},-}}{\Delta_{\bm{0}}^{2}}\bigg[\frac{\Delta_{\bm{0}}^{2}}{2}-\frac{h^{2}}{4}+\frac{h^{2}}{4}\bigg]\\
+ & =\frac{1}{2}z_{\bm{0},-}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+D_{\bm{0},-} & =\frac{h\epsilon_{\bm{0},-}z_{\bm{0},-}}{2\Delta_{\bm{0}}^{2}}\bigg[v_{\bm{k},-}^{2}+u_{\bm{k},-}^{2}\bigg]\\
+ & =\frac{h\epsilon_{\bm{0},-}z_{\bm{0},-}}{2\Delta_{\bm{0}}^{2}}\frac{(\lambda+\gamma_{\bm{Q}/2}^{B})}{\epsilon_{\bm{0},-}}\\
+ & =\frac{h\epsilon_{\bm{0},-}z_{\bm{0},-}}{4(\lambda+\gamma_{\bm{Q}/2}^{B})h}\frac{(\lambda+\gamma_{\bm{Q}/2}^{B})}{\epsilon_{\bm{0},-}}\\
+ & =\frac{1}{4}z_{\bm{0},-}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E_{\bm{0},-}=\frac{1}{2}u_{\bm{0},-}^{2}-\frac{h}{8\epsilon_{\bm{0},-}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F_{\bm{0},-}=\frac{1}{2}u_{\bm{0},-}^{2}-\frac{h}{8\epsilon_{\bm{0},-}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In summary, we've shown that the order of the thermodynamic limits do not
+ commute for condensed bosons.
+ 
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%dummy comment inserted by tex2lyx to ensure that this paragraph is not
+ empty
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Detail calculation of the exact dynamical matrix 
+\end_layout
+
+\begin_layout Standard
+The Zeeman energy is simplified through a local gauge transform on the boson
+ operators as 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:gaugetrans"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ In momentum space, this is equivalent to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+b_{\bm{k}\uparrow}^{\omega} & \rightarrow b_{\bm{k}+\frac{\bm{Q}}{2}\uparrow}^{\omega}\nonumber \\
+b_{\bm{k}\downarrow}^{\omega} & \rightarrow b_{\bm{k}-\frac{\bm{Q}}{2}\downarrow}^{\omega}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We display the calculations of the dynamical matrix in Nambu representation
+ in detail:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+ & \int_{0}^{\beta}d\tau\sum_{\bm{i}\sigma}\bar{b}_{\bm{i}\sigma}^{\tau}\partial_{\tau}b_{\bm{i}\sigma}^{\tau}\nonumber \\
+ & =\frac{1}{\mathcal{N}\beta}\int_{0}^{\beta}d\tau\sum_{\bm{i}\sigma}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}(i\omega')\bar{b}_{\bm{k}\sigma}^{\omega}b_{\bm{k}'\sigma}^{\omega'}e^{i(\bm{k}-\bm{k}')\cdot\bm{r}_{i}}e^{-i(\omega-\omega')\tau}e^{-i\omega0^{+}}\nonumber \\
+ & =\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}(i\omega)\bar{b}_{\bm{k}\sigma}^{\omega}b_{\bm{k}'\sigma}^{\omega'}\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}e^{-i\omega0^{+}}\nonumber \\
+ & =\frac{1}{2}\bigg(\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}(i\omega)\bar{b}_{\bm{k}\sigma}^{\omega}b_{\bm{k}'\sigma}^{\omega'}\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}e^{-i\omega0^{+}}+\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}(-i\omega)b_{-\bm{k}'\sigma}^{-\omega'}\bar{b}_{-\bm{k}\sigma}^{-\omega}\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}e^{i\omega0^{+}}\bigg)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The calculations for the terms containing 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-field and symmetry-breaking field are similar, we omit them here.
+ The coupling with 
+\begin_inset Formula $W^{(B)}$
+\end_inset
+
+-fields contributes to the diagonal elements of the dynamical matrix:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+ & -\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}W_{\bm{i},\bm{\delta}}^{(B)\tau}(b_{\bm{i}+\bm{\delta}\uparrow}^{\tau}\bar{b}_{\bm{i}\uparrow}^{\tau}+b_{\bm{i}+\bm{\delta}\downarrow}^{\tau}\bar{b}_{\bm{i}\downarrow}^{\tau})\nonumber \\
+ & \rightarrow-\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}W_{\bm{i},\bm{\delta}}^{(B)\tau}(b_{\bm{i}+\bm{\delta}\uparrow}^{\tau}\bar{b}_{\bm{i}\uparrow}^{\tau}e^{-i\frac{\bm{Q}\cdot\bm{\delta}}{2}}+b_{\bm{i}+\bm{\delta}\downarrow}^{\tau}\bar{b}_{\bm{i}\downarrow}^{\tau}e^{i\frac{\bm{Q}\cdot\bm{\delta}}{2}})\nonumber \\
+ & =-\frac{1}{(\mathcal{N}\beta)^{3/2}}\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{q}\bm{k}\bm{k}'}\sum_{\nu\omega\omega'}W_{\bm{q},\bm{\delta}}^{(B)\nu}(\bar{b}_{\bm{k}\uparrow}^{\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{i(\bm{k}-\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'-\nu)\tau}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}}\nonumber \\
+ & +\bar{b}_{\bm{k}\downarrow}^{\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{i(\bm{k}-\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'-\nu)\tau}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}})\nonumber \\
+ & =-\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{4}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}(\bar{b}_{\bm{k}\uparrow}^{\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}}+\bar{b}_{\bm{k}\downarrow}^{\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}})\nonumber \\
+ & -\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{4}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}(b_{-\bm{k}\uparrow}^{-\omega}\bar{b}_{-\bm{k}'\uparrow}^{-\omega'}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega'0^{+}}+b_{-\bm{k}\downarrow}^{-\omega}\bar{b}_{-\bm{k}'\downarrow}^{-\omega'}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega'0^{+}})
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+the conjugate field:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+ & \int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}(b_{\bm{i}\uparrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\uparrow}^{\tau}+b_{\bm{i}\downarrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\downarrow}^{\tau})\nonumber \\
+ & \rightarrow\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}(b_{\bm{i}\uparrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\uparrow}^{\tau}e^{i\frac{\bm{Q}\cdot\bm{\delta}}{2}}+b_{\bm{i}\downarrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\downarrow}^{\tau}e^{-i\frac{\bm{Q}\cdot\bm{\delta}}{2}})\nonumber \\
+ & =\frac{1}{(\mathcal{N}\beta)^{3/2}}\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{q}\bm{k}\bm{k}'}\sum_{\nu\omega\omega'}\bar{W}_{\bm{q},\bm{\delta}}^{(B)\nu}(\bar{b}_{\bm{k}\uparrow}^{\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{i(\bm{k}-\bm{k}'+\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'+\nu)\tau}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}}\nonumber \\
+ & +\bar{b}_{\bm{k}\downarrow}^{\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{i(\bm{k}-\bm{k}'+\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'+\nu)\tau}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}})\nonumber \\
+ & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{4}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}(\bar{b}_{\bm{k}\uparrow}^{\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}}+\bar{b}_{\bm{k}\downarrow}^{\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}})\nonumber \\
+ & +\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{4}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}(b_{-\bm{k}\uparrow}^{-\omega}\bar{b}_{-\bm{k}'\uparrow}^{-\omega'}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega'0^{+}}+b_{-\bm{k}\downarrow}^{-\omega}\bar{b}_{-\bm{k}'\downarrow}^{-\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega'0^{+}})
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The coupling with the 
+\begin_inset Formula $W^{(A)}$
+\end_inset
+
+-fields connects two boson variables with opposite spin, momentum, and frequency.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+ & -\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}(b_{\bm{i}\uparrow}^{\tau}b_{\bm{i}+\bm{\delta}\downarrow}^{\tau}-b_{\bm{i}\downarrow}^{\tau}b_{\bm{i}+\bm{\delta}\uparrow}^{\tau})\nonumber \\
+ & -\rightarrow\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}(b_{\bm{i}\uparrow}^{\tau}b_{\bm{i}+\bm{\delta}\downarrow}^{\tau}e^{i\frac{\bm{Q}\cdot\bm{\delta}}{2}}-b_{\bm{i}\downarrow}^{\tau}b_{\bm{i}+\bm{\delta}\uparrow}^{\tau}e^{-i\frac{\bm{Q}\cdot\bm{\delta}}{2}})\nonumber \\
+ & =-\frac{1}{(\mathcal{N}\beta)^{3/2}}\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{q}\bm{k}\bm{k}'}\sum_{\nu\omega\omega'}\bar{W}_{\bm{q},\bm{\delta}}^{(A)\nu}(b_{-\bm{k}\uparrow}^{-\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{-i(-\bm{k}+\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'+\nu)\tau}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}\nonumber \\
+ & -b_{-\bm{k}\downarrow}^{-\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{-i(-\bm{k}+\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'+\nu)\tau}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}})\nonumber \\
+ & =-\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{4}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(A)\omega'-\omega}(b_{-\bm{k}\uparrow}^{-\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-b_{-\bm{k}\downarrow}^{-\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}})\nonumber \\
+ & -\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{4}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(A)\omega'-\omega}(b_{-\bm{k}\downarrow}^{-\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-b_{-\bm{k}\uparrow}^{-\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}})
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+the conjugate field:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+ & -\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}W_{\bm{i},\bm{\delta}}^{(A)\tau}(\bar{b}_{\bm{i}+\bm{\delta}\downarrow}^{\tau}\bar{b}_{\bm{i}\uparrow}^{\tau}-\bar{b}_{\bm{i}+\bm{\delta}\uparrow}^{\tau}\bar{b}_{\bm{i}\downarrow}^{\tau})\nonumber \\
+ & \rightarrow-\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}W_{\bm{i},\bm{\delta}}^{(A)\tau}(\bar{b}_{\bm{i}+\bm{\delta}\downarrow}^{\tau}\bar{b}_{\bm{i}\uparrow}^{\tau}e^{-i\frac{\bm{Q}\cdot\bm{\delta}}{2}}-\bar{b}_{\bm{i}+\bm{\delta}\uparrow}^{\tau}\bar{b}_{\bm{i}\downarrow}^{\tau}e^{i\frac{\bm{Q}\cdot\bm{\delta}}{2}})\nonumber \\
+ & =-\frac{1}{(\mathcal{N}\beta)^{3/2}}\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{q}\bm{k}\bm{k}'}\sum_{\nu\omega\omega'}W_{\bm{q},\bm{\delta}}^{(A)\nu}(\bar{b}_{\bm{k}\downarrow}\bar{b}_{-\bm{k}'\uparrow}^{-\omega'}e^{i(\bm{k}-\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'-\nu)\tau}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}}\nonumber \\
+ & -\bar{b}_{\bm{k}\uparrow}\bar{b}_{-\bm{k}'\downarrow}^{-\omega'}e^{i(\bm{k}-\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'-\nu)\tau}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}})\nonumber \\
+ & =-\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{4}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(A)\omega-\omega'}(\bar{b}_{\bm{k}\downarrow}^{\omega}\bar{b}_{-\bm{k}'\uparrow}^{-\omega'}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}}-\bar{b}_{\bm{k}\uparrow}^{\omega}\bar{b}_{-\bm{k}'\downarrow}^{-\omega'}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}})\nonumber \\
+ & -\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{4}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(A)\omega-\omega'}(\bar{b}_{\bm{k}\uparrow}^{\omega}\bar{b}_{-\bm{k}'\downarrow}^{-\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}}-\bar{b}_{\bm{k}\downarrow}^{\omega}\bar{b}_{-\bm{k}'\uparrow}^{-\omega'}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}})
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The matrix elements of 
+\begin_inset Formula $\mathcal{M}_{\bm{k},\omega}$
+\end_inset
+
+ are summarized in 
+\end_layout
+
+\begin_layout Section
+Detail calculation of saddle point Green function matrix
+\end_layout
+
+\begin_layout Subsection
+Dispersion relations
+\end_layout
+
+\begin_layout Standard
+For simplicity, we introduce short-handed notation 
+\begin_inset Formula $1=\bm{k}+\frac{\bm{Q}}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $2=-\bm{k}+\frac{\bm{Q}}{2}$
+\end_inset
+
+.
+ The determinant is calculated as following
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+ & \det\mathcal{M}_{\bm{k},\omega}^{\text{sp}}\nonumber \\
+ & =(i\omega+\lambda+\gamma_{1}^{B})e^{-i\omega0^{+}}\begin{vmatrix}(-i\omega+\lambda+\gamma_{1}^{B})e^{i\omega0^{+}} & 0 & -h/2\\
+0 & (i\omega+\lambda+\gamma_{2}^{B})e^{-i\omega0^{+}} & -\gamma_{2}^{A}\\
+-h/2 & -\gamma_{2}^{A} & (-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & +\gamma_{1}^{A}\begin{vmatrix}-\gamma_{1}^{A} & 0 & -h/2\\
+-h/2 & (i\omega+\lambda+\gamma_{2}^{B})e^{-i\omega0^{+}} & -\gamma_{2}^{A}\\
+0 & -\gamma_{2}^{A} & (-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & -\frac{h}{2}\begin{vmatrix}-\gamma_{1}^{A} & (-i\omega+\lambda+\gamma_{1}^{B})e^{i\omega0^{+}} & -h/2\\
+-h/2 & 0 & -\gamma_{2}^{A}\\
+0 & -h/2 & (-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =[(\lambda+\gamma_{1}^{B})^{2}+\omega^{2}][(\lambda+\gamma_{2}^{B})^{2}+\omega^{2}-(\gamma_{2}^{A})^{2}]-\frac{h^{2}}{4}(i\omega+\lambda+\gamma_{1}^{B})(i\omega+\lambda+\gamma_{2}^{B})e^{-2i\omega0^{+}}\nonumber \\
+ & -\gamma_{1}^{A}\big(\gamma_{1}^{A}[(\lambda+\gamma_{2}^{B})^{2}+\omega^{2}-(\gamma_{2}^{A})^{2}]+\gamma_{2}^{A}\frac{h^{2}}{4}\big)\nonumber \\
+ & -\frac{h^{2}}{4}\big(\gamma_{1}^{A}\gamma_{2}^{A}+(-i\omega+\lambda+\gamma_{1}^{B})(-i\omega+\lambda+\gamma_{2}^{B})-\frac{h^{2}}{4}\big)=0\label{eq:det}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $\alpha_{\bm{k}}^{2}=(\lambda+\gamma_{\bm{k}}^{B})^{2}-(\gamma_{\bm{k}}^{A})^{2}$
+\end_inset
+
+, the expression 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:det"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ can be simplified as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\det\mathcal{M}_{\bm{k},\omega}^{\text{sp}}=\omega^{4}+(\alpha_{1}^{2}+\alpha_{2}^{2}+\frac{h^{2}}{2})\omega^{2}+\alpha_{1}^{2}\alpha_{2}^{2}-\frac{h^{2}}{2}(\lambda+\gamma_{1}^{B})(\lambda+\gamma_{2}^{B})-\gamma_{1}^{A}\gamma_{2}^{A}\frac{h^{2}}{2}+\frac{h^{4}}{16}=0
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Matrix elements
+\end_layout
+
+\begin_layout Standard
+The next step is to calculate the adjunct matrix 
+\begin_inset Formula $\mathcal{A}=\mathcal{C}^{T}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{11} & =\begin{vmatrix}(-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0 & -\frac{h}{2}\\
+0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\
+-\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}-i\omega^{3}+(\lambda+\gamma_{1}^{B})\omega^{2}-i\omega(\alpha_{2}^{2}+\frac{h^{2}}{4})+\alpha_{2}^{2}(\lambda+\gamma_{1}^{B})-\frac{h^{2}}{4}(\lambda+\gamma_{2}^{B})}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{21} & =-\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0 & -\frac{h}{2}\\
+-\frac{h}{2} & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\[1em]
+0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}\gamma_{1}^{A}\omega^{2}+\alpha_{2}^{2}\gamma_{1}^{A}+\frac{h^{2}}{4}\gamma_{2}^{A}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{31} & =\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & -\frac{h}{2}\\
+-\frac{h}{2} & 0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\[1em]
+0 & -\frac{h}{2} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =-{\color{red}\frac{h}{2}\omega^{2}-i\omega\frac{h}{2}(\lambda+\gamma_{1}^{B}+\lambda+\gamma_{2}^{B})+\frac{h}{2}\big(\gamma_{1}^{A}\gamma_{2}^{A}+(\lambda+\gamma_{1}^{B})(\lambda+\gamma_{2}^{B})-\frac{h^{2}}{4}\big)}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{41} & =-\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0\\
+-\frac{h}{2} & 0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}}\\
+0 & -\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}\frac{h}{2}(\gamma_{1}^{A}-\gamma_{2}^{A})i\omega+\frac{h}{2}\big(\gamma_{1}^{A}(\lambda+\gamma_{2}^{B})+\gamma_{2}^{A}(\lambda+\gamma_{1}^{B})\big)}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{12} & =-\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2} & 0\\
+0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\
+-\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}\gamma_{1}^{A}\omega^{2}+\gamma_{1}^{A}\alpha_{2}^{2}+\frac{h^{2}}{4}\gamma_{2}^{A}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{22} & =\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\frac{h}{2} & 0\\
+-\frac{h}{2} & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\
+0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}i}{\color{red}\omega^{3}+(\lambda+\gamma_{1}^{B})\omega^{2}+i\omega(\alpha_{2}^{2}+\frac{h^{2}}{4})+\alpha_{2}^{2}(\lambda+\gamma_{1}^{B})-\frac{h^{2}}{4}(\lambda+\gamma_{2}^{B})}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{32} & =-\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0\\
+-\frac{h}{2} & 0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\
+0 & -\frac{h}{2} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}\frac{h}{2}i\omega(\gamma_{2}^{A}-\gamma_{1}^{A})+\frac{h}{2}\big[\gamma_{2}^{A}(\lambda+\gamma_{1}^{B})+\gamma_{1}^{A}(\lambda+\gamma_{2}^{B})\big]}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{42} & =\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2}\\
+-\frac{h}{2} & 0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}}\\
+0 & -\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}-\frac{h}{2}\omega^{2}+i\omega\frac{h}{2}\big[\lambda+\gamma_{1}^{B}+\lambda+\gamma_{2}^{B}\big]+\frac{h}{2}\big[(\lambda+\gamma_{1}^{B})(\lambda+\gamma_{2}^{B})+\gamma_{1}^{A}\gamma_{2}^{A}-\frac{h^{2}}{4}\big]}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{13} & =\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2} & 0\\
+(-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0 & -\frac{h}{2}\\
+-\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}-\frac{h}{2}\omega^{2}-i\omega\frac{h}{2}\big[\lambda+\gamma_{1}^{B}+\lambda+\gamma_{2}^{B}\big]+\frac{h}{2}\big[\gamma_{1}^{A}\gamma_{2}^{A}+(\lambda+\gamma_{1}^{B})(\lambda+\gamma_{2}^{B})-\frac{h^{2}}{4}\big]}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{23} & =-\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\frac{h}{2} & 0\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0 & -\frac{h}{2}\\
+0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}\frac{h}{2}i\omega(\gamma_{2}^{A}-\gamma_{1}^{A})+\frac{h}{2}\big[\gamma_{2}^{A}(\lambda+\gamma_{1}^{B})+\gamma_{1}^{A}(\lambda+\gamma_{2}^{B})\big]}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{33} & =\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & -\frac{h}{2}\\
+0 & -\frac{h}{2} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}-i\omega^{3}+(\lambda+\gamma_{2}^{B})\omega^{2}+i\omega(\frac{h^{2}}{4}-\alpha_{1}^{2})+\alpha_{1}^{2}(\lambda+\gamma_{2}^{B})-\frac{h^{2}}{4}(\lambda+\gamma_{1}^{B})}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{43} & =-\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2}\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0\\
+0 & -\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}\gamma_{2}^{A}\omega^{2}+\gamma_{2}^{A}\alpha_{1}^{2}+\frac{h^{2}}{4}\gamma_{1}^{A}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{14} & =-\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2} & 0\\
+(-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0 & -\frac{h}{2}\\
+0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}\frac{h}{2}(\gamma_{1}^{A}-\gamma_{2}^{A})i\omega+\frac{h}{2}\big[\gamma_{1}^{A}(\lambda+\gamma_{2}^{B})+\gamma_{2}^{A}(\lambda+\gamma_{1}^{B})\big]}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{24} & =\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\frac{h}{2} & 0\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0 & -\frac{h}{2}\\
+-\frac{h}{2} & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}-\frac{h}{2}\omega^{2}+\frac{h}{2}\big(\lambda+\gamma_{1}^{B}+\lambda+\gamma_{2}^{B}\big)i\omega+\frac{h}{2}\big[(\lambda+\gamma_{1}^{B})(\lambda+\gamma_{2}^{B}))e^{-2i\omega0^{+}}+\gamma_{1}^{A}\gamma_{2}^{A}-\frac{h^{2}}{4}\big]}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{34} & =-\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & -\frac{h}{2}\\
+-\frac{h}{2} & 0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}\gamma_{2}^{A}\omega^{2}+\gamma_{2}^{A}\alpha_{1}^{2}+\frac{h^{2}}{4}\gamma_{1}^{A}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{44} & =\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2}\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0\\
+-\frac{h}{2} & 0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & ={\color{red}i\omega^{3}+(\lambda+\gamma_{2}^{B})\omega^{2}+(\alpha_{1}^{2}+\frac{h^{2}}{4})i\omega+(\lambda+\gamma_{2}^{B})\alpha_{1}^{2}-\frac{h^{2}}{4}(\lambda+\gamma_{1}^{B})}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The matrix has some symmetries, which are listed below: 
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{11} & \xleftrightarrow{k\leftrightarrow-k}\mathcal{A}_{33}\quad\mathcal{A}_{22}\xleftrightarrow{k\leftrightarrow-k}\mathcal{A}_{44}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A}_{21} & =\mathcal{A}_{12}\xleftrightarrow{k\leftrightarrow-k}\mathcal{A}_{34}=\mathcal{A}_{43}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{A}_{41}=\mathcal{A}_{14}\xleftrightarrow{k\leftrightarrow-k}\mathcal{A}_{23}=\mathcal{A}_{32}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{A}_{42}=\mathcal{A}_{24}\quad\mathcal{A}_{13}=\mathcal{A}_{31}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The adjunct matrix 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ is a linear combination of 
+\begin_inset Formula $g_{\bm{k}}^{\sigma\sigma'}$
+\end_inset
+
+ matrices
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{A} & =-\bigg(g_{\bm{k}}^{-+}(i\omega+\epsilon_{\bm{k},+})[\omega^{2}+(\epsilon_{\bm{k},-})^{2}]+g_{\bm{k}}^{++}(i\omega-\epsilon_{\bm{k},+})[\omega^{2}+(\epsilon_{\bm{k},-})^{2}]\nonumber \\
+ & +g_{\bm{k}}^{--}(i\omega+\epsilon_{\bm{k},-})[\omega^{2}+(\epsilon_{\bm{k},+})^{2}]+g_{\bm{k}}^{+-}(i\omega-\epsilon_{\bm{k},-})[\omega^{2}+(\epsilon_{\bm{k},+})^{2}]\bigg)\label{eq:adjunct}\\
+ & =-i\omega^{3}(g_{\bm{k}}^{-+}+g_{\bm{k}}^{++}+g_{\bm{k}}^{--}+g_{\bm{k}}^{+-})\\
+ & -\omega^{2}(g_{\bm{k}}^{-+}\epsilon_{\bm{k},+}-g_{\bm{k}}^{++}\epsilon_{\bm{k},+}+g_{\bm{k}}^{--}\epsilon_{\bm{k},-}-g_{\bm{k}}^{+-}\epsilon_{\bm{k},-})\\
+ & -i\omega\big[g_{\bm{k}}^{-+}(\epsilon_{\bm{k},-})^{2}+g_{\bm{k}}^{++}(\epsilon_{\bm{k},-})^{2}+g_{\bm{k}}^{--}(\epsilon_{\bm{k},+})^{2}+g_{\bm{k}}^{+-}(\epsilon_{\bm{k},+})^{2}\big]\\
+ & -g_{\bm{k}}^{-+}\epsilon_{\bm{k},+}(\epsilon_{\bm{k},-})^{2}+g_{\bm{k}}^{++}\epsilon_{\bm{k},+}(\epsilon_{\bm{k},-})^{2}-g_{\bm{k}}^{--}\epsilon_{\bm{k},-}(\epsilon_{\bm{k},+})^{2}+g_{\bm{k}}^{+-}\epsilon_{\bm{k},-}(\epsilon_{\bm{k},+})^{2}\\
+ & =-i\omega^{3}(g_{\bm{k}}^{-+}+g_{\bm{k}}^{++}+g_{\bm{k}}^{--}+g_{\bm{k}}^{+-})\\
+ & -\omega^{2}\big[\epsilon_{\bm{k},+}(g_{\bm{k}}^{-+}-g_{\bm{k}}^{++})+\epsilon_{\bm{k},-}(g_{\bm{k}}^{--}-g_{\bm{k}}^{+-})\big]\\
+ & -i\omega\big[\epsilon_{\bm{k},-}^{2}(g_{\bm{k}}^{-+}+g_{\bm{k}}^{++})+\epsilon_{\bm{k},+}^{2}(g_{\bm{k}}^{--}+g_{\bm{k}}^{+-})\big]\\
+ & +\epsilon_{\bm{k},+}\epsilon_{\bm{k},-}^{2}(g_{\bm{k}}^{++}-g_{\bm{k}}^{-+})+\epsilon_{\bm{k},-}\epsilon_{\bm{k},+}^{2}(g_{\bm{k}}^{+-}-g_{\bm{k}}^{--})
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+The matrix elements of 
+\begin_inset Formula $g_{\bm{k}}^{\sigma\sigma'}$
+\end_inset
+
+ are determined by solving 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:adjunct"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ element by element.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{equation}
+\mathcal{A}_{11}=-i\omega^{3}+(\lambda+\gamma_{1}^{B})\omega^{2}-i(\alpha_{2}^{2}+\frac{h^{2}}{4})\omega+(\lambda+\gamma_{1}^{B})\alpha_{2}^{2}-\frac{h^{2}}{4}(\lambda+\gamma_{2}^{B})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Define 
+\begin_inset Formula $X_{1}=\big(g_{\bm{k}}^{-+}-g_{\bm{k}}^{++}\big)_{11}$
+\end_inset
+
+ , 
+\begin_inset Formula $X_{2}=\big(g_{\bm{k}}^{-+}-g_{\bm{k}}^{+-})_{11}$
+\end_inset
+
+ , 
+\begin_inset Formula $Y_{1}=\big(g_{\bm{k}}^{-+}+g_{\bm{k}}^{++}\big)_{11}$
+\end_inset
+
+ , 
+\begin_inset Formula $Y_{2}=\big(g_{\bm{k}}^{-+}+g_{\bm{k}}^{+-})_{11}$
+\end_inset
+
+ .
+ Thus
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+Y_{1}+Y_{2}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\epsilon_{\bm{k}}^{+}X_{1}+\epsilon_{\bm{k}}^{-}X_{2}=-(\lambda+\gamma_{1}^{B})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+(\epsilon_{\bm{k}}^{-})^{2}Y_{1}+(\epsilon_{\bm{k}}^{+})^{2}Y_{2}=\alpha_{2}^{2}+\frac{h^{2}}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\epsilon_{\bm{k}}^{+}(\epsilon_{\bm{k}}^{-})^{2}X_{1}+\epsilon_{\bm{k}}^{-}(\epsilon_{\bm{k}}^{+})^{2}X_{2}=\frac{h^{2}}{4}(\lambda+\gamma_{2}^{B})-(\lambda+\gamma_{1}^{B})\alpha_{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+We have
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+Y_{1}=\frac{1}{\Delta_{\bm{k}}^{2}}[(\epsilon_{\bm{k}}^{+})^{2}-(\alpha_{2}^{2}+\frac{h^{2}}{4})]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+Y_{2}=-\frac{1}{\Delta_{\bm{k}}^{2}}[(\epsilon_{\bm{k}}^{-})^{2}-(\alpha_{2}^{2}+\frac{h^{2}}{4})]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+X_{1}=\frac{(\lambda+\gamma_{1}^{B})}{\epsilon_{\bm{k}}^{+}\Delta_{\bm{k}}^{2}}\bigg(\alpha_{2}^{2}-(\epsilon_{\bm{k}}^{+})^{2}\bigg)-\frac{h^{2}}{4}\frac{(\lambda+\gamma_{2}^{B})}{\epsilon_{\bm{k}}^{+}\Delta_{\bm{k}}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+X_{2}=-\frac{(\lambda+\gamma_{1}^{B})}{\epsilon_{\bm{k}}^{-}\Delta_{\bm{k}}^{2}}\bigg(\alpha_{2}^{2}-(\epsilon_{\bm{k}}^{-})^{2}\bigg)+\frac{h^{2}}{4}\frac{(\lambda+\gamma_{2}^{B})}{\epsilon_{\bm{k}}^{-}\Delta_{\bm{k}}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The matrix elements are
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+(g_{\bm{k}}^{-+})_{11} & =-\frac{(\Delta_{-\bm{k}}^{+})^{2}}{\Delta_{\bm{k}}^{2}}\bigg[\frac{\lambda+\gamma_{1}^{B}}{2\epsilon_{\bm{k}}^{+}}-\frac{1}{2}\bigg]-\frac{h^{2}}{4\Delta_{\bm{k}}^{2}}\bigg[\frac{\lambda+\gamma_{2}^{B}}{2\epsilon_{\bm{k}}^{+}}+\frac{1}{2}\bigg]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The other elements can be determined in similar way, which are displayed
+ from 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:g_sigma"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:allresults"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ .
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

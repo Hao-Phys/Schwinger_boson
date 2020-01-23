@@ -1,0 +1,1026 @@
+%% LyX 2.3.0 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,headheight=1cm,headsep=4cm,footskip=1cm}
+\usepackage{verbatim}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{amsthm}\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{appendix}
+\usepackage{comment}
+\usepackage{lscape}
+
+\numberwithin{equation}{section}
+
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+
+\title{Dynamical structure factor: $J_1$-$J_2$ triangular lattice antiferromagnetic model}
+\date{July 2018}
+\author{Hao Zhang}
+
+\makeatother
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+We consider the triangular lattice $S=1/2$ Heisenberg model in the
+presence of nearest neighbor (NN) $J_{1}$ and next nearest neighbor
+(NNN) $J_{2}$ antiferromagnetic couplings,
+
+\begin{equation}
+\mathcal{H}=J_{1}\sum_{\bm{i},\bm{\delta}_{1}>0}\bm{S}_{\bm{i}}\cdot\bm{S}_{\bm{i}+\bm{\delta}_{1}}+J_{2}\sum_{\bm{i},\bm{\delta}_{2}>0}\bm{S}_{\bm{i}}\cdot\bm{S}_{\bm{i}+\bm{\delta}_{2}}\label{eq:hham}
+\end{equation}
+
+Consider the classical limit, (i.e. $S\rightarrow\infty$), we can
+treat the spin operators in \eqref{eq:hham} as classical vectors.
+Introducing Fourier transform of classical spin vectors:
+
+\begin{equation}
+\bm{S}_{\bm{i}}=\frac{1}{\sqrt{\mathcal{N}}}\sum_{\bm{q}}\bm{S}_{\bm{q}}e^{i\bm{q}\cdot\bm{r}}
+\end{equation}
+
+where $\mathcal{N}$ is the number of sites of the system and $\bm{q}$
+is a wave vector of the Brillouin zone (BZ). The ordering wave vector
+$\bm{Q}$ can be found by minimizing the Hamiltonian \eqref{eq:hham}
+with respect to $\bm{q}$. The classical analysis predicts that for
+$J_{2}/J_{1}<1/8$, the system has the $2\pi/3$ 3-sublattice noncollinear
+order, while for $1/8<J_{2}/J_{1}<1$, the ground state is characterized
+by a 4-sublattice order of spin vectors which sum to zero around two
+neighbouring elementary triangles. Spin wave analysis shows that the
+leading $1/S$ quantum corrections lift the infinite classical degeneracy
+for $1/8<J_{2}/J_{1}<1$ and favor a state with collinear order with
+2-sublattice. \\
+
+We will use the Schwinger boson method including Gaussian fluctuations
+to calculate the dynamical structure factor of this model. To investigate
+the possibility of observing magnon peaks, we introduce a small symmetry
+breaking field in $x-y$ plane.
+
+\begin{equation}
+\bm{h}_{\bm{i}}=(h\cos(\bm{Q}\cdot\bm{r}_{\bm{i}}),h\sin(\bm{Q}\cdot\bm{r}_{\bm{i}}),0)
+\end{equation}
+
+
+\section{Path integral formalism}
+
+\subsection{Spin representation}
+
+We introduce the Schwinger boson representation of $\bm{S}_{\bm{i}}$:
+
+\begin{align}
+S_{\bm{i}}^{+} & =b_{\bm{i}\uparrow}^{\dagger}b_{\bm{i}\downarrow}\nonumber \\
+S_{\bm{i}}^{-} & =b_{\bm{i}\downarrow}^{\dagger}b_{\bm{i}\uparrow}\nonumber \\
+S_{\bm{i}}^{z} & =\frac{1}{2}(b_{\bm{i}\uparrow}^{\dagger}b_{\bm{i}\uparrow}-b_{\bm{i}\downarrow}^{\dagger}b_{\bm{i}\downarrow})
+\end{align}
+
+The \textbf{physical} subspace of Schwinger bosons must satisfy
+
+\begin{equation}
+\sum_{\sigma}b_{\bm{i}\sigma}^{\dagger}b_{\bm{i}\sigma}=2S=1\quad\sigma=\uparrow,\downarrow\label{eq:constraint}
+\end{equation}
+
+The Heisenberg interactions can be expressed in terms of six pairs
+of \textit{bond operators}:
+
+\begin{equation}
+\bm{S}_{\bm{i}}\cdot\bm{S}_{\bm{i}+\bm{\delta}}=-A_{\bm{i},\bm{\delta}}^{\dagger}A_{\bm{i},\bm{\delta}}+:B_{\bm{i},\bm{\delta}}^{\dagger}B_{\bm{i},\bm{\delta}}:
+\end{equation}
+
+where $\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}$, and
+
+\begin{align}
+A_{\bm{i},\bm{\delta}} & =\frac{1}{2}(b_{\bm{i}\uparrow}b_{\bm{i}+\bm{\delta}\downarrow}-b_{\bm{i}\downarrow}b_{\bm{i}+\bm{\delta}\uparrow})\nonumber \\
+B_{\bm{i},\bm{\delta}} & =\frac{1}{2}(b_{\bm{i}\uparrow}b_{\bm{i}+\bm{\delta}\uparrow}^{\dagger}+b_{\bm{i}\downarrow}b_{\bm{i}+\bm{\delta}\downarrow}^{\dagger})
+\end{align}
+
+
+\subsection{The generating Hamiltonian}
+
+The generating Hamiltonian is defined by
+
+\begin{equation}
+\mathcal{H}[j,h]=\mathcal{H}-\sum_{\bm{i}}\sum_{\sigma\sigma'}j_{\bm{i}}^{\tau\mu}b_{\bm{i}\sigma}^{\tau\dagger}\sigma_{\sigma\sigma'}^{\mu}b_{\bm{i}\sigma'}^{\tau}+\mathcal{H}_{h}
+\end{equation}
+
+where $j_{\bm{i}}^{\tau\mu}$ represents the external field at space
+$\bm{i}$ time $\tau$, and $\sigma^{\mu}$ is a Pauli matrix. $\mathcal{H}_{s}$
+is the Zeeman coupling of the spin operators and the symmetry breaking
+field,
+
+\begin{align}
+\mathcal{H}_{h} & =-\sum_{i}\bm{h}_{\bm{i}}\cdot\bm{\sigma}_{\bm{i}}\nonumber \\
+ & =-h\sum_{\bm{i}}\cos(\bm{Q}\cdot\bm{r}_{\bm{i}})\sigma_{\bm{i}}^{x}+\sin(\bm{Q}\cdot\bm{r}_{\bm{i}})\sigma_{\bm{i}}^{y}\nonumber \\
+ & =-h\sum_{\bm{i}}e^{-i\bm{Q}\cdot\bm{r}_{\bm{i}}}b_{{\bm{i}}\uparrow}^{\dagger}b_{{\bm{i}}\downarrow}+e^{i\bm{Q}\cdot\bm{r}_{\bm{i}}}b_{{\bm{i}}\downarrow}^{\dagger}b_{{\bm{i}}\uparrow}
+\end{align}
+
+Refer to \eqref{eq:constraint}, we find that the Schwinger boson
+representation introduces an extra local $U(1)$ \textit{gauge} symmetry
+in the model, which can be expressed as
+
+\begin{equation}
+b_{\bm{i}\sigma}^{\tau}\rightarrow b_{\bm{i}\sigma}^{\tau}e^{i\theta_{\bm{i}}^{\tau}}
+\end{equation}
+
+Thus we are free to perform local gauge transforms on boson operators,
+
+\begin{align}
+b_{\bm{i}\uparrow}^{\tau} & \rightarrow e^{-i\frac{\bm{Q\cdot\bm{r}_{i}}}{2}}b_{\bm{i}\uparrow}^{\tau}\nonumber \\
+b_{\bm{i}\downarrow}^{\tau} & \rightarrow e^{i\frac{\bm{Q\cdot\bm{r}_{i}}}{2}}b_{\bm{i}\downarrow}^{\tau}\label{eq:gaugetrans}
+\end{align}
+
+which simplifies the Zeeman energy
+
+\begin{equation}
+\mathcal{H}_{h}\rightarrow-\frac{h}{2}\sum_{\bm{i}}b_{{\bm{i}}\uparrow}^{\dagger}b_{{\bm{i}}\downarrow}+b_{{\bm{i}}\downarrow}^{\dagger}b_{{\bm{i}}\uparrow}
+\end{equation}
+
+
+\subsection{The generating functional}
+
+The generating functional of boson coherent states path integral is
+given by
+
+\begin{align}
+Z[j,h] & =\Tr P_{S}T_{\tau}\bigg[\exp\bigg(-\int_{0}^{\beta}d\tau\mathcal{H}[j,h]\bigg)\bigg]\nonumber \\
+ & =\lim_{\epsilon\rightarrow0}\Tr T_{\tau}\prod_{n=0}^{N_{\epsilon}-1}\big[P_{S}^{\tau_{n}}\exp(-\epsilon\mathcal{H}[j(\tau_{n}),h])\big]
+\end{align}
+
+where $\epsilon=\beta/N_{\epsilon}$ is the imaginary time step, and
+$\tau_{n}=n\epsilon$ is the discrete imaginary time. $P_{S}$ is
+the projector to enforce the constraint \eqref{eq:constraint}, which
+can be written as
+
+\begin{equation}
+P_{S}^{\tau_{n}}=\lim_{\epsilon\rightarrow0}\prod_{\bm{i}}\epsilon\int\frac{d\lambda_{i}}{2\pi}\exp\bigg(-i\epsilon\sum_{\bm{i}}\lambda_{\bm{i}}^{\tau_{n}}(\sum_{\sigma}b_{\bm{i}\sigma}^{\tau_{n}\dagger}b_{\bm{i}\sigma}^{\tau_{n}}-2S)\bigg)
+\end{equation}
+
+Recall that the resolution of identity of boson coherent states is
+given by
+
+\begin{equation}
+\mathbb{I}=\int d^{2}\bm{b}e^{-\bar{\bm{b}}\bm{b}}\ket{\bm{b}}\bra{\bm{b}}\label{eq:roi}
+\end{equation}
+
+where $\bm{b}=(b_{1\sigma},...,b_{\mathcal{N}\sigma})$ is a $2\mathcal{N}$-dimensional
+($\sigma=\uparrow,\downarrow)$ vector living in the parameter space
+of boson coherent states. The integration measure is defined as
+
+\begin{equation}
+\int d^{2}\bm{b}\equiv\int_{-\infty}^{\infty}\prod_{\bm{i}\sigma}\frac{d(\Re b_{\bm{i}\sigma})d(\Im b_{\bm{i}\sigma})}{\pi}=\int_{-\infty}^{\infty}\prod_{\bm{i}\sigma}\frac{\text{d}\bar{b}_{\bm{i}\sigma}\text{d}b_{\bm{i}\sigma}}{2\pi i}
+\end{equation}
+
+The trace of any operator can be calculated by using the boson coherent
+states,
+
+\begin{equation}
+\Tr\mathcal{O}=\int d^{2}\bm{b}e^{-\bar{\bm{b}}\bm{b}}\bra{\bm{b}}\mathcal{O}\ket{\bm{b}}
+\end{equation}
+
+Thus the generating functional can be written as
+
+\begin{align}
+Z[j,h] & =T_{\tau}\int d^{2}\bm{b}^{0}e^{-\Bar{\bm{b}}^{0}\bm{b}^{0}}\nonumber \\
+ & \bra{\bm{b}^{0}}\lim_{\epsilon\rightarrow0}\prod_{n=0}^{N_{\epsilon}-1}\prod_{i}\epsilon\int d\lambda_{i}\exp\bigg[-\epsilon\bigg(\mathcal{H}[j(\tau_{n}),h]+\sum_{i}\lambda_{i}^{\tau_{n}}(\sum_{\sigma}b_{\bm{i}\sigma}^{\tau_{n}\dagger}b_{\bm{i}\sigma}^{\tau_{n}}-1)\bigg)\bigg]\ket{\bm{b}^{0}}\nonumber \\
+ & =T_{\tau}\int d^{2}\bm{b}^{0}e^{-\Bar{\bm{b}}^{0}\bm{b}^{0}}\nonumber \\
+ & \bra{\bm{b}^{0}}\lim_{\epsilon\rightarrow0}\prod_{n=0}^{N_{\epsilon}-1}\prod_{i}\epsilon\int d\lambda_{i}\bigg[1-\epsilon\bigg(\mathcal{H}[j(\tau_{n}),h]+\sum_{i}\lambda_{i}^{\tau_{n}}(\sum_{\sigma}b_{\bm{i}\sigma}^{\tau_{n}\dagger}b_{\bm{i}\sigma}^{\tau_{n}}-1)\bigg)+\mathcal{O}(\epsilon)\bigg]\ket{\bm{b}^{0}}
+\end{align}
+
+We can insert $N_{\epsilon}-1$ resolution of identity \eqref{eq:roi},
+and use periodic boundary condition
+
+\begin{equation}
+\bm{b}^{0}=\bm{b}^{\beta}
+\end{equation}
+
+Note that the time-ordering is taken care automatically by the process
+of path integral,
+
+\begin{align}
+Z[j] & =\lim_{\epsilon\rightarrow0}\prod_{\tau}\int d^{2}\bm{b}^{\tau}e^{-\bar{\bm{b}}^{\tau}\bm{b}^{\tau}}\prod_{\tau=0}^{\beta-\epsilon}\bra{\bm{b}^{\tau+\epsilon}}\epsilon\prod_{i}\int d\lambda_{i}\nonumber \\
+ & \bigg[1-\epsilon\bigg(\mathcal{H}[j(\tau),h]+\sum_{i}\lambda_{i}^{\tau}(\sum_{\sigma}b_{\bm{i}\sigma}^{\tau\dagger}b_{\bm{i}\sigma}^{\tau}-1)\bigg)+\mathcal{O}(\epsilon)\bigg]\ket{\bm{b}^{\tau}}\label{eq:generating1}
+\end{align}
+
+Note that boson coherent states are the eigenstates of boson annihilation
+operators
+
+\begin{align}
+b_{i\sigma}^{\tau}\ket{\bm{b}} & =b_{i\sigma}^{\tau}\ket{\bm{b}}\nonumber \\
+\bra{\bm{b}}b_{i\sigma}^{\tau\dagger} & =\bra{\bm{b}}\bar{b}_{i\sigma}^{\tau}
+\end{align}
+
+and the overlap of two coherent states is given by
+
+\begin{equation}
+\bra{\bm{b}}\ket{\bm{b}'}=e^{\bar{\bm{b}}\bm{b}'}
+\end{equation}
+
+Thus
+
+\begin{align}
+Z[j] & \simeq\lim_{\epsilon\rightarrow0}\prod_{\tau}\int d^{2}\bm{b}^{\tau}e^{-\bar{\bm{b}}^{\tau}\bm{b}^{\tau}}\prod_{\tau=0}^{\beta-\epsilon}\epsilon\prod_{\bm{i}}\int d\lambda_{\bm{i}}^{\tau}\nonumber \\
+ & \bigg[\bra{\bm{b}^{\tau+\epsilon}}\ket{\bm{b}^{\tau}}-\epsilon\bigg(H[j(\tau),h]+\sum_{\bm{i}}\lambda_{\bm{i}}^{\tau}(\sum_{\sigma}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma}^{\tau}-1)\bigg)\bra{\bm{b}^{\tau}}\ket{\bm{b}^{\tau}}\bigg]\nonumber \\
+ & =\lim_{\epsilon\rightarrow0}\prod_{\tau}\int d^{2}\bm{b}^{\tau}e^{-\bar{\bm{b}}^{\tau}\bm{b}^{\tau}}\prod_{\tau=0}^{\beta-\epsilon}\epsilon\prod_{\bm{i}}\int d\lambda_{\bm{i}}^{\tau}\nonumber \\
+ & \bigg[e^{\bar{\bm{b}}^{\tau+\epsilon}(\bm{b}^{\tau+\epsilon}-\epsilon\partial_{\tau}\bm{b}^{\tau+\epsilon})}-\epsilon\bigg(H[j(\tau),h]+\sum_{\bm{i}}\lambda_{\bm{i}}^{\tau}(\sum_{\sigma}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma}^{\tau}-1)\bigg)e^{\bar{\bm{b}^{\tau}}\bm{b}^{\tau}}\bigg]\nonumber \\
+ & =\int\mathcal{D}^{2}\bm{b}\int\mathcal{D}\lambda\exp\bigg(-\int_{0}^{\beta}d\tau\sum_{{\bm{i}}\sigma}\bar{b}_{{\bm{i}}\sigma}^{\tau}\partial_{\tau}b_{{\bm{i}}\sigma}^{\tau}+H[j(\tau),h]+i\sum_{\bm{i}}\lambda_{\bm{i}}^{\tau}(\sum_{\sigma}\bar{b}_{{\bm{i}}\sigma}^{\tau}b_{{\bm{i}}\sigma}^{\tau}-1)\bigg)\label{eq:partition}
+\end{align}
+
+where we have assumed the operators in $(...)$ of \eqref{eq:generating1}
+are evaluated at equal time, which is of course a shaky assumption.
+The time-ordering will be taken into account when we introduce the
+Fourier transform of the boson operators. We have also introduced
+short-handed notations for the integration measures.
+
+\begin{align}
+\int\mathcal{D}^{2}\bm{b} & =\lim_{\epsilon\rightarrow0}\prod_{\tau}\int d^{2}\bm{b}^{\tau}\nonumber \\
+\int\mathcal{D}\lambda & =\lim_{\epsilon\rightarrow0}\prod_{\bm{i}\tau}\epsilon\int d^{2}\lambda_{\bm{i}}^{\tau}
+\end{align}
+
+The \textquotedbl classical generating Hamiltonian\textquotedbl{}
+$H[j(\tau),h]$ can be written as
+
+\begin{align}
+H[j(\tau),h] & =J_{1}\sum_{\bm{i},\bm{\delta}_{1}>0}(-\bar{A}_{\bm{i},\bm{\delta}_{1}}^{\tau}A_{\bm{i},\bm{\delta}_{1}}^{\tau}+\bar{B}_{\bm{i},\bm{\delta}_{1}}^{\tau}B_{\bm{i},\bm{\delta}_{1}}^{\tau})\nonumber \\
+ & +J_{2}\sum_{\bm{i},\bm{\delta}_{2}>0}(-\bar{A}_{\bm{i},\bm{\delta}_{2}}^{\tau}A_{\bm{i},\bm{\delta}_{2}}^{\tau}+\bar{B}_{\bm{i},\bm{\delta}_{2}}^{\tau}B_{\bm{i},\bm{\delta}_{2}}^{\tau})\nonumber \\
+ & -\sum_{\bm{i}}\sum_{\sigma\sigma'}j_{\bm{i}}^{\tau\mu}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma'}^{\tau}\sigma_{\sigma\sigma'}^{\mu}+\mathcal{H}_{h}\label{eq:clham}
+\end{align}
+
+where
+
+\begin{align}
+A_{\bm{i},\bm{\delta}}^{\tau} & =\frac{1}{2}(b_{\bm{i}\uparrow}^{\tau}b_{\bm{i}+\bm{\delta}\downarrow}^{\tau}-b_{\bm{i}\downarrow}^{\tau}b_{\bm{i}+\bm{\delta}\uparrow}^{\tau})\nonumber \\
+B_{\bm{i},\bm{\delta}}^{\tau} & =\frac{1}{2}(b_{\bm{i}\uparrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\uparrow}^{\tau}+b_{\bm{i}\downarrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\downarrow}^{\tau})
+\end{align}
+
+
+\subsection{Hubbard-Stratonovich transform}
+
+We note that the classical Hamiltonian \eqref{eq:clham} is quartic
+in boson variables. It can be decoupled into quadratic terms via Hubbard-Stratonovich
+(HS) transform. We introduce pairs of auxiliary fields $(\bar{W}_{\bm{i},\bm{\delta}}^{r},W_{\bm{i},\bm{\delta}}^{r})$,
+where $\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}$ and $r=A,B$.
+The HS identities are
+
+\begin{equation}
+e^{-J_{\bm{\delta}}\bar{B}_{\bm{i}\bm{\delta}}^{\tau}B_{\bm{i},\bm{\delta}}^{\tau}}=J_{\bm{\delta}}\int\frac{d\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}dW_{\bm{i},\bm{\delta}}^{(B)\tau}}{2\pi i}e^{-J_{\bm{\delta}}\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}W_{\bm{i},\bm{\delta}}^{(B)\tau}+J_{\bm{\delta}}(-\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}B_{\bm{i},\bm{\delta}}^{\tau}+W_{\bm{i},\bm{\delta}}^{(B)\tau}\bar{B}_{\bm{i},\bm{\delta}}^{\tau})}
+\end{equation}
+
+\begin{equation}
+e^{J_{\bm{\delta}}\bar{A}_{\bm{i}\bm{\delta}}^{\tau}A_{\bm{i},\bm{\delta}}^{\tau}}=J_{\bm{\delta}}\int\frac{d\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}dW_{\bm{i},\bm{\delta}}^{(A)\tau}}{2\pi i}e^{-J_{\bm{\delta}}\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}W_{\bm{i},\bm{\delta}}^{(A)\tau}+J_{\bm{\delta}}(\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}A_{\bm{i},\bm{\delta}}^{\tau}+W_{\bm{i},\bm{\delta}}^{(A)\tau}\bar{A}_{\bm{i},\bm{\delta}}^{\tau})}
+\end{equation}
+
+\begin{comment}
+Let's check the second identity,
+
+\begin{align}
+ & \int d\Re Wd\Im We^{-J(\bar{W}W+\bar{W}A-W\bar{A})}\nonumber \\
+ & =\int d\Re Wd\Im We^{-J[(\Re W-i\Im W)(\Re W+i\Im W)+(\Re W-i\Im W)A-(\Re W+i\Im W)\bar{A}]}\nonumber \\
+ & =\int d\Re Wd\Im We^{(\Re W+\frac{1}{2}(A-\bar{A}))^{2}+(\Im W-\frac{i}{2}(A+\bar{A}))^{2}}e^{\frac{1}{4}J[(A+\bar{A})^{2}-(A-\bar{A})^{2}]}\nonumber \\
+ & =\frac{\pi}{J}e^{J\bar{A}A}
+\end{align}
+
+We also note that
+
+\begin{equation}
+\int d\bar{W}dW=(2i)\int d\Re Wd\Im W
+\end{equation}
+\end{comment}
+
+
+\section{The effective action}
+
+The partition function \eqref{eq:partition} can now be written as
+
+\begin{equation}
+Z[j,h]=\int\mathcal{D}\bar{W}\mathcal{D}W\mathcal{D}\lambda e^{-\mathcal{S}_{\text{eff}}(\bar{W},W,\lambda,j,h)}\label{eq:pathintegral}
+\end{equation}
+
+where the integration measure is defined as
+
+\begin{equation}
+\mathcal{D}\bar{W}\mathcal{D}W=\prod_{\bm{i},\bm{\delta}>0}\prod_{\tau}\prod_{r}J_{\bm{\delta}}\frac{d\bar{W}_{\bm{i},\bm{\delta}}^{(r)\tau}dW_{\bm{i},\bm{\delta}}^{(r)\tau}}{2\pi i}
+\end{equation}
+
+The effective action can be split into two terms:
+
+\begin{equation}
+\mathcal{S}_{\text{eff}}(\bar{W},W,\lambda,j,h)=\mathcal{S}_{0}(\bar{W},W,\lambda)+\mathcal{S}_{\text{bos}}(\bar{W},W,\lambda,j,h)
+\end{equation}
+
+with
+
+\begin{equation}
+\mathcal{S}_{0}(\bar{W},W,\lambda)=\int_{0}^{\beta}d\tau\bigg(\sum_{\bm{i},\bm{\delta}>0}\sum_{r}J_{\bm{\delta}}\bar{W}_{\bm{i}\bm{\delta}}^{(r)\tau}W_{\bm{i}\bm{\delta}}^{(r)\tau}-i2S\sum_{\bm{i}}\lambda_{\bm{i}}^{\tau}\bigg)
+\end{equation}
+
+The bosonic action is defined as the integration over bosonic variables,
+
+\begin{align}
+e^{-\mathcal{S}_{\text{bos}}} & =\int\mathcal{D}^{2}\bm{b}\exp\bigg(-\int_{0}^{\beta}d\tau\sum_{\bm{i}\sigma}\bar{b}_{\bm{i}\sigma}^{\tau}\partial_{\tau}b_{\bm{i}\sigma}+i\sum_{\bm{i}}\lambda_{\bm{i}}^{\tau}\sum_{\sigma}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma}^{\tau}\nonumber \\
+ & +\sum_{\bm{i},\bm{\delta}>0}J_{\bm{\delta}}\big(\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}B_{\bm{i},\bm{\delta}}^{\tau}-W_{\bm{i},\bm{\delta}}^{(B)\tau}\bar{B}_{\bm{i},\bm{\delta}}^{\tau}-\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}A_{\bm{i},\bm{\delta}}^{\tau}-W_{\bm{i},\bm{\delta}}^{(A)\tau}\bar{A}_{\bm{i},\bm{\delta}}^{\tau}\big)\nonumber \\
+ & -\sum_{\bm{i}}\sum_{\sigma\sigma'}j_{\bm{i}}^{\tau\mu}\bar{b}_{\bm{i}\sigma}^{\tau}b_{\bm{i}\sigma'}^{\tau}\sigma_{\sigma\sigma'}^{\mu}+\mathcal{H}_{h}\bigg)\nonumber \\
+ & =\int\mathcal{D}^{2}\bm{b}e^{-\bm{b}^{\dagger}\mathcal{G}^{-1}(\bar{W},W,\lambda,j,h)\bm{b}}=\det[\mathcal{G}(\bar{W},W,\lambda,j,h)]\label{eq:defofaction1}
+\end{align}
+
+where in the last two steps, we have used integration by parts to
+define the \textbf{dynamical matrix}. The dimension of $\mathcal{G}$
+is $[(\beta/\epsilon)\mathcal{N}N]\times[(\beta/\epsilon)\mathcal{N}N]$
+($N$ is the group index of $SU(N)$, in this calculation $N=2$).
+
+\subsection{Momentum-Matsubara representation}
+
+To calculate the dynamical structure factor, we should work in momentum
+and Matsubara space. Introduce following Fourier transform
+
+\begin{align}
+b_{\bm{i}\sigma}^{\tau} & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{k},n}b_{\bm{k}\sigma}^{\omega_{n}}e^{-i(\bm{k}\cdot\bm{r}_{i}-\omega_{n}\tau)}\\
+\bar{b}_{\bm{i}\sigma}^{\tau} & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{k},n}\bar{b}_{\bm{k}\sigma}^{\omega_{n}}e^{i(\bm{k}\cdot\bm{r}_{i}-\omega_{n}\tau)}e^{-i\omega_{n}0^{+}}\label{eq:Fourier}
+\end{align}
+
+where the convergence factor $e^{i\omega_{n}0^{+}}$ is introduced
+to account for the time order of boson coherent states as discussed
+in the paragraph after \eqref{eq:partition}. We can also introduce
+Fourier transform on the auxiliary fields,
+
+\begin{align}
+W_{\bm{i},\bm{\delta}}^{(r)\tau} & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}}\sum_{n}W_{\bm{k},\bm{\delta}}^{(r)\omega_{n}}e^{-i(\bm{k}\cdot\bm{x}_{i}-\omega_{n}\tau)}\nonumber \\
+\bar{W}_{\bm{i},\bm{\delta}}^{(r)\tau} & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}}\sum_{n}\bar{W}_{\bm{k},\bm{\delta}}^{(r)\omega_{n}}e^{i(\bm{k}\cdot\bm{x}_{i}-\omega_{n}\tau)}\nonumber \\
+\lambda_{\bm{i}}^{\tau} & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{k}}\sum_{n}\lambda_{\bm{k}}^{\omega_{n}}e^{-i(\bm{k}\cdot\bm{x}_{i}-\omega_{n}\tau)}
+\end{align}
+
+As discussed in \eqref{eq:gaugetrans}, we will perform a local gauge
+transform on the boson operators to simplify the Zeeman energy. In
+momentum space, this is equivalent to
+
+\begin{align}
+b_{\bm{k}\uparrow}^{\omega} & \rightarrow b_{\bm{k}+\frac{\bm{Q}}{2}\uparrow}^{\omega}\nonumber \\
+b_{\bm{k}\downarrow}^{\omega} & \rightarrow b_{\bm{k}-\frac{\bm{Q}}{2}\downarrow}^{\omega}
+\end{align}
+
+We will work in the representation $\bm{b}_{\bm{k},\omega}^{\dagger}=(\bar{b}_{\bm{k}\uparrow}^{\omega},b_{-\bm{k}\downarrow}^{-\omega},\bar{b}_{\bm{k}\downarrow}^{\omega},b_{-\bm{k}\uparrow}^{-\omega})$.
+We can work out the result term by term,
+
+\begin{align}
+ & \int_{0}^{\beta}d\tau\sum_{\bm{i}\sigma}\bar{b}_{\bm{i}\sigma}^{\tau}\partial_{\tau}b_{\bm{i}\sigma}\nonumber \\
+ & =\frac{1}{\mathcal{N}\beta}\int_{0}^{\beta}d\tau\sum_{\bm{i}\sigma}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}(i\omega')\bar{b}_{\bm{k}\sigma}^{\omega}b_{\bm{k}'\sigma}^{\omega'}e^{i(\bm{k}-\bm{k}')\cdot\bm{r}_{i}}e^{-i(\omega-\omega')\tau}e^{-i\omega0^{+}}\nonumber \\
+ & =\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}(i\omega)\bar{b}_{\bm{k}\sigma}^{\omega}b_{\bm{k}'\sigma}^{\omega'}\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}e^{-i\omega0^{+}}\nonumber \\
+ & =\frac{1}{2}\big(\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}(i\omega)\bar{b}_{\bm{k}\sigma}^{\omega}b_{\bm{k}'\sigma}^{\omega'}\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}e^{-i\omega0^{+}}+\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}(-i\omega)b_{-\bm{k}'\sigma}^{-\omega'}\bar{b}_{-\bm{k}\sigma}^{-\omega}\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}e^{i\omega0^{+}}\big)
+\end{align}
+
+The calculations for the $\lambda$-field are similar, which are omitted
+here. The coupling with $W^{(B)}$-fields contributes to the diagonal
+elements of the dynamical matrix.
+
+\begin{align}
+ & -\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}W_{\bm{i},\bm{\delta}}^{(B)\tau}(b_{\bm{i}+\bm{\delta}\uparrow}^{\tau}\bar{b}_{\bm{i}\uparrow}^{\tau}+b_{\bm{i}+\bm{\delta}\downarrow}^{\tau}\bar{b}_{\bm{i}\downarrow}^{\tau})\nonumber \\
+ & \rightarrow-\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}W_{\bm{i},\bm{\delta}}^{(B)\tau}(b_{\bm{i}+\bm{\delta}\uparrow}^{\tau}\bar{b}_{\bm{i}\uparrow}^{\tau}e^{-i\frac{\bm{Q}\cdot\bm{\delta}}{2}}+b_{\bm{i}+\bm{\delta}\downarrow}^{\tau}\bar{b}_{\bm{i}\downarrow}^{\tau}e^{i\frac{\bm{Q}\cdot\bm{\delta}}{2}})\nonumber \\
+ & =-\frac{1}{(\mathcal{N}\beta)^{3/2}}\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{q}\bm{k}\bm{k}'}\sum_{\nu\omega\omega'}W_{\bm{q},\bm{\delta}}^{(B)\nu}(\bar{b}_{\bm{k}\uparrow}^{\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{i(\bm{k}-\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'-\nu)\tau}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}}\nonumber \\
+ & +\bar{b}_{\bm{k}\downarrow}^{\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{i(\bm{k}-\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'-\nu)\tau}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}})\nonumber \\
+ & =-\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}(\bar{b}_{\bm{k}\uparrow}^{\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}}+\bar{b}_{\bm{k}\downarrow}^{\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}})\nonumber \\
+ & =-\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}(b_{-\bm{k}\uparrow}^{-\omega}\bar{b}_{-\bm{k}'\uparrow}^{-\omega'}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega'0^{+}}+b_{-\bm{k}\downarrow}^{-\omega}\bar{b}_{-\bm{k}'\downarrow}^{-\omega'}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega'0^{+}})
+\end{align}
+
+\begin{align}
+ & \int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}(b_{\bm{i}\uparrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\uparrow}^{\tau}+b_{\bm{i}\downarrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\downarrow}^{\tau})\nonumber \\
+ & \rightarrow\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}(b_{\bm{i}\uparrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\uparrow}^{\tau}e^{i\frac{\bm{Q}\cdot\bm{\delta}}{2}}+b_{\bm{i}\downarrow}^{\tau}\bar{b}_{\bm{i}+\bm{\delta}\downarrow}^{\tau}e^{-i\frac{\bm{Q}\cdot\bm{\delta}}{2}})\nonumber \\
+ & =\frac{1}{(\mathcal{N}\beta)^{3/2}}\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{q}\bm{k}\bm{k}'}\sum_{\nu\omega\omega'}\bar{W}_{\bm{q},\bm{\delta}}^{(B)\nu}(\bar{b}_{\bm{k}\uparrow}^{\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{i(\bm{k}-\bm{k}'+\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'+\nu)\tau}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}}\nonumber \\
+ & +\bar{b}_{\bm{k}\downarrow}^{\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{i(\bm{k}-\bm{k}'+\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'+\nu)\tau}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}})\nonumber \\
+ & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}(\bar{b}_{\bm{k}\uparrow}^{\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}}+\bar{b}_{\bm{k}\downarrow}^{\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}})\nonumber \\
+ & =\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}(b_{-\bm{k}\uparrow}^{-\omega}\bar{b}_{-\bm{k}'\uparrow}^{-\omega'}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega'0^{+}}+b_{-\bm{k}\downarrow}^{-\omega}\bar{b}_{-\bm{k}'\downarrow}^{-\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega'0^{+}})
+\end{align}
+
+The coupling with the $W^{(A)}$-fields connects two boson variables
+with opposite spin, momentum, and frequency.
+
+\begin{align}
+ & -\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}(b_{\bm{i}\uparrow}^{\tau}b_{\bm{i}+\bm{\delta}\downarrow}^{\tau}-b_{\bm{i}\downarrow}^{\tau}b_{\bm{i}+\bm{\delta}\uparrow}^{\tau})\nonumber \\
+ & -\rightarrow\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}(b_{\bm{i}\uparrow}^{\tau}b_{\bm{i}+\bm{\delta}\downarrow}^{\tau}e^{i\frac{\bm{Q}\cdot\bm{\delta}}{2}}-b_{\bm{i}\downarrow}^{\tau}b_{\bm{i}+\bm{\delta}\uparrow}^{\tau}e^{-i\frac{\bm{Q}\cdot\bm{\delta}}{2}})\nonumber \\
+ & =-\frac{1}{(\mathcal{N}\beta)^{3/2}}\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{q}\bm{k}\bm{k}'}\sum_{\nu\omega\omega'}\bar{W}_{\bm{q},\bm{\delta}}^{(A)\nu}(b_{-\bm{k}\uparrow}^{-\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{-i(-\bm{k}+\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'+\nu)\tau}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}\nonumber \\
+ & -b_{-\bm{k}\downarrow}^{-\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{-i(-\bm{k}+\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'+\nu)\tau}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}})\nonumber \\
+ & =-\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(A)\omega'-\omega}(b_{-\bm{k}\uparrow}^{-\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-b_{-\bm{k}\downarrow}^{-\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}})\nonumber \\
+ & =-\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(A)\omega'-\omega}(b_{-\bm{k}\downarrow}^{-\omega}b_{\bm{k}'\uparrow}^{\omega'}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-b_{-\bm{k}\uparrow}^{-\omega}b_{\bm{k}'\downarrow}^{\omega'}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}})
+\end{align}
+
+\begin{align}
+ & -\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}W_{\bm{i},\bm{\delta}}^{(A)\tau}(\bar{b}_{\bm{i}+\bm{\delta}\downarrow}^{\tau}\bar{b}_{\bm{i}\uparrow}^{\tau}-\bar{b}_{\bm{i}+\bm{\delta}\uparrow}^{\tau}\bar{b}_{\bm{i}\downarrow}^{\tau})\nonumber \\
+ & \rightarrow-\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}W_{\bm{i},\bm{\delta}}^{(A)\tau}(\bar{b}_{\bm{i}+\bm{\delta}\downarrow}^{\tau}\bar{b}_{\bm{i}\uparrow}^{\tau}e^{-i\frac{\bm{Q}\cdot\bm{\delta}}{2}}-\bar{b}_{\bm{i}+\bm{\delta}\uparrow}^{\tau}\bar{b}_{\bm{i}\downarrow}^{\tau}e^{i\frac{\bm{Q}\cdot\bm{\delta}}{2}})\nonumber \\
+ & =-\frac{1}{(\mathcal{N}\beta)^{3/2}}\int_{0}^{\beta}d\tau\sum_{\bm{i}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{q}\bm{k}\bm{k}'}\sum_{\nu\omega\omega'}W_{\bm{q},\bm{\delta}}^{(A)\nu}(\bar{b}_{\bm{k}\downarrow}\bar{b}_{-\bm{k}'\uparrow}^{-\omega'}e^{i(\bm{k}-\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'-\nu)\tau}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}}\nonumber \\
+ & -\bar{b}_{\bm{k}\uparrow}\bar{b}_{-\bm{k}'\downarrow}^{-\omega'}e^{i(\bm{k}-\bm{k}'-\bm{q})\cdot\bm{r}_{i}}e^{-i(\omega-\omega'-\nu)\tau}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}})\nonumber \\
+ & =-\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(A)\omega-\omega'}(\bar{b}_{\bm{k}\downarrow}^{\omega}\bar{b}_{-\bm{k}'\uparrow}^{-\omega'}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}}-\bar{b}_{\bm{k}\uparrow}^{\omega}\bar{b}_{-\bm{k}'\downarrow}^{-\omega'}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}})\nonumber \\
+ & =-\frac{1}{\sqrt{\mathcal{N}\beta}}\sum_{\bm{\delta}>0}\frac{J_{\bm{\delta}}}{2}\sum_{\bm{k}\bm{k}'}\sum_{\omega\omega'}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(A)\omega-\omega'}(\bar{b}_{\bm{k}\uparrow}^{\omega}\bar{b}_{-\bm{k}'\downarrow}^{-\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}}-\bar{b}_{\bm{k}\downarrow}^{\omega}\bar{b}_{-\bm{k}'\uparrow}^{-\omega'}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i(\omega-\omega')0^{+}})
+\end{align}
+
+The elements of the dynamical matrix $\mathcal{G}^{-1}[j=0]=\mathcal{M}$
+are listed below
+
+\begin{align}
+\mathcal{M}_{11} & =\bigg(\frac{1}{2}i\omega\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i}{2}\frac{\lambda_{\bm{k}-\bm{k}'}^{\omega-\omega'}}{\sqrt{\mathcal{N}\beta}}\nonumber \\
+ & -\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}(W_{\bm{k}-\bm{k}'}^{(B)\omega-\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}'-\bm{k}}^{(B)\omega'-\omega}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}})\bigg)e^{-i\omega0^{+}}\\
+\mathcal{M}_{22} & =\bigg(\frac{1}{2}(-i\omega)\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i}{2}\frac{\lambda_{\bm{k}'-\bm{k}}^{\omega'-\omega}}{\sqrt{\mathcal{N}\beta}}\nonumber \\
+ & -\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}(W_{\bm{k}-\bm{k}'}^{(B)\omega-\omega'}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}'-\bm{k}}^{(B)\omega'-\omega}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}})\bigg)e^{i\omega'0^{+}}\\
+\mathcal{M}_{33} & =\bigg(\frac{1}{2}i\omega\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i}{2}\frac{\lambda_{\bm{k}-\bm{k}'}^{\omega-\omega'}}{\sqrt{\mathcal{N}\beta}}\nonumber \\
+ & -\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}(W_{\bm{k}-\bm{k}'}^{(B)\omega-\omega'}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}'-\bm{k}}^{(B)\omega'-\omega}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}})\bigg)e^{-i\omega0^{+}}\\
+\mathcal{M}_{44} & =\bigg(\frac{1}{2}(-i\omega)\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i}{2}\frac{\lambda_{\bm{k}'-\bm{k}}^{\omega'-\omega}}{\sqrt{\mathcal{N}\beta}}\nonumber \\
+ & -\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}(W_{\bm{k}-\bm{k}'}^{(B)\omega-\omega'}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}'-\bm{k}}^{(B)\omega'-\omega}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}})\bigg)e^{i\omega'0^{+}}\\
+\mathcal{M}_{12} & =\bigg(\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}W_{\bm{k}-\bm{k}'}^{(A)\omega-\omega'}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}\bigg)e^{-i(\omega-\omega')0^{+}}\\
+\mathcal{M}_{21} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}\bar{W}_{\bm{k}'-\bm{k}}^{(A)\omega'-\omega}(e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}})\\
+\mathcal{M}_{34} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}W_{\bm{k}-\bm{k}'}^{(A)\omega-\omega'}(e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}})\\
+\mathcal{M}_{43} & =\bigg(\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta_{2}}}\frac{J_{\bm{\delta}}}{4\sqrt{\mathcal{N}\beta}}\bar{W}_{\bm{k}'-\bm{k}}^{(A)\omega'-\omega}(e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}})\bigg)e^{-i(\omega-\omega')0^{+}}\\
+\mathcal{M}_{13} & =\mathcal{M}_{24}=\mathcal{M}_{31}=\mathcal{M}_{42}=-\frac{h}{2}\delta_{\bm{k},\bm{k}'}\\
+\mathcal{M}_{14} & =\mathcal{M}_{23}=\mathcal{M}_{32}=\mathcal{M}_{41}=0
+\end{align}
+
+
+\section{Saddle point expansion}
+
+The path integral \eqref{eq:pathintegral} can be evaluated by using
+\textit{saddle point approximation}. The effective action is expanded
+around its saddle point
+
+\begin{equation}
+\mathcal{S}_{\text{eff}}=\mathcal{S}_{0}+\sum_{\alpha}\mathcal{S}_{\alpha}^{(1)}\Delta\phi_{\alpha}+\sum_{\alpha_{1}\alpha_{2}}\mathcal{S}_{\alpha_{1}\alpha_{2}}^{(2)}\Delta\phi_{\alpha_{1}}\Delta\phi_{\alpha_{2}}+\mathcal{S}_{\text{int}}
+\end{equation}
+
+where
+
+\begin{equation}
+\mathcal{S}_{\text{int}}=\sum_{n=3}^{\infty}\mathcal{S}_{\alpha_{1}..\alpha_{n}}^{(n)}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}}
+\end{equation}
+
+includes third and higher order terms. And
+
+\begin{equation}
+\Delta\phi_{\alpha}=\phi_{\alpha}-\phi_{\alpha}^{\text{sp}}
+\end{equation}
+
+are the fluctuations about the saddle point with
+
+\begin{equation}
+\phi_{\alpha}=(\bar{W}_{\bm{k},\bm{\delta}}^{(r)\omega},W_{\bm{k},\bm{\delta}}^{(r)\omega},\lambda_{\bm{k}}^{\omega})
+\end{equation}
+
+where $\alpha$ includes field, momentum and frequency indices. The
+coefficients are
+
+\begin{equation}
+\mathcal{S}_{\alpha_{1},...\alpha_{n}}^{(n)}=\frac{1}{n!}\frac{\partial^{n}\mathcal{S}_{\text{eff}}}{\partial\phi_{\alpha_{1}}...\partial\phi_{\alpha_{n}}}
+\end{equation}
+
+
+\subsection{Saddle point dynamical matrix}
+
+The saddle point requires $\mathcal{S}_{\alpha}^{(1)}=0$, \textit{i.e.}
+
+\begin{align}
+\left.\frac{\partial\mathcal{S}_{\text{eff}}}{\partial\phi_{\alpha}}\right\vert _{\text{sp}} & =\left.\frac{\partial\mathcal{S}_{0}}{\partial\phi_{\alpha}}\right\vert _{\text{sp}}+\left.\frac{\partial\mathcal{S}_{\text{bos}}}{\partial\phi_{\alpha}}\right\vert _{\text{sp}}\nonumber \\
+ & =\left.\frac{\partial\mathcal{S}_{0}}{\partial\phi_{\alpha}}\right\vert _{\text{sp}}+\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial\phi_{\alpha}}\bigg]=0\label{eq:saddlepointeGreenself}
+\end{align}
+
+The trace goes over all $\alpha$ indices (auxiliary field component,
+flavors, momentum, and frequency). We can also write the results explicitly,
+according to \eqref{eq:defofaction1}
+
+\begin{align}
+\left.\bar{W}_{\bm{i},\bm{\delta}}^{(B)\tau}\right\vert _{\text{sp}} & =-\left.\expval{B_{\bm{i},\bm{\delta}}^{\tau}}\right\vert _{\text{sp}}\nonumber \\
+\left.W_{\bm{i},\bm{\delta}}^{(B)\tau}\right\vert _{\text{sp}} & =+\left.\expval{\bar{B}_{\bm{i},\bm{\delta}}^{\tau}}\right\vert _{\text{sp}}\nonumber \\
+\left.\bar{W}_{\bm{i},\bm{\delta}}^{(A)\tau}\right\vert _{\text{sp}} & =+\left.\expval{A_{\bm{i},\bm{\delta}}^{\tau}}\right\vert _{\text{sp}}\nonumber \\
+\left.W_{\bm{i},\bm{\delta}}^{(A)\tau}\right\vert _{\text{sp}} & =+\left.\expval{\bar{A}_{\bm{i},\bm{\delta}}^{\tau}}\right\vert _{\text{sp}}
+\end{align}
+
+where
+
+\begin{equation}
+\left.\expval{\mathcal{O}}\right\vert _{\text{sp}}=Z_{\text{bos}}^{-1}\int\mathcal{D}^{2}\bm{b}\mathcal{O}(\bm{r},\tau)e^{-\mathcal{S}_{\text{bos}}}
+\end{equation}
+
+From now on, we assume that the auxiliary fields are \textbf{static}
+and \textbf{homogeneous}, whose Fourier transforms are Kronecker delta
+both in momentum and frequency. Consider the following ansatz,
+
+\begin{align}
+\left.\bar{W}_{\bm{\delta}}^{(B)}\right\vert _{\text{sp}} & =-B_{\bm{\delta}} & \left.W_{\bm{\delta}}^{(B)}\right\vert _{\text{sp}} & =B_{\bm{\delta}} & \left.\bar{W}_{\bm{\delta}}^{(A)}\right\vert _{\text{sp}} & =-i{A_{\bm{\delta}}} & \left.W_{\bm{\delta}}^{(A)}\right\vert _{\text{sp}} & =iA_{\bm{\delta}} & \left.\lambda\right\vert _{\text{sp}} & =i\lambda
+\end{align}
+
+where $A_{\bm{\delta}}$, $B_{\bm{\delta}}$, and $\lambda$ are real.
+The effective action at saddle point now describes non-interacting
+bosons. The corresponding dynamical matrix $\mathcal{M}_{\bm{k},\omega}^{\text{sp}}$
+takes the form
+
+\begin{equation}
+\begin{pmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2} & 0\\[1em]
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0 & -\frac{h}{2}\\[1em]
+-\frac{h}{2} & 0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\[1em]
+0 & -\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{pmatrix}
+\end{equation}
+
+where
+
+\begin{align}
+\gamma_{\bm{k}}^{A} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}>0}J_{\bm{\delta}}A_{\bm{\delta}}\sin(\bm{k}\cdot\bm{\delta})\\
+\gamma_{\bm{k}}^{B} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}>0}J_{\bm{\delta}}B_{\bm{\delta}}\cos(\bm{k}\cdot\bm{\delta})
+\end{align}
+
+The action $\mathcal{S}_{0}$ at the saddle point is written as
+
+\begin{equation}
+\mathcal{S}_{0}=\beta\mathcal{N}\bigg(\sum_{\bm{\delta}>0}J_{\bm{\delta}}(A_{\bm{\delta}}^{2}-B_{\bm{\delta}}^{2})+2\lambda S\bigg)
+\end{equation}
+
+
+\subsection{Saddle point Green function}
+
+The dispersion relations of \textit{free} Schwinger bosons (spinons)
+are given by the \textbf{poles} of (Matsubara) Green function, which
+is the inverse of the dynamical matrix at the saddle point.
+
+\begin{equation}
+\mathcal{G}_{\bm{k},\omega}^{\text{sp}}=(\mathcal{M}_{\bm{k},\omega}^{\text{sp}})^{-1}
+\end{equation}
+
+We expect two bands of dispersion relations, because the symmetry
+breaking field lifts the degeneracy. Also, since the spinons propagate
+both forwards and backwards in imaginary time, the single spinon Green
+function should take the form
+
+\begin{equation}
+\mathcal{G}_{\bm{k},\omega}^{\text{sp}}(\bm{k},i\omega)=\frac{g_{\bm{k}}^{-+}}{i\omega-\epsilon_{\bm{k}}^{+}}+\frac{g_{\bm{k}}^{++}}{i\omega+\epsilon_{\bm{k}}^{+}}+\frac{g_{\bm{k}}^{--}}{i\omega-\epsilon_{\bm{k}}^{-}}+\frac{g_{\bm{k}}^{+-}}{i\omega+\epsilon_{\bm{k}}^{-}}
+\end{equation}
+
+where $\epsilon_{\bm{k}}^{\pm}$ are the dispersion relations, and
+$g_{\bm{k}}^{\sigma\sigma'}$ are $4\times4$ matrices yet to be determined.
+\\
+
+The inverse of a general matrix can be calculated as
+
+\begin{equation}
+\mathcal{G}=\mathcal{M}^{-1}=\frac{1}{\det(\mathcal{M})}\mathcal{C}^{T}
+\end{equation}
+
+where $\mathcal{C}$ is the co-factor matrix of $\mathcal{M}$. Thus
+the poles can be determined by
+
+%dispersion relations are determined by the roots of ($i\omega$) of the equation 
+
+\begin{equation}
+\det\mathcal{M}_{\bm{k},\omega}^{\text{sp}}(i\omega)=0
+\end{equation}
+
+The dispersion relations take the form (see A.1)
+
+\begin{equation}
+\epsilon_{\bm{k}}^{\pm}=\sqrt{\frac{1}{2}\bigg[\big(\alpha_{1}^{2}+\alpha_{2}^{2}+\frac{h^{2}}{2}\big)\pm\Delta_{\bm{k}}^{2}\bigg]}
+\end{equation}
+
+where
+
+\begin{equation}
+\Delta_{\bm{k}}^{2}=\sqrt{\big(\alpha_{1}^{2}-\alpha_{2}^{2})^{2}+\bigg[\bigg((\lambda+\gamma_{1}^{B})+(\lambda+\gamma_{2}^{B})\bigg)^{2}-(\gamma_{1}^{A}-\gamma_{2}^{A})^{2}\bigg]h^{2}}
+\end{equation}
+
+The $4\times4$ matrices $g_{\bm{k}}^{\pm\sigma}$ ($\sigma=\pm)$
+are (see A.2)
+
+\begin{equation}
+g_{\bm{k}}^{-\sigma}=\begin{pmatrix}A_{\bm{k}}^{\sigma} & C_{\bm{k}}^{\sigma} & B_{\bm{k}}^{\sigma} & D_{\bm{k}}^{\sigma}\\
+C_{\bm{k}}^{\sigma} & E_{\bm{k}}^{\sigma} & D_{\bm{-k}}^{\sigma} & F_{\bm{k}}^{\sigma}\\
+B_{\bm{k}}^{\sigma} & D_{\bm{-k}}^{\sigma} & A_{\bm{-k}}^{\sigma} & C_{\bm{-k}}^{\sigma}\\
+D_{\bm{k}}^{\sigma} & F_{\bm{k}}^{\sigma} & C_{\bm{-k}}^{\sigma} & E_{\bm{-k}}^{\sigma}
+\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+g_{\bm{k}}^{+\sigma}=-\begin{pmatrix}E_{\bm{k}}^{\sigma} & C_{\bm{k}}^{\sigma} & F_{\bm{k}}^{\sigma} & D_{\bm{-k}}^{\sigma}\\
+C_{\bm{k}}^{\sigma} & A_{\bm{k}}^{\sigma} & D_{\bm{k}}^{\sigma} & B_{\bm{k}}^{\sigma}\\
+F_{\bm{k}}^{\sigma} & D_{\bm{k}}^{\sigma} & E_{\bm{-k}}^{\sigma} & C_{\bm{-k}}^{\sigma}\\
+D_{\bm{-k}}^{\sigma} & B_{\bm{k}}^{\sigma} & C_{\bm{-k}}^{\sigma} & A_{\bm{-k}}^{\sigma}
+\end{pmatrix}
+\end{equation}
+The form of matrix elements are the same as those given in the appendix
+of (arXiv:1802.06878v3 {[}cond-mat.str-el{]}) . Notice that the convergence
+factors are ``loaded'' into the dynamical matrix, not into the Green
+function.
+
+\subsection{Saddle point equations}
+
+We will use (\ref{eq:saddlepointeGreenself}) to write down the saddle
+point equations explicitly. 
+
+First consider the $\lambda$-field, 
+
+\begin{equation}
+\frac{\partial\mathcal{G}^{-1}}{\partial\lambda}=\begin{pmatrix}e^{-i\omega0^{+}}\\
+ & e^{i\omega0^{+}}\\
+ &  & e^{-i\omega0^{+}}\\
+ &  &  & e^{i\omega0^{+}}
+\end{pmatrix}
+\end{equation}
+
+The second term of (\ref{eq:saddlepointeGreenself}) can be calculated
+as following,
+
+\begin{align}
+\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial\lambda}\bigg] & =\frac{1}{2}\sum_{\bm{k}}\sum_{\omega}\bigg[\frac{1}{i\omega-\epsilon_{\bm{k}}^{+}}\bigg(A_{\bm{k}}^{+}e^{-i\omega0^{+}}+E_{\bm{k}}^{+}e^{i\omega0^{+}}+A_{-\bm{k}}^{+}e^{-i\omega0+}+E_{\bm{-k}}^{+}e^{i\omega0^{+}}\bigg)\nonumber \\
+ & -\frac{1}{i\omega+\epsilon_{\bm{k}}^{+}}\bigg(E_{\bm{k}}^{+}e^{-i\omega0^{+}}+A_{\bm{k}}^{+}e^{i\omega0^{+}}+E_{-\bm{k}}^{+}e^{-i\omega0+}+A_{\bm{-k}}^{+}e^{i\omega0^{+}}\bigg)\nonumber \\
+ & +\frac{1}{i\omega-\epsilon_{\bm{k}}^{-}}\bigg(A_{\bm{k}}^{-}e^{-i\omega0^{+}}+E_{\bm{k}}^{-}e^{i\omega0^{+}}+A_{-\bm{k}}^{-}e^{-i\omega0+}+E_{\bm{-k}}^{-}e^{i\omega0^{+}}\bigg)\nonumber \\
+ & -\frac{1}{i\omega+\epsilon_{\bm{k}}^{-}}\bigg(E_{\bm{k}}^{-}e^{-i\omega0^{+}}+A_{\bm{k}}^{-}e^{i\omega0^{+}}+E_{-\bm{k}}^{-}e^{-i\omega0+}+A_{\bm{-k}}^{-}e^{i\omega0^{+}}\bigg)\bigg]\label{eq:lambdasum}
+\end{align}
+
+There are four types of Matsubara sums in (\ref{eq:lambdasum}). This
+step elucidates the reason to keep the convergence factor: 1. the
+sum diverges without the factor; 2. the value of the summation depends
+on the sign (in the exponential) of the factor.
+
+\begin{align*}
+\sum_{\omega}\frac{e^{i\omega0+}}{i\omega-\epsilon} & =-\beta\frac{1}{e^{\beta\epsilon}-1}=-\beta n(\epsilon)\\
+\sum_{\omega}\frac{e^{i\omega0+}}{i\omega+\epsilon} & =\beta\big(n(\epsilon)+1\big)\\
+\sum_{\omega}\frac{e^{-i\omega0^{+}}}{i\omega-\epsilon} & =-\beta\big(n(\epsilon)+1\big)\\
+\sum_{\omega}\frac{e^{-i\omega0+}}{i\omega+\epsilon} & =\beta n(\epsilon)
+\end{align*}
+
+Thus (\ref{eq:lambdasum}) after Matsubara sum is given by
+
+\begin{align*}
+\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial\lambda}\bigg] & =-\frac{\beta}{2}\sum_{\bm{k}}\bigg((A_{\bm{k}}^{+}+A_{\bm{-k}}^{+})\big(n(\epsilon_{\bm{k}}^{+})+1\big)+(E_{\bm{k}}^{+}+E_{\bm{-k}}^{+})n(\epsilon_{\bm{k}}^{+})\\
+ & +(A_{\bm{k}}^{-}+A_{\bm{-k}}^{-})\big(n(\epsilon_{\bm{k}}^{-})+1\big)+(E_{\bm{k}}^{-}+E_{\bm{-k}}^{-})n(\epsilon_{\bm{k}}^{-})\bigg)
+\end{align*}
+
+Refer to (arXiv:1802.06878v3 {[}cond-mat.str-el{]}) for the expressions
+of $A_{\bm{k}}, E_{\bm{k}}$. We will focus on the physics at $T=0$,
+note that
+
+\begin{equation}
+\lim_{\beta\rightarrow\infty}\beta n(\epsilon)=0
+\end{equation}
+
+Thus
+
+\begin{equation}
+\lim_{\beta\rightarrow\infty}\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial\lambda}\bigg]=-\frac{\beta}{2}\sum_{\bm{k}}\bigg((A_{\bm{k}}^{+}+A_{\bm{-k}}^{+}+A_{\bm{k}}^{-}+A_{\bm{-k}}^{-}\bigg)
+\end{equation}
+
+While 
+
+\begin{equation}
+\left.\frac{\partial\mathcal{S}_{0}}{\partial\lambda}\right\vert _{\text{sp}}=2\mathcal{N\beta}S
+\end{equation}
+
+Thus the saddle point equation for the $\lambda$-field takes the
+form
+
+\begin{equation}
+\boxed{{S=\frac{1}{\mathcal{N}}\sum_{\bm{k}}\bigg[u_{\bm{k}}^{+^{2}}\frac{\Delta_{-\bm{k}}^{+^{2}}}{\Delta_{\bm{k}}^{2}}+u_{\bm{k}}^{-^{2}}\frac{\Delta_{-\bm{k}}^{-^{2}}}{\Delta_{\bm{k}}^{2}}+(v_{-\bm{k}}^{+^{2}}-v_{-\bm{k}}^{-^{2}})\frac{h^{2}}{4\Delta_{\bm{k}}^{2}}\bigg]}}
+\end{equation}
+
+Next, we focus on the calculation of the saddle point equation for
+$A_{\bm{\bm{\delta}}}$. The derivative of the dynamical matrix with
+respect to $A_{\bm{\bm{\delta}}}$ is given by 
+
+\begin{equation}
+\frac{\partial\mathcal{G}^{-1}}{\partial A_{\bm{\delta}}}=\begin{pmatrix}0 & -J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg) & 0 & 0\\
+-J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg) & 0 & 0 & 0\\
+0 & 0 & 0 & -J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\\
+0 & 0 & -J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg) & 0
+\end{pmatrix}
+\end{equation}
+
+The second term of (\ref{eq:saddlepointeGreenself}) can be calculated
+as following,
+
+\begin{align}
+\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial A_{\bm{\delta}}}\bigg] & =-\sum_{\bm{k}}\sum_{\bm{\omega}}\bigg\{\frac{1}{i\omega-\epsilon_{\bm{k}}^{+}}\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k}}^{+}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k}}^{+}\bigg]\nonumber \\
+ & -\frac{1}{i\omega+\epsilon_{\bm{k}}^{+}}\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k}}^{+}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k}}^{+}\bigg]\nonumber \\
+ & +\frac{1}{i\omega-\epsilon_{\bm{k}}^{-}}\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k}}^{-}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k}}^{-}\bigg]\nonumber \\
+ & -\frac{1}{i\omega+\epsilon_{\bm{k}}^{-}}\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k}}^{-}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k}}^{-}\bigg]\bigg\}\nonumber \\
+ & =-\sum_{\bm{k}}\sum_{\bm{\omega}}\bigg\{\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k}}^{+}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k}}^{+}\bigg]\bigg(\frac{1}{i\omega-\epsilon_{\bm{k}}^{+}}-\frac{1}{i\omega+\epsilon_{\bm{k}}^{+}}\bigg)\nonumber \\
+ & +\bigg[J_{\bm{\delta}}\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{\bm{k}}^{-}+J_{\bm{\delta}}\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)C_{-\bm{k}}^{-}\bigg]\bigg(\frac{1}{i\omega-\epsilon_{\bm{k}}^{-}}-\frac{1}{i\omega+\epsilon_{\bm{k}}^{-}}\bigg)\bigg\}\label{eq:saddletraceA}
+\end{align}
+
+The Matsubara sums in \ref{eq:saddletraceA} converge, 
+
+\begin{equation}
+\sum_{\omega}\bigg(\frac{1}{i\omega-\epsilon}-\frac{1}{i\omega+\epsilon}\bigg)=-\beta\big(1+2n(\epsilon)\big)
+\end{equation}
+
+At $T=0$,
+
+\begin{equation}
+\lim_{\beta\rightarrow\infty}\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial A_{\bm{\delta}}}\bigg]=\beta J_{\bm{\delta}}\sum_{\bm{k}}\bigg[\sin\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)(C_{\bm{k}}^{+}+C_{\bm{k}}^{-})+\sin\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)(C_{\bm{-k}}^{+}+C_{-\bm{k}}^{-})\bigg]
+\end{equation}
+
+While
+
+\begin{equation}
+\frac{\partial\mathcal{S}_{0}}{\partial A_{\bm{\delta}}}=2\beta\mathcal{N}J_{\bm{\delta}}A_{\bm{\delta}}
+\end{equation}
+
+Thus the saddle point equations for $A_{\bm{\delta}}$-fields are
+
+\begin{equation}
+\boxed{A_{\bm{\delta}}=\frac{1}{\mathcal{N}}\sum_{\bm{k}}\bigg[z_{\bm{k}}^{+}\frac{\Delta_{-\bm{k}}^{+^{2}}}{\Delta_{\bm{k}}^{2}}+z_{\bm{k}}^{-}\frac{\Delta_{-\bm{k}}^{-^{2}}}{\Delta_{\bm{k}}^{2}}-(z_{-\bm{k}}^{+}-z_{-\bm{k}}^{-})\frac{h^{2}}{4\Delta_{\bm{k}}^{2}}\bigg]\sin\bigg((\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}\bigg)}
+\end{equation}
+
+Consider the $B_{\bm{\delta}}$ - fields, 
+
+\begin{equation}
+\frac{\partial\mathcal{G}^{-1}}{\partial B_{\bm{\delta}}}=\begin{pmatrix}J_{\bm{\delta}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)e^{-i\omega0^{+}} & 0 & 0 & 0\\
+0 & J_{\bm{\delta}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)e^{i\omega0^{+}} & 0 & 0\\
+0 & 0 & J_{\bm{\delta}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)e^{-i\omega0^{+}} & 0\\
+0 & 0 & 0 & J_{\bm{\delta}}\cos\bigg(\bm{(-k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)e^{i\omega0^{+}}
+\end{pmatrix}
+\end{equation}
+
+The second term of (\ref{eq:saddlepointeGreenself}) can be calculated
+as following,
+
+\begin{align*}
+\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial B_{\bm{\delta}}}\bigg] & =J_{\bm{\delta}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\sum_{\bm{k}}\sum_{\bm{\omega}}\bigg\{\frac{1}{i\omega-\epsilon_{\bm{k}}^{+}}(A_{\bm{k}}^{+}e^{-i\omega0^{+}}+E_{\bm{k}}^{+}e^{i\omega0^{+}})-\frac{1}{i\omega+\epsilon_{\bm{k}}^{+}}(E_{\bm{k}}^{+}e^{-i\omega0^{+}}+A_{\bm{k}}^{+}e^{i\omega0^{+}})\\
+ & +\frac{1}{i\omega-\epsilon_{\bm{k}}^{-}}(A_{\bm{k}}^{-}e^{-i\omega0^{+}}+E_{\bm{k}}^{-}e^{i\omega0^{+}})-\frac{1}{i\omega+\epsilon_{\bm{k}}^{-}}(E_{\bm{k}}^{-}e^{-i\omega0^{+}}+A_{\bm{k}}^{-}e^{i\omega0^{+}})\bigg\}\\
+ & =-2\beta J_{\bm{\delta}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\sum_{\bm{k}}\bigg\{ A_{\bm{k}}^{+}\big[n(\epsilon_{\bm{k}}^{+})+1\big]+E_{\bm{k}}^{+}n(\epsilon_{\bm{k}}^{+})+A_{\bm{k}}^{-}\big[n(\epsilon_{\bm{k}}^{-})+1\big]+E_{\bm{k}}^{-}n(\epsilon_{\bm{k}}^{-})\bigg\}
+\end{align*}
+
+At $T=0$,
+
+\begin{align}
+\lim_{\beta\rightarrow\infty}\frac{1}{2}\Tr\bigg[\mathcal{G}^{\text{sp}}\frac{\partial\mathcal{G}^{-1}}{\partial B_{\bm{\delta}}}\bigg] & =-2\beta J_{\bm{\delta}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\sum_{\bm{k}}(A_{\bm{k}}^{+}+A_{\bm{k}}^{-})\\
+ & =2\beta J_{\bm{\delta}}\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)\sum_{\bm{k}}\bigg[u_{\bm{k}}^{+^{2}}\frac{\Delta_{-\bm{k}}^{+^{2}}}{\Delta_{\bm{k}}^{2}}+u_{\bm{k}}^{-^{2}}\frac{\Delta_{-\bm{k}}^{-^{2}}}{\Delta_{\bm{k}}^{2}}+(v_{-\bm{k}}^{+^{2}}-v_{-\bm{k}}^{-^{2}})\frac{h^{2}}{4\Delta_{\bm{k}}^{2}}\bigg]
+\end{align}
+
+While
+
+\begin{equation}
+\frac{\partial\mathcal{S}_{0}}{\partial B_{\bm{\delta}}}=-2\beta\mathcal{N}J_{\bm{\delta}}B_{\bm{\delta}}
+\end{equation}
+
+The saddle point equations for $B_{\bm{\delta}}$-fields are
+
+\begin{equation}
+\boxed{B_{\bm{\delta}}=\frac{1}{\mathcal{N}}\sum_{\bm{k}}\sum_{\bm{k}}\bigg[u_{\bm{k}}^{+^{2}}\frac{\Delta_{-\bm{k}}^{+^{2}}}{\Delta_{\bm{k}}^{2}}+u_{\bm{k}}^{-^{2}}\frac{\Delta_{-\bm{k}}^{-^{2}}}{\Delta_{\bm{k}}^{2}}+(v_{-\bm{k}}^{+^{2}}-v_{-\bm{k}}^{-^{2}})\frac{h^{2}}{4\Delta_{\bm{k}}^{2}}\bigg]\cos\bigg(\bm{(k+\frac{\bm{Q}}{2})}\cdot\bm{\delta}\bigg)}
+\end{equation}
+
+
+\appendix
+%dummy comment inserted by tex2lyx to ensure that this paragraph is not empty
+
+
+\section{Detail calculation of Green function matrix}
+
+\subsection{Dispersion relations}
+
+For simplicity, we introduce short-handed notation $1=\bm{k}+\frac{\bm{Q}}{2}$
+and $2=-\bm{k}+\frac{\bm{Q}}{2}$. The determinant is calculated as
+following
+
+\begin{align}
+ & \det\mathcal{M}_{\bm{k},\omega}^{\text{sp}}\nonumber \\
+ & =(i\omega+\lambda+\gamma_{1}^{B})e^{-i\omega0^{+}}\begin{vmatrix}(-i\omega+\lambda+\gamma_{1}^{B})e^{i\omega0^{+}} & 0 & -h/2\\
+0 & (i\omega+\lambda+\gamma_{2}^{B})e^{-i\omega0^{+}} & -\gamma_{2}^{A}\\
+-h/2 & -\gamma_{2}^{A} & (-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & +\gamma_{1}^{A}\begin{vmatrix}-\gamma_{1}^{A} & 0 & -h/2\\
+-h/2 & (i\omega+\lambda+\gamma_{2}^{B})e^{-i\omega0^{+}} & -\gamma_{2}^{A}\\
+0 & -\gamma_{2}^{A} & (-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & -\frac{h}{2}\begin{vmatrix}-\gamma_{1}^{A} & (-i\omega+\lambda+\gamma_{1}^{B})e^{i\omega0^{+}} & -h/2\\
+-h/2 & 0 & -\gamma_{2}^{A}\\
+0 & -h/2 & (-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =[(\lambda+\gamma_{1}^{B})^{2}+\omega^{2}][(\lambda+\gamma_{2}^{B})^{2}+\omega^{2}-(\gamma_{2}^{A})^{2}]-\frac{h^{2}}{4}(i\omega+\lambda+\gamma_{1}^{B})(i\omega+\lambda+\gamma_{2}^{B})e^{-2i\omega0^{+}}\nonumber \\
+ & -\gamma_{1}^{A}\big(\gamma_{1}^{A}[(\lambda+\gamma_{2}^{B})^{2}+\omega^{2}-(\gamma_{2}^{A})^{2}]+\gamma_{2}^{A}\frac{h^{2}}{4}\big)\nonumber \\
+ & -\frac{h^{2}}{4}\big(\gamma_{1}^{A}\gamma_{2}^{A}+(-i\omega+\lambda+\gamma_{1}^{B})(-i\omega+\lambda+\gamma_{2}^{B})-\frac{h^{2}}{4}\big)=0\label{eq:det}
+\end{align}
+
+Define $\alpha_{\bm{k}}^{2}=(\lambda+\gamma_{\bm{k}}^{B})^{2}-(\gamma_{\bm{k}}^{A})^{2}$,
+the expression \eqref{eq:det} can be simplified as
+
+\begin{align}
+\det\mathcal{M}_{\bm{k},\omega}^{\text{sp}}=\omega^{4}+(\alpha_{1}^{2}+\alpha_{2}^{2}+\frac{h^{2}}{2})\omega^{2}+\alpha_{1}^{2}\alpha_{2}^{2}-\frac{h^{2}}{2}(\lambda+\gamma_{1}^{B})(\lambda+\gamma_{2}^{B})-\gamma_{1}^{A}\gamma_{2}^{A}\frac{h^{2}}{2}+\frac{h^{4}}{16}=0
+\end{align}
+
+
+\subsection{Matrix elements}
+
+The next step is to calculate the adjunct matrix $\mathcal{A}=\mathcal{C}^{T}$,
+
+\begin{align}
+\mathcal{A}_{11} & =\begin{vmatrix}(-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0 & -\frac{h}{2}\\
+0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\
+-\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =\boxed{(-i\omega+\lambda+\gamma_{1}^{B})e^{i\omega0^{+}}(\omega^{2}+\alpha_{2}^{2})-\frac{h^{2}}{4}(i\omega+\lambda+\gamma_{2}^{B})e^{-i\omega0^{+}}}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{21} & =-\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0 & -\frac{h}{2}\\
+-\frac{h}{2} & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\[1em]
+0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =\boxed{\gamma_{1}^{A}(\omega^{2}+\alpha_{2}^{2})+\frac{h^{2}}{4}\gamma_{2}^{A}}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{31} & =\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & -\frac{h}{2}\\
+-\frac{h}{2} & 0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\[1em]
+0 & -\frac{h}{2} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =\boxed{\frac{h}{2}[\gamma_{1}^{A}\gamma_{2}^{A}-(-i\omega+\lambda+\gamma_{1}^{B})(-i\omega+\lambda+\gamma_{2}^{B})e^{2i\omega0^{+}}-\frac{h^{2}}{4}]}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{41} & =-\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0\\
+-\frac{h}{2} & 0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}}\\
+0 & -\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & =\boxed{\frac{h}{2}[\gamma_{1}^{A}(i\omega+\lambda+\gamma_{2}^{B})e^{-i\omega0^{+}}+\gamma_{2}^{A}(-i\omega+\lambda+\gamma_{1}^{B})e^{i\omega0^{+}}]}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{12} & =-\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2} & 0\\
+0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\
+-\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =\boxed{\gamma_{1}^{A}(\omega^{2}+\alpha_{2}^{2})+\frac{h^{2}}{4}\gamma_{2}^{A}}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{22} & =\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\frac{h}{2} & 0\\
+-\frac{h}{2} & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\
+0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =\boxed{(i\omega+\lambda+\gamma_{1}^{B})e^{-i\omega0^{+}}(\omega^{2}+\alpha_{2}^{2})-\frac{h^{2}}{4}(-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{32} & =-\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0\\
+-\frac{h}{2} & 0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}\\
+0 & -\frac{h}{2} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+%\boxed{\frac{h}{2}[(i\omega+\lambda+\gamma_{1}^{B})e^{-i\omega0^{+}}\gamma_{2}^{A}+\frac{h}{2}(-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}]}
+ & =\boxed{\frac{h}{2}[(i\omega+\lambda+\gamma_{1}^{B})e^{-i\omega0^{+}}\gamma_{2}^{A}+(-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}\gamma_{1}^{A}]}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{42} & =\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2}\\
+-\frac{h}{2} & 0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}}\\
+0 & -\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & =\boxed{\frac{h}{2}[(i\omega+\lambda+\gamma_{1}^{B})(i\omega+\lambda+\gamma_{2}^{B})e^{-2i\omega0^{+}}+\gamma_{1}^{A}\gamma_{2}^{A}-\frac{h^{2}}{4}]}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{13} & =\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2} & 0\\
+(-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0 & -\frac{h}{2}\\
+-\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =\boxed{\frac{h}{2}[\gamma_{1}^{A}\gamma_{2}^{A}+(-i\omega+\lambda+\gamma_{1}^{B})(-i\omega+\lambda+\gamma_{2}^{B})e^{2i\omega0^{+}}-\frac{h^{2}}{4}]}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{23} & =-\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\frac{h}{2} & 0\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0 & -\frac{h}{2}\\
+0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+%
+ & =\boxed{\frac{h}{2}[(i\omega+\lambda+\gamma_{1}^{B})e^{-i\omega0^{+}}\gamma_{1}^{A}+(-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}\gamma_{1}^{A}]}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{33} & =\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & -\frac{h}{2}\\
+0 & -\frac{h}{2} & (-i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =\boxed{(-i\omega+\lambda+\gamma_{2}^{B})e^{i\omega0^{+}}(\omega^{2}+\alpha_{1}^{2})-\frac{h^{2}}{4}(-i\omega+\lambda+\gamma_{1}^{B})e^{-i\omega0^{+}}}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{43} & =-\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2}\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0\\
+0 & -\frac{h}{2} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & =\boxed{\gamma_{2}^{A}(\omega^{2}+\alpha_{1}^{2})+\frac{h^{2}}{4}\gamma_{1}^{A}}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{14} & =-\begin{vmatrix}-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2} & 0\\
+(-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0 & -\frac{h}{2}\\
+0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & =\boxed{\frac{h}{2}[\gamma_{1}^{A}(i\omega+\lambda+\gamma_{2}^{B})e^{-i\omega0^{+}}+\gamma_{2}^{A}(-i\omega+\lambda+\gamma_{1}^{B})e^{i\omega0^{+}}]}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{24} & =\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\frac{h}{2} & 0\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0 & -\frac{h}{2}\\
+-\frac{h}{2} & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & =\boxed{\frac{h}{2}[(i\omega+\lambda+\gamma_{1}^{B})(i\omega+\lambda+\gamma_{2}^{B})e^{-2i\omega0^{+}}+\gamma_{1}^{A}\gamma_{2}^{A}-\frac{h^{2}}{4}]}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{34} & =-\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & 0\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & -\frac{h}{2}\\
+-\frac{h}{2} & 0 & -\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{A}
+\end{vmatrix}\nonumber \\
+ & =\boxed{\gamma_{2}^{A}(\omega^{2}+\alpha_{1}^{2})+\frac{h^{2}}{4}\gamma_{1}^{A}}
+\end{align}
+
+\begin{align}
+\mathcal{A}_{44} & =\begin{vmatrix}(i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}} & -\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & -\frac{h}{2}\\
+-\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{A} & (-i\omega+\lambda+\gamma_{\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{i\omega0^{+}} & 0\\
+-\frac{h}{2} & 0 & (i\omega+\lambda+\gamma_{-\bm{k}+\frac{\bm{Q}}{2}}^{B})e^{-i\omega0^{+}}
+\end{vmatrix}\nonumber \\
+ & =\boxed{(i\omega+\lambda+\gamma_{2}^{B})e^{-i\omega0^{+}}(\omega^{2}+\alpha_{1}^{2})-\frac{h^{2}}{4}(-i\omega+\lambda+\gamma_{1}^{B})e^{i\omega0^{+}}}
+\end{align}
+
+The adjunct matrix $\mathcal{A}$ is a linear combination of $g_{\bm{k}}^{\sigma\sigma'}$
+matrices
+
+\begin{align}
+\mathcal{A} & =-\bigg(g_{\bm{k}}^{-+}(i\omega+\epsilon_{\bm{k}}^{+})[\omega^{2}+(\epsilon_{\bm{k}}^{-})^{2}]+g_{\bm{k}}^{++}(i\omega-\epsilon_{\bm{k}}^{+})[\omega^{2}+(\epsilon_{\bm{k}}^{-})^{2}]\nonumber \\
+ & +g_{\bm{k}}^{--}(i\omega+\epsilon_{\bm{k}}^{-})[\omega^{2}+(\epsilon_{\bm{k}}^{+})^{2}]+g_{\bm{k}}^{+-}(i\omega-\epsilon_{\bm{k}}^{-})[\omega^{2}+(\epsilon_{\bm{k}}^{+})^{2}]\bigg)\label{eq:adjunct}
+\end{align}
+
+The matrix elements of $g_{\bm{k}}^{\sigma\sigma'}$ are determined
+by solving \eqref{eq:adjunct} element by element.
+
+\begin{equation}
+\mathcal{A}_{11}=-i\omega^{3}+(\lambda+\gamma_{1}^{B})\omega^{2}-i(\alpha_{2}^{2}+\frac{h^{2}}{4})\omega+(\lambda+\gamma_{1}^{B})\alpha_{2}^{2}-\frac{h^{2}}{4}(\lambda+\gamma_{2}^{B})
+\end{equation}
+
+We have
+
+\begin{equation}
+\big(g_{\bm{k}}^{-+}+g_{\bm{k}}^{++}+g_{\bm{k}}^{--}+g_{\bm{k}}^{+-}\big)_{11}=1
+\end{equation}
+
+\begin{equation}
+\big((\epsilon_{\bm{k}}^{+}g_{\bm{k}}^{-+}-\epsilon_{\bm{k}}^{+}g_{\bm{k}}^{++}+\epsilon_{\bm{k}}^{-}g_{\bm{k}}^{--}-\epsilon_{\bm{k}}^{-}g_{\bm{k}}^{+-}\big)_{11}=-(\lambda+\gamma_{1}^{B})
+\end{equation}
+
+\begin{equation}
+\big((\epsilon_{\bm{k}}^{-})^{2}g_{\bm{k}}^{-+}+(\epsilon_{\bm{k}}^{-})^{2}g_{\bm{k}}^{++}+(\epsilon_{\bm{k}}^{+})^{2}g_{\bm{k}}^{--}+(\epsilon_{\bm{k}}^{+})^{2}g_{\bm{k}}^{+-}\big)_{11}=\alpha_{2}^{2}+\frac{h^{2}}{4}
+\end{equation}
+
+\begin{equation}
+\big(\epsilon_{\bm{k}}^{+}(\epsilon_{\bm{k}}^{-})^{2}g_{\bm{k}}^{-+}-\epsilon_{\bm{k}}^{+}(\epsilon_{\bm{k}}^{-})^{2}g_{\bm{k}}^{++}+\epsilon_{\bm{k}}^{-}(\epsilon_{\bm{k}}^{+})^{2}g_{\bm{k}}^{--}-\epsilon_{\bm{k}}^{-}(\epsilon_{\bm{k}}^{+})^{2}g_{\bm{k}}^{+-}\big)_{11}=\frac{h^{2}}{4}(\lambda+\gamma_{2}^{B})-(\lambda+\gamma_{1}^{B})\alpha_{2}^{2}
+\end{equation}
+
+Define $X_{1}=\big(g_{\bm{k}}^{-+}-g_{\bm{k}}^{++}\big)_{11}$ , $X_{2}=\big(g_{\bm{k}}^{-+}-g_{\bm{k}}^{+-})_{11}$
+, $Y_{1}=\big(g_{\bm{k}}^{-+}+g_{\bm{k}}^{++}\big)_{11}$ , $Y_{2}=\big(g_{\bm{k}}^{-+}+g_{\bm{k}}^{+-})_{11}$
+. Thus
+
+\[
+Y_{1}+Y_{2}=1
+\]
+
+\[
+\epsilon_{\bm{k}}^{+}X_{1}+\epsilon_{\bm{k}}^{-}X_{2}=-(\lambda+\gamma_{1}^{B})
+\]
+
+\[
+(\epsilon_{\bm{k}}^{-})^{2}Y_{1}+(\epsilon_{\bm{k}}^{+})^{2}Y_{2}=\alpha_{2}^{2}+\frac{h^{2}}{4}
+\]
+
+\[
+\epsilon_{\bm{k}}^{+}(\epsilon_{\bm{k}}^{-})^{2}X_{1}+\epsilon_{\bm{k}}^{-}(\epsilon_{\bm{k}}^{+})^{2}X_{2}=\frac{h^{2}}{4}(\lambda+\gamma_{2}^{B})-(\lambda+\gamma_{1}^{B})\alpha_{2}^{2}
+\]
+
+We have
+
+\[
+Y_{1}=\frac{1}{\Delta_{\bm{k}}^{2}}[(\epsilon_{\bm{k}}^{+})^{2}-(\alpha_{2}^{2}+\frac{h^{2}}{4})]
+\]
+
+\[
+Y_{2}=-\frac{1}{\Delta_{\bm{k}}^{2}}[(\epsilon_{\bm{k}}^{-})^{2}-(\alpha_{2}^{2}+\frac{h^{2}}{4})]
+\]
+
+\[
+X_{1}=\frac{(\lambda+\gamma_{1}^{B})}{\epsilon_{\bm{k}}^{+}\Delta_{\bm{k}}^{2}}\bigg(\alpha_{2}^{2}-(\epsilon_{\bm{k}}^{+})^{2}\bigg)-\frac{h^{2}}{4}\frac{(\lambda+\gamma_{2}^{B})}{\epsilon_{\bm{k}}^{+}\Delta_{\bm{k}}^{2}}
+\]
+
+\[
+X_{2}=-\frac{(\lambda+\gamma_{1}^{B})}{\epsilon_{\bm{k}}^{-}\Delta_{\bm{k}}^{2}}\bigg(\alpha_{2}^{2}-(\epsilon_{\bm{k}}^{-})^{2}\bigg)+\frac{h^{2}}{4}\frac{(\lambda+\gamma_{2}^{B})}{\epsilon_{\bm{k}}^{-}\Delta_{\bm{k}}^{2}}
+\]
+
+The matrix elements are
+
+\begin{align*}
+(g_{\bm{k}}^{-+})_{11} & =-\frac{(\Delta_{-\bm{k}}^{+})^{2}}{\Delta_{\bm{k}}^{2}}\bigg[\frac{\lambda+\gamma_{1}^{B}}{2\epsilon_{\bm{k}}^{+}}-\frac{1}{2}\bigg]-\frac{h^{2}}{4\Delta_{\bm{k}}^{2}}\bigg[\frac{\lambda+\gamma_{2}^{B}}{2\epsilon_{\bm{k}}^{+}}+\frac{1}{2}\bigg]
+\end{align*}
+
+\end{document}

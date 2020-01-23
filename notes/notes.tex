@@ -1,0 +1,158 @@
+% File              : notes.tex
+% Author            : Hao Zhang <hzhangphys@gmail.com>
+% Date              : 01.20.2020
+% Last Modified Date: 01.23.2020
+% Last Modified By  : Hao Zhang <hzhangphys@gmail.com>
+\documentclass{article}
+\usepackage{mathptmx,newtxtext,newtxmath,xspace}
+\usepackage{amsbsy,bm,bbold}
+\usepackage{graphicx,color,xcolor,epsfig,rotate}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+	    urlcolor=blue,
+	    citecolor=blue]{hyperref}
+\usepackage{soul}
+\usepackage{physics}
+\usepackage{geometry} 
+\pagestyle{fancyplain}  
+\lhead{\large}
+\cfoot{\sc\thepage}
+\lfoot{}
+\rfoot{}
+\allowdisplaybreaks[2]
+\geometry{verbose,tmargin=2cm,bmargin=2cm,headheight=1cm,headsep=4cm,footskip=1cm}
+
+\begin{document}
+
+\title{Large-$N$ theory for frustrated magnets}
+
+\author{Hao Zhang}
+
+\date{\today}
+
+\maketitle
+
+\section{Formalism}
+
+\label{sec:formalism}
+
+The partition function of interacting spins can be expressed as a
+function integral over the boson coherent states,
+
+\begin{equation}
+\mathcal{Z}=\int D[\bar{b},b]D[\lambda]e^{-\int_{0}^{\beta}d\tau[\sum_{i\alpha}\bar{b}_{i\alpha}^{\tau}\partial_{\tau}b_{i\alpha}^{\tau}+\mathcal{H}(b,\bar{b})]}e^{-i\int_{0}^{\beta}d\tau\lambda_{i}^{\tau}\sum_{i\alpha}(\bar{b}_{i\alpha}^{\tau}b_{i\alpha}^{\tau}-NS)},
+\end{equation}
+
+where the generalized Hamiltonian is written as, 
+
+\begin{equation}
+\mathcal{H}(\bar{b},b)=\sum_{\langle i,j\rangle}\frac{2J_{ij}}{N}(\bar{B}_{ij}^{\tau}B_{ij}^{\tau}-\bar{A}_{ij}^{\tau}A_{ij}^{\tau}).
+\end{equation}
+
+The integration measures are, 
+
+\begin{equation}
+D[\bar{b},b]=\prod_{i,\alpha,\tau}\frac{d\bar{b}_{i\alpha}^{\tau}db_{i\alpha}^{\tau}}{2\pi i},\ \ D[\lambda]=\prod_{i}\frac{d\lambda_{i}^{\tau}}{2\pi}.
+\end{equation}
+
+To integrate over bosonic variables, we introduce Hubbard-Stratonovich
+(H-S) transformations, 
+
+\begin{equation}
+e^{-\alpha\bar{B}_{ij}^{\tau}B_{ij}}=\int\frac{d\bar{W}_{ij}^{(B)\tau}W_{ij}^{(B)\tau}}{2\pi i/\alpha}e^{-\alpha\bar{W}_{ij}^{(B)\tau}W_{ij}^{(B)\tau}+\alpha(-\bar{W}_{ij}^{(B)\tau}B_{ij}^{\tau}+W_{ij}^{(B)\tau}\bar{B}_{ij}^{\tau})},
+\end{equation}
+
+\begin{equation}
+e^{\alpha\bar{A}_{ij}^{\tau}A_{ij}^{\tau}}=\int\frac{d\bar{W}_{ij}^{(A)\tau}W_{ij}^{(A)\tau}}{2\pi i/\alpha}e^{-\alpha\bar{W}_{ij}^{(A)\tau}W_{ij}^{(A)\tau}+\alpha(\bar{W}_{ij}^{(A)\tau}B_{ij}^{\tau}+W_{ij}^{(A)\tau}\bar{B}_{ij}^{\tau})}.
+\end{equation}
+
+The partition function is now quadratic in bosonic variables and can
+be integrated over analytically,
+
+\begin{equation}
+\mathcal{Z}=\int D[\bar{W},W]D[\lambda]e^{-NS_{\text{eff}}(\bar{W},W,\lambda)},
+\end{equation}
+
+where the effective action is written as
+
+\begin{align}
+S_{\text{eff}}(\bar{W},W,\lambda) & =\int_{0}^{\beta}d\tau\bigg(\frac{1}{2J_{ij}}\sum_{r=A,B}\bar{W}_{ij}^{(r)\tau}W_{ij}^{(r)\tau}-iS\sum_{i}\lambda_{i}^{\tau}\bigg)\nonumber \\
+ & +\frac{1}{N}\Tr\ln\big[\mathcal{G}^{-1}(\bar{W},W,\lambda)\big].\label{eq:action}
+\end{align}
+
+The integration measure for the H-S fields are 
+
+\begin{equation}
+D[\bar{W},W]=\prod_{i,j,\tau,r}\frac{d\bar{W}_{ij}^{(r)\tau}dW_{ij}^{(r)\tau}}{4\pi iJ_{ij}/N}.
+\end{equation}
+
+By treating $N$ as a large parameter, we can expand the action Eq.
+\eqref{eq:action} near its saddle point (SP) $\delta S_{\text{eff}}=0$.
+We see that $1/N$ plays the role of $\hbar$ in a semiclassical expansion.
+The effective action is now written as, 
+
+\begin{equation}
+S_{\text{eff}}=\sum_{n=0}^{\infty}\sum_{\alpha_{1},..,\alpha_{n}}S_{\alpha_{1},...,\alpha_{n}}^{(n)}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}},
+\end{equation}
+
+with 
+
+\begin{equation}
+S_{\alpha_{1},...,\alpha_{n}}^{(n)}=\frac{1}{n!}\frac{\partial^{(n)}S_{\text{eff}}}{\partial\phi_{\alpha_{1}}..\partial\phi_{\alpha_{n}}}\bigg|_{\text{SP}},
+\end{equation}
+
+and $\Delta\phi_{\alpha}=\phi_{\alpha}-\phi_{\alpha}^{\text{SP}}$.
+The $\alpha$ index includes gauge fields ($\bar{W}_{ij}^{(r)\tau},W_{ij}^{(r)\tau},\lambda)$,
+space $i$, and time $\tau$. Expansion the first line of Eq. \eqref{eq:action}
+is straightforward, as for the second line, notice that, 
+
+\begin{align}
+\Tr\ln\big[\mathcal{G}^{-1}(\bar{W},W,\lambda)\big] & =\Tr\ln\big[\mathcal{G}_{\text{SP}}^{-1}\big(1+\mathcal{G}_{\text{SP}}(\mathcal{G}^{-1}-\mathcal{G}_{\text{SP}}^{-1})\big)\big]\nonumber \\
+ & =\Tr\ln\big[\mathcal{G}_{\text{SP}}^{-1}\big(1+\mathcal{G}_{\text{SP}}\sum_{\alpha}\Delta\phi v_{\alpha}\big)\big],
+\end{align}
+
+where we have defined the so-called internal vertex, 
+
+\begin{equation}
+(\mathcal{G}^{-1}-\mathcal{G}_{\text{SP}}^{-1})=\sum_{\alpha}\Delta\phi\frac{\partial\mathcal{G}^{-1}}{\partial\phi}\equiv\sum_{\alpha}\Delta\phi v_{\alpha}.
+\end{equation}
+
+This definition is valid because the boson Green function is linear
+in the gauge fields. We can further exploit the properties of trace
+logarithm of a matrix, 
+
+\begin{align}
+\Tr\ln\big[\mathcal{G}_{\text{SP}}^{-1}\big(1+\mathcal{G}_{\text{SP}}\sum_{\alpha}\Delta\phi v_{\alpha}\big)\big] & =\Tr\ln\mathcal{G}_{\text{SP}}^{-1}+\Tr\ln\big(1+\mathcal{G}_{\text{SP}}\sum_{\alpha}\Delta\phi v_{\alpha}\big)\nonumber \\
+ & =\Tr\ln\mathcal{G}_{\text{SP}}^{-1}+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\Tr\big(\mathcal{G}_{\text{SP}}\sum_{\alpha}\Delta\phi v_{\alpha}\big)^{n}\nonumber \\
+ & =\Tr\ln\mathcal{G}_{\text{SP}}^{-1}+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sum_{\alpha_{1},...,\alpha_{n}}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}}\Tr\big(\mathcal{G}_{\text{SP}}v_{\alpha_{1}}...\mathcal{G}_{\text{SP}}v_{\alpha_{n}}\big).
+\end{align}
+
+Using this result, it's straightforward to show that, 
+
+\begin{align}
+S^{(0)} & =S_{\text{SP}}^{\text{eff}}=\int_{0}^{\beta}d\tau\bigg(\frac{1}{2J_{ij}}\sum_{r=A,B}\bar{W}_{ij}^{(r)\tau}W_{ij}^{(r)\tau}-iS\sum_{i}\lambda_{i}^{\tau}\bigg)\bigg|_{\text{SP}}\nonumber \\
+ & +\frac{1}{N}\Tr\ln\mathcal{G}_{\text{SP}}^{-1},
+\end{align}
+\begin{align}
+S_{\alpha}^{(1)} & =\frac{\partial}{\partial\phi_{\alpha}}\bigg[\int_{0}^{\beta}d\tau\bigg(\frac{1}{2J_{ij}}\sum_{r=A,B}\bar{W}_{ij}^{(r)\tau}W_{ij}^{(r)\tau}-iS\sum_{i}\lambda_{i}^{\tau}\bigg)\bigg]\bigg|_{\text{SP}}\nonumber \\
+ & +\frac{1}{N}\Tr\big(\mathcal{G}_{\text{SP}}v_{\alpha}),
+\end{align}
+
+and
+
+\begin{equation}
+S_{\alpha\alpha'}^{(2)}=
+\end{equation}
+
+%\bibliographystyle{plain}
+%\bibliography{doc.bib}
+
+
+
+
+
+
+
+\end{document}
+
