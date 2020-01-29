@@ -1,3 +1,5 @@
 *.tex~
 *.lyx~
+*.lyx#
 *.pyc
+*.DS_Store

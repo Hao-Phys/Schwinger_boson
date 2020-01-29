@@ -272,6 +272,10 @@ D[\bar{W},W]=\prod_{i,j,\tau,r}\frac{d\bar{W}_{ij}^{(r)\tau}dW_{ij}^{(r)\tau}}{4
 
 \end_layout
 
+\begin_layout Subsection
+Saddle point expansion
+\end_layout
+
 \begin_layout Standard
 By treating 
 \begin_inset Formula $N$
@@ -406,7 +410,7 @@ This definition is valid because the boson Green function is linear in the
 \begin{align}
 \Tr\ln\big[\mathcal{G}_{\text{SP}}^{-1}\big(1+\mathcal{G}_{\text{SP}}\sum_{\alpha}\Delta\phi v_{\alpha}\big)\big] & =\Tr\ln\mathcal{G}_{\text{SP}}^{-1}+\Tr\ln\big(1+\mathcal{G}_{\text{SP}}\sum_{\alpha}\Delta\phi v_{\alpha}\big)\nonumber \\
  & =\Tr\ln\mathcal{G}_{\text{SP}}^{-1}+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\Tr\big(\mathcal{G}_{\text{SP}}\sum_{\alpha}\Delta\phi v_{\alpha}\big)^{n}\nonumber \\
- & =\Tr\ln\mathcal{G}_{\text{SP}}^{-1}+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sum_{\alpha_{1},...,\alpha_{n}}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}}\Tr\big(\mathcal{G}_{\text{SP}}v_{\alpha_{1}}...\mathcal{G}_{\text{SP}}v_{\alpha_{n}}\big).
+ & =\Tr\ln\mathcal{G}_{\text{SP}}^{-1}+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sum_{\alpha_{1},...,\alpha_{n}}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}}\Tr\big(\mathcal{G}_{\text{SP}}v_{\alpha_{1}}...\mathcal{G}_{\text{SP}}v_{\alpha_{n}}\big).\label{eq:internal_expansion}
 \end{align}
 
 \end_inset
@@ -445,12 +449,361 @@ and
 
 \begin_layout Standard
 \begin_inset Formula 
+\begin{align}
+S_{\alpha\alpha'}^{(2)} & =\frac{1}{4J_{ij}}\big(\delta_{\alpha,\bar{W}_{ij}^{(r)\tau}}\delta_{\alpha',W_{ij}^{(r)\tau}}+\delta_{\alpha,W_{ij}^{(r)\tau}}\delta_{\alpha',\bar{W}_{ij}^{(r)\tau}}\big)\\
+ & -\frac{1}{2N}\Tr\big(\mathcal{G}_{\text{SP}}v_{\alpha}\mathcal{G}_{\text{SP}}v_{\alpha'}\big).
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, the interacting part is written as, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
 \begin{equation}
-S_{\alpha\alpha'}^{(2)}=
+S_{\alpha_{1},...,\alpha_{n}}^{(n\geq3)}=\frac{(-1)^{n+1}}{n!n}\sum_{P(\alpha_{1},...\alpha_{n})}\frac{1}{N}\Tr\big(\mathcal{G}_{\text{SP}}v_{\alpha_{1}}...\mathcal{G}_{\text{SP}}v_{\alpha_{n}}\big),
 \end{equation}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $P(\alpha_{1},...\alpha_{n})$
+\end_inset
+
+ is the permutation of 
+\begin_inset Formula $n$
+\end_inset
+
+ gauge fields.
+ The effective action is now written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+S_{\text{eff}}=S_{\text{eff}}^{\text{SP}}+\sum_{\alpha_{1}\alpha_{2}}S_{\alpha_{1}\alpha_{2}}^{(2)}\Delta\phi_{1}\Delta\phi_{2}+S_{\text{int}},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+S_{\text{int}}=\sum_{n=3}^{\infty}\sum_{\alpha_{1},...\alpha_{n}}S_{\alpha_{1},...,\alpha_{n}}^{(n)}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dynamical spin susceptibility
+\end_layout
+
+\begin_layout Standard
+Consider a subgroup of SU(
+\begin_inset Formula $N$
+\end_inset
+
+) group, the SP(
+\begin_inset Formula $N$
+\end_inset
+
+) group, whose generators break the time-reversal invariance, and can be
+ written as, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{S}_{\alpha\beta}=b_{\alpha}^{\dagger}b_{\beta}-\text{sgn}\alpha\text{sgn}\beta b_{-\beta}^{\dagger}b_{-\alpha}^{\dagger},\label{eq:spngen}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\alpha,\beta=\{-N/2,...,N/2\}$
+\end_inset
+
+.
+ [The reasons for considering only the SP(
+\begin_inset Formula $N$
+\end_inset
+
+) generators (symplectic spins) need to be clarified].
+ The computation of the dynamical spin susceptibility requires the coupling
+ of the generators defined in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:spngen"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ with space- and time- dependent external sources 
+\begin_inset Formula $j_{i\alpha\beta}^{\tau}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{J}_{s}=\sum_{i}j_{i\alpha\beta}^{\tau}\mathcal{S}_{\alpha\beta}^{\tau}(i),
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the sum over repeated flavor indices is assumed, then 
+\begin_inset Formula $\mathcal{Z}\rightarrow\mathcal{Z}[j]$
+\end_inset
+
+.
+ The imaginary time 
+\emph on
+dynamical spin susceptibility
+\emph default
+ is defined as, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\alpha\beta}(1,2)=\frac{\partial^{2}\ln\mathcal{Z}[j]}{\partial j_{1\alpha\beta}^{\tau}\partial j_{2\beta\alpha}^{0}}\bigg|_{j=0}.\label{eq:chi}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The above definition makes sense because 
+\begin_inset Formula $F\sim-\ln\mathcal{Z}$
+\end_inset
+
+, and 
+\begin_inset Formula $\chi=-\partial^{2}F/\partial B^{2}$
+\end_inset
+
+ .
+ It is easy to check that 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:chi"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ can be brought into two parts, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\alpha\beta}(1,2)=\chi_{\alpha\beta}^{(\text{1})}(1,2)+\chi_{\alpha\beta}^{(2)}(1,2),
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\chi_{\alpha\beta}^{(\text{1})}(1,2) & =\frac{1}{\mathcal{Z}}\frac{\partial^{2}\mathcal{Z}}{\partial j_{1\alpha\beta}^{\tau}\partial j_{2\beta\alpha}^{0}}\bigg|_{j=0}\\
+ & =\frac{1}{\mathcal{Z}}\bigg(-N\int D[\bar{\phi},\phi]\frac{\partial^{2}S_{\text{eff}}}{\partial j_{1\alpha\beta}^{\tau}\partial j_{2\beta\alpha}^{0}}e^{-NS_{\text{eff}}}+N^{2}\int D[\bar{\phi},\phi]\frac{\partial S_{\text{eff}}}{\partial j_{1\alpha\beta}^{\tau}}\frac{\partial S_{\text{eff}}}{\partial j_{2\beta\alpha}^{0}}e^{-NS_{\text{eff}}}\bigg)\bigg|_{j=0},
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\chi_{\alpha\beta}^{(2)}(1,2) & =-\frac{1}{\mathcal{Z}^{2}}\frac{\partial\mathcal{Z}}{\partial j_{1\alpha\beta}^{\tau}}\frac{\partial\mathcal{Z}}{\partial j_{2\beta\alpha}^{0}}\bigg|_{j=0}\\
+ & =-\frac{N^{2}}{\mathcal{Z}^{2}}\bigg[\bigg(\int D[\bar{\phi},\phi]\frac{\partial S_{\text{eff}}}{\partial j_{1\alpha\beta}^{\tau}}e^{-NS_{\text{eff}}}\bigg)\bigg(\int D[\bar{\phi},\phi]\frac{\partial S_{\text{eff}}}{\partial j_{2\beta\alpha}^{0}}e^{-NS_{\text{eff}}}\bigg)\bigg]\bigg|_{j=0}.
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The term 
+\begin_inset Formula $\chi_{\alpha\beta}^{(2)}(1,2)$
+\end_inset
+
+ corresponds to a product of the expectation values of two symplectic spins
+ 
+\begin_inset Formula $\langle\mathcal{S}_{\alpha\beta}^{\tau}(1)\rangle\langle\mathcal{S}_{\beta\alpha}^{0}(2)\rangle$
+\end_inset
+
+, which are not dynamical, therefore will be neglected in the following
+ calculations.
+ The term of interest 
+\begin_inset Formula $\chi_{\alpha\beta}^{(\text{1})}(1,2)$
+\end_inset
+
+ can be further written in two parts
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\alpha\beta}^{(\text{1})}(1,2)=\chi_{\alpha\beta}^{(\text{I})}(1,2)+\chi_{\alpha\beta}^{(\text{II})}(1,2),
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\alpha\beta}^{(\text{I})}(1,2)=-\frac{N}{\mathcal{Z}}\int D[\bar{\phi},\phi]\bigg(\frac{\partial^{2}S_{\text{eff}}}{\partial j_{1\alpha\beta}^{\tau}\partial j_{2\beta\alpha}^{0}}\bigg|_{j=0}e^{-NS_{\text{eff}}[j=0]}\bigg),
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\alpha\beta}^{(\text{II})}(1,2)=\frac{N^{2}}{\mathcal{Z}}\int D[\bar{\phi},\phi]\bigg(\frac{\partial S_{\text{eff}}}{\partial j_{1\alpha\beta}^{\tau}}\bigg|_{j=0}\frac{\partial S_{\text{eff}}}{\partial j_{2\beta\alpha}^{0}}\bigg|_{j=0}e^{-NS_{\text{eff}}[j=0]}\bigg).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Keep in mind that the external sources only couple with Schwinger bosons,
+ therefore only the last term of Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:action"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ contributes to the derivative of 
+\begin_inset Formula $S_{\text{eff}}$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ Let's first expand this term in series of 
+\begin_inset Formula $j$
+\end_inset
+
+, following the same steps as Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:internal_expansion"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\Tr\ln\big[\mathcal{G}^{-1}(\bar{\phi},\phi,j)\big] & =\Tr\ln\big[\mathcal{G}^{-1}[j=0]\big(1+\mathcal{G}[j=0](\mathcal{G}^{-1}(\bar{\phi},\phi,j)-\mathcal{G}^{-1}[j=0])\big]\nonumber \\
+ & =\Tr\ln\big[\mathcal{G}^{-1}[j=0]\big]+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sum_{\mu_{1},...,\mu_{n}}\sum_{\nu_{1},...,\nu_{n}}j_{1\mu_{1}\nu_{1}}...j_{n\mu_{n}\nu_{n}}\Tr\big(\mathcal{G}[j=0]u^{\mu_{1}\nu_{1}}(1)...\mathcal{G}[j=0]u^{\mu_{n}\nu_{n}}(n)\big),
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $u^{\mu_{i}\nu_{i}}$
+\end_inset
+
+ are the so-called external vertices defined as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+u^{\mu_{i}\nu_{i}}(i)\equiv\frac{\partial\mathcal{G}^{-1}}{\partial j_{i\mu_{i}\nu_{i}}}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
@@ -462,7 +815,7 @@ options "default"
 
 \end_inset
 
- 
+
 \end_layout
 
 \end_body
