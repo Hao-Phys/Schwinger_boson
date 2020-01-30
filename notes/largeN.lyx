@@ -505,7 +505,7 @@ with
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-S_{\text{int}}=\sum_{n=3}^{\infty}\sum_{\alpha_{1},...\alpha_{n}}S_{\alpha_{1},...,\alpha_{n}}^{(n)}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}}.
+S_{\text{int}}=\sum_{n=3}^{\infty}\sum_{\alpha_{1},...\alpha_{n}}S_{\alpha_{1},...,\alpha_{n}}^{(n)}\Delta\phi_{\alpha_{1}}...\Delta\phi_{\alpha_{n}}.\label{eq:S_int}
 \end{equation}
 
 \end_inset
@@ -776,7 +776,7 @@ noprefix "false"
 \begin_inset Formula 
 \begin{align}
 \Tr\ln\big[\mathcal{G}^{-1}(\bar{\phi},\phi,j)\big] & =\Tr\ln\big[\mathcal{G}^{-1}[j=0]\big(1+\mathcal{G}[j=0](\mathcal{G}^{-1}(\bar{\phi},\phi,j)-\mathcal{G}^{-1}[j=0])\big]\nonumber \\
- & =\Tr\ln\big[\mathcal{G}^{-1}[j=0]\big]+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sum_{\mu_{1},...,\mu_{n}}\sum_{\nu_{1},...,\nu_{n}}j_{1\mu_{1}\nu_{1}}...j_{n\mu_{n}\nu_{n}}\Tr\big(\mathcal{G}[j=0]u^{\mu_{1}\nu_{1}}(1)...\mathcal{G}[j=0]u^{\mu_{n}\nu_{n}}(n)\big),
+ & =\Tr\ln\big[\mathcal{G}^{-1}[j=0]\big]+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sum_{\mu_{1},...,\mu_{n}}\sum_{\nu_{1},...,\nu_{n}}j_{1\mu_{1}\nu_{1}}...j_{n\mu_{n}\nu_{n}}\Tr\big(\mathcal{G}[j=0]u^{\mu_{1}\nu_{1}}(1)...\mathcal{G}[j=0]u^{\mu_{n}\nu_{n}}(n)\big),\label{eq:gen_log}
 \end{align}
 
 \end_inset
@@ -804,6 +804,402 @@ u^{\mu_{i}\nu_{i}}(i)\equiv\frac{\partial\mathcal{G}^{-1}}{\partial j_{i\mu_{i}\
 \end_layout
 
 \begin_layout Standard
+Taking derivatives on Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:gen_log"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N\frac{\partial^{2}S_{\text{eff}}}{\partial j_{1\alpha\beta}^{\tau}\partial j_{2\beta\alpha}^{0}}\bigg|_{j=0}=-\Tr\big(\mathcal{G}[j=0]u^{\alpha\beta}(\tau;1)\mathcal{G}[j=0]u^{\beta\alpha}(0;2)\big),
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N\frac{\partial S_{\text{eff}}}{\partial j_{1\alpha\beta}^{\tau}}\bigg|_{j=0}=\Tr\big(\mathcal{G}[j=0]u^{\alpha\beta}(\tau;1)\big).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that there are actually two repeated terms for the second derivatives,
+ which cancel the factor 2 in the denominator.
+ Therefore, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\alpha\beta}^{(\text{I})}(1,2)=\frac{1}{\mathcal{Z}}\int D[\bar{\phi},\phi]\Tr\big(\mathcal{G}[j=0]u^{\alpha\beta}(\tau;1)\mathcal{G}[j=0]u^{\beta\alpha}(0;2)\big)e^{-NS_{\text{eff}}[j=0]},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{\alpha\beta}^{(\text{II})}(1,2)=\frac{1}{\mathcal{Z}}\int D[\bar{\phi},\phi]\Tr\big(\mathcal{G}[j=0]u^{\alpha\beta}(\tau;1)\big)\Tr\big(\mathcal{G}[j=0]u^{\beta\alpha}(0;2)\big)e^{-NS_{\text{eff}}[j=0]}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We further notice that,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{G}[j=0] & =\mathcal{G}_{\text{SP}}[j=0]\big(1+\mathcal{G}_{\text{SP}}[j=0]\sum_{\alpha}\Delta\phi_{\alpha}v_{\alpha}\big)^{-1}\nonumber \\
+ & =\mathcal{G}_{\text{SP}}[j=0]\sum_{n=0}^{\infty}(-1)^{n}\big[\mathcal{G}_{\text{SP}}[j=0]\sum_{\alpha}\Delta\phi_{\alpha}v_{\alpha}\big]^{n}.
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\chi_{\alpha\beta}^{(\text{I})}(1,2) & =\frac{1}{\mathcal{Z}}\int D[\bar{\phi},\phi]\Tr\big[\mathcal{G}_{\text{SP}}\sum_{m=0}^{\infty}\big(\sum_{\alpha}\Delta\phi_{\alpha}v_{\alpha}\mathcal{G}_{\text{SP}}\big)^{m}u^{\alpha\beta}(\tau;1)\mathcal{G}_{\text{SP}}\sum_{m'=0}^{\infty}\big(\sum_{\alpha}\Delta\phi_{\alpha}v_{\alpha}\mathcal{G}_{\text{SP}}\big)^{m'}u^{\beta\alpha}(0;2)\big]\nonumber \\
+ & \times\bigg[\sum_{L=0}^{\infty}\frac{(-N)^{L}}{L!}(S_{\text{int}})^{L}\bigg]e^{-N(\Delta\bar{\phi}_{\alpha}S_{\alpha\alpha'}^{(2)}\Delta\phi_{\alpha'}+S_{\text{eff,SP}})},
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\chi_{\alpha\beta}^{(\text{II})}(1,2) & =\frac{1}{\mathcal{Z}}\int D[\bar{\phi},\phi]\Tr\big[\mathcal{G}_{\text{SP}}\sum_{m=0}^{\infty}\big(\sum_{\alpha}\Delta\phi_{\alpha}v_{\alpha}\mathcal{G}_{\text{SP}}\big)^{m}u^{\alpha\beta}(\tau;1)\big]\Tr\big[\mathcal{G}_{\text{SP}}\sum_{m'=0}^{\infty}\big(\sum_{\alpha}\Delta\phi_{\alpha}v_{\alpha}\mathcal{G}_{\text{SP}}\big)^{m'}u^{\beta\alpha}(0;2)\big]\nonumber \\
+ & \times\bigg[\sum_{L=0}^{\infty}\frac{(-N)^{L}}{L!}(S_{\text{int}})^{L}\bigg]e^{-N(\Delta\bar{\phi}_{\alpha}S_{\alpha\alpha'}^{(2)}\Delta\phi_{\alpha'}+S_{\text{eff,SP}})},
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{Z}=\int D[\bar{\phi},\phi]\bigg[\sum_{L=0}^{\infty}\frac{(-N)^{L}}{L!}(S_{\text{int}})^{L}\bigg]e^{-N(\Delta\bar{\phi}_{\alpha}S_{\alpha\alpha'}^{(2)}\Delta\phi_{\alpha'}+S_{\text{eff,SP}})}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Feynman diagrams
+\end_layout
+
+\begin_layout Standard
+Loop diagrams can be used to represent traces.
+ Notice that there are two types of loops (traces): 
+\emph on
+external loops
+\emph default
+ with either one or two external vertices and 
+\emph on
+internal loops
+\emph default
+ coming from 
+\begin_inset Formula $(S_{\text{int}})^{L}$
+\end_inset
+
+ (refer to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:S_int"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]).
+ Wick's theorem tells us that the 
+\begin_inset Quotes eld
+\end_inset
+
+Gaussian average
+\begin_inset Quotes erd
+\end_inset
+
+ of an even number of fields 
+\begin_inset Formula $\Delta\phi$
+\end_inset
+
+ is the sum of all possible pair contractions, which defines the RPA propagator
+ 
+\begin_inset Formula $D_{\alpha_{1}\alpha_{2}}=\big[S_{\alpha_{1}\alpha_{2}}^{(2)}\big]^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{N}D_{\alpha_{1}\alpha_{2}}=\int D[\bar{\phi},\phi]\Delta\bar{\phi}_{\alpha_{1}}\Delta\phi_{\alpha_{2}}e^{-N(\Delta\bar{\phi}_{\alpha}S_{\alpha\alpha'}^{(2)}\Delta\phi_{\alpha'})}.\label{eq:RPA_pro}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+According to the linked-cluster theorem, due to the presence of 
+\begin_inset Formula $\mathcal{Z}$
+\end_inset
+
+ in the denominator for both 
+\begin_inset Formula $\chi_{\alpha\beta}^{(\text{I})}(1,2)$
+\end_inset
+
+ and 
+\begin_inset Formula $\chi_{\alpha\beta}^{(\text{II})}(1,2)$
+\end_inset
+
+, only connected diagrams contribute to the dynamical spin susceptibility.
+ 
+\end_layout
+
+\begin_layout Standard
+From now on, we use open/closed dots to represent external/internal vertices,
+ straight/wavy lines to represent the saddle point/RPA propagators, and
+ dot line for the external sources.
+ 
+\end_layout
+
+\begin_layout Standard
+The recipes to construct diagrams for 
+\begin_inset Formula $\chi_{\alpha\beta}^{(\text{I})}(1,2)$
+\end_inset
+
+ are given as following: 1.
+ choose one external loop with two external vertices and 
+\begin_inset Formula $m$
+\end_inset
+
+ (
+\begin_inset Formula $m\geq0)$
+\end_inset
+
+ internal vertices; 2.
+ choose 
+\begin_inset Formula $L$
+\end_inset
+
+ internal loops; 3.
+ contract all wavy lines.
+ As for 
+\begin_inset Formula $\chi_{\alpha\beta}^{(\text{II})}(1,2)$
+\end_inset
+
+ , step 2, 3 are the same, the only difference is step 1: choose two external
+ loops each with one external vertex and some internal vertices.
+ 
+\end_layout
+
+\begin_layout Standard
+Notice that external loops are of the order 
+\begin_inset Formula $\mathcal{O}[N^{0}]$
+\end_inset
+
+, while each internal loop is of the order 
+\begin_inset Formula $\mathcal{O}[N^{1}]$
+\end_inset
+
+ (because of the factor 
+\begin_inset Formula $N$
+\end_inset
+
+ in the exponential).
+ Further more, as shown in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:RPA_pro"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, each contraction is of the order 
+\begin_inset Formula $\mathcal{O}[N^{-1}]$
+\end_inset
+
+ .
+ Consider a particular Feynman diagram with 
+\begin_inset Formula $C$
+\end_inset
+
+ contractions and 
+\begin_inset Formula $L$
+\end_inset
+
+ internal loops, the order of the diagram is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\bigg(\frac{1}{N}\bigg)^{C-L}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The diagrams contribute up to the 
+\begin_inset Formula $1/N$
+\end_inset
+
+ order are summarized in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:diagrams"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/diagrams.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrammatic representation of (a).
+ saddle point contribution, and (b)–(e) the 
+\begin_inset Formula $1/N$
+\end_inset
+
+ correction to the dynamical spin susceptibility.
+ The diagram (b) with 
+\begin_inset Formula $(C,L)=(1,0)$
+\end_inset
+
+ comes from 
+\begin_inset Formula $\chi_{\alpha\beta}^{(\text{II})}$
+\end_inset
+
+, while diagrams (c)–(e) are all from 
+\begin_inset Formula $\chi_{\alpha\beta}^{(\text{I})}$
+\end_inset
+
+ with 
+\begin_inset Formula $(C,L)=(1,0),(1,0)$
+\end_inset
+
+, and 
+\begin_inset Formula $(2,1)$
+\end_inset
+
+, respectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:diagrams"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
