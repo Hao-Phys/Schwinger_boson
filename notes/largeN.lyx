@@ -391,7 +391,7 @@ where we have defined the so-called internal vertex,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-(\mathcal{G}^{-1}-\mathcal{G}_{\text{SP}}^{-1})=\sum_{\alpha}\Delta\phi\frac{\partial\mathcal{G}^{-1}}{\partial\phi}\equiv\sum_{\alpha}\Delta\phi v_{\alpha}.
+(\mathcal{G}^{-1}-\mathcal{G}_{\text{SP}}^{-1})=\sum_{\alpha}\Delta\phi\frac{\partial\mathcal{G}^{-1}}{\partial\phi}\bigg|_{\text{SP}}\equiv\sum_{\alpha}\Delta\phi v_{\alpha}.
 \end{equation}
 
 \end_inset
@@ -574,7 +574,7 @@ noprefix "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\mathcal{J}_{s}=\sum_{i}j_{i\alpha\beta}^{\tau}\mathcal{S}_{\alpha\beta}^{\tau}(i),
+\mathcal{J}_{s}=\sum_{i}j_{i\alpha\beta}^{\tau}\mathcal{S}_{\beta\alpha}^{\tau}(i),
 \end{equation}
 
 \end_inset
@@ -1374,7 +1374,7 @@ The inverse Green function
 \end_inset
 
  can be written as quadratic form of Nambu spinor 
-\begin_inset Formula $\vec{b}_{\bm{k},\omega}=(\bar{b}_{\bm{k}\uparrow}^{\omega},b_{-\bm{k}\downarrow}^{-\omega},\bar{b}_{\bm{k}\downarrow}^{\omega},b_{-\bm{k}\uparrow}^{-\omega})$
+\begin_inset Formula $\vec{b}_{\bm{k},\omega}^{\dagger}=(\bar{b}_{\bm{k}\uparrow}^{\omega},b_{-\bm{k}\downarrow}^{-\omega},\bar{b}_{\bm{k}\downarrow}^{\omega},b_{-\bm{k}\uparrow}^{-\omega})$
 \end_inset
 
 , with 
@@ -1406,7 +1406,7 @@ with matrix elements
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-F_{\bm{Q}}^{B}(\bm{k},\bm{k}',i\omega)=\frac{1}{2}i\omega\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i\lambda_{\bm{k}-\bm{k}'}}{2\sqrt{N_{s}\beta}}-\sum_{\bm{\delta}>0}\frac{J}{4\sqrt{N_{s}\beta}}(W_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}),
+F_{\bm{Q}}^{B}(\bm{k},\bm{k}',i\omega)=i\omega\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i\lambda_{\bm{k}-\bm{k}'}}{\sqrt{N_{s}\beta}}-\sum_{\bm{\delta}>0}\frac{J}{2\sqrt{N_{s}\beta}}(W_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}),
 \end{equation}
 
 \end_inset
@@ -1421,7 +1421,7 @@ and
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-F_{\bm{Q}}^{A}(\bm{k},\bm{k}')=\sum_{\bm{\delta}>0}\frac{J}{4\sqrt{N_{s}\beta}}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(A)\omega-\omega'}(e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}).
+F_{\bm{Q}}^{A}(\bm{k},\bm{k}')=\sum_{\bm{\delta}>0}\frac{J}{2\sqrt{N_{s}\beta}}W_{\bm{k}-\bm{k}',\bm{\delta}}^{(A)\omega-\omega'}(e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}).
 \end{equation}
 
 \end_inset
@@ -1521,7 +1521,7 @@ where
 \begin_inset Formula 
 \begin{align}
 \gamma_{\bm{k}}^{A} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}>0}J_{\bm{\delta}}A_{\bm{\delta}}\sin(\bm{k}\cdot\bm{\delta})\nonumber \\
-\gamma_{\bm{k}}^{B} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}>0}J_{\bm{\delta}}B_{\bm{\delta}}\cos(\bm{k}\cdot\bm{\delta})
+\gamma_{\bm{k}}^{B} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}>0}J_{\bm{\delta}}B_{\bm{\delta}}\cos(\bm{k}\cdot\bm{\delta}).
 \end{align}
 
 \end_inset
@@ -1744,11 +1744,144 @@ which are solved self-consistently.
 
 \end_layout
 
+\begin_layout Subsection
+Vertex rules
+\end_layout
+
+\begin_layout Subsubsection
+External vertices
+\end_layout
+
+\begin_layout Standard
+For SU(2) spins, the external source term is written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{J}_{s}=\frac{1}{2}\int_{0}^{\beta}d\tau\sum_{i}j_{i}^{\tau\mu}\bar{b}_{i\alpha}^{\tau}\sigma_{\alpha\alpha'}^{\mu}b_{i\alpha'}^{\tau},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where sum over repeated indices for flavor 
+\begin_inset Formula $\alpha,\alpha'$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu=x,y,z$
+\end_inset
+
+ is assumed.
+ In momentum and frequency space, it is written as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{J}_{s}=\frac{1}{4\sqrt{N_{s}\beta}}\sum_{\bm{k},\bm{k}'}\sum_{\omega,\omega'}j_{(\bm{k}-\bm{k}')}^{(\omega-\omega'),\mu}\sigma_{\alpha\alpha'}^{\mu}\big(\bar{b}_{\bm{k}\alpha}^{\omega}b_{\bm{k}'\alpha'}^{\omega'}+b_{-\bm{k},\alpha'}^{-\omega}\bar{b}_{-\bm{k}'\alpha}^{-\omega'}\big).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Nambu representation, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{J}_{s}=\frac{1}{2}\sum_{\bm{k},\bm{k}'}\sum_{\omega,\omega'}\vec{b}_{\bm{k},\omega}^{\dagger}\hat{j}(\bm{k},\bm{k}';\omega,\omega')\vec{b}_{\bm{k}',\omega'},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{j}(\bm{k},\bm{k}';\omega,\omega')=\frac{j_{(\bm{k}-\bm{k}')}^{(\omega-\omega'),\mu}}{2\sqrt{N_{s}\beta}}\begin{pmatrix}\sigma_{++}^{\mu} & 0 & \sigma_{+-}^{\mu} & 0\\
+0 & \sigma_{--}^{\mu} & 0 & \sigma_{+-}^{\mu}\\
+\sigma_{-+}^{\mu} & 0 & \sigma_{--}^{\mu} & 0\\
+0 & \sigma_{-+}^{\mu} & 0 & \sigma_{++}^{\mu}
+\end{pmatrix}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that 
+\begin_inset Formula $\mathcal{G}^{-1}[j]=\mathcal{G}^{-1}[j=0]+\mathcal{J}_{s}$
+\end_inset
+
+, then the external vertices in Nambu representation can be written as,
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+u_{\bm{k},\bm{k}'}^{\mu}(\bm{q},i\omega_{n})=\frac{\partial\mathcal{G}^{-1}[j]}{\partial j_{\bm{q}}^{\omega_{n},\mu}}=\frac{1}{2\sqrt{N_{s}\beta}}\sum_{\bm{k},\bm{k}'}\sum_{\omega,\omega'}\delta_{(\bm{k}-\bm{k}'),\bm{q}}\delta_{(\omega-\omega'),\omega_{n}}\vec{b}_{\bm{k},\omega}^{\dagger}\hat{u}^{\mu}\vec{b}_{\bm{k}',\omega'},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{u}^{x}=\frac{1}{2}\begin{pmatrix}0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\\
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0
+\end{pmatrix},\ \hat{u}^{y}=\frac{i}{2}\begin{pmatrix}0 & 0 & -1 & 0\\
+0 & 0 & 0 & -1\\
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0
+\end{pmatrix},\ u^{z}=\frac{1}{2}\begin{pmatrix}1 & 0 & 0 & 0\\
+0 & -1 & 0 & 0\\
+0 & 0 & -1 & 0\\
+0 & 0 & 0 & 1
+\end{pmatrix}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Internal vertices
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "./doc.bib"
-options "default"
+btprint "btPrintCited"
+bibfiles "doc"
+options "plain"
 
 \end_inset
 
