@@ -175,7 +175,22 @@ where the generalized Hamiltonian is written as,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\mathcal{H}(\bar{b},b)=\sum_{\langle i,j\rangle}\frac{2J_{ij}}{N}(\bar{B}_{ij}^{\tau}B_{ij}^{\tau}-\bar{A}_{ij}^{\tau}A_{ij}^{\tau}).
+\mathcal{H}(\bar{b},b)=\sum_{\langle i,j\rangle}\frac{2J_{ij}}{N}(\bar{B}_{ij}^{\tau}B_{ij}^{\tau}-\bar{A}_{ij}^{\tau}A_{ij}^{\tau}),
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\bar{A}_{ij}=\frac{1}{2}\sum_{\alpha}\text{sgn}\alpha b_{i\alpha}^{\dagger}b_{j\bar{\alpha}}^{\dagger},\ \bar{B}_{ij}=\frac{1}{2}\sum_{\alpha}b_{i\alpha}^{\dagger}b_{j\alpha}\ (\alpha=-N/2,...,N/2).
 \end{equation}
 
 \end_inset
@@ -217,7 +232,7 @@ e^{-\alpha\bar{B}_{ij}^{\tau}B_{ij}}=\int\frac{d\bar{W}_{ij}^{(B)\tau}W_{ij}^{(B
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-e^{\alpha\bar{A}_{ij}^{\tau}A_{ij}^{\tau}}=\int\frac{d\bar{W}_{ij}^{(A)\tau}W_{ij}^{(A)\tau}}{2\pi i/\alpha}e^{-\alpha\bar{W}_{ij}^{(A)\tau}W_{ij}^{(A)\tau}+\alpha(\bar{W}_{ij}^{(A)\tau}B_{ij}^{\tau}+W_{ij}^{(A)\tau}\bar{B}_{ij}^{\tau})}.
+e^{\alpha\bar{A}_{ij}^{\tau}A_{ij}^{\tau}}=\int\frac{d\bar{W}_{ij}^{(A)\tau}W_{ij}^{(A)\tau}}{2\pi i/\alpha}e^{-\alpha\bar{W}_{ij}^{(A)\tau}W_{ij}^{(A)\tau}+\alpha(\bar{W}_{ij}^{(A)\tau}A_{ij}^{\tau}+W_{ij}^{(A)\tau}\bar{A}_{ij}^{\tau})}.
 \end{equation}
 
 \end_inset
@@ -391,7 +406,7 @@ where we have defined the so-called internal vertex,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-(\mathcal{G}^{-1}-\mathcal{G}_{\text{SP}}^{-1})=\sum_{\alpha}\Delta\phi\frac{\partial\mathcal{G}^{-1}}{\partial\phi}\bigg|_{\text{SP}}\equiv\sum_{\alpha}\Delta\phi v_{\alpha}.
+(\mathcal{G}^{-1}-\mathcal{G}_{\text{SP}}^{-1})=\sum_{\alpha}\Delta\phi\frac{\partial\mathcal{G}^{-1}}{\partial\phi}\bigg|_{\text{SP}}\equiv\sum_{\alpha}\Delta\phi v_{\alpha}.\label{eq:int_vert}
 \end{equation}
 
 \end_inset
@@ -1406,7 +1421,7 @@ with matrix elements
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-F_{\bm{Q}}^{B}(\bm{k},\bm{k}',i\omega)=i\omega\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i\lambda_{\bm{k}-\bm{k}'}}{\sqrt{N_{s}\beta}}-\sum_{\bm{\delta}>0}\frac{J}{2\sqrt{N_{s}\beta}}(W_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}),
+F_{\bm{Q}}^{B}(\bm{k},\bm{k}',i\omega)=i\omega\delta_{\bm{k},\bm{k}'}\delta_{\omega,\omega'}+\frac{i\lambda_{\bm{k}-\bm{k}'}^{\omega-\omega'}}{\sqrt{N_{s}\beta}}-\sum_{\bm{\delta}>0}\frac{J}{2\sqrt{N_{s}\beta}}(W_{\bm{k}-\bm{k}',\bm{\delta}}^{(B)\omega-\omega'}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-\bar{W}_{\bm{k}'-\bm{k},\bm{\delta}}^{(B)\omega'-\omega}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}),
 \end{equation}
 
 \end_inset
@@ -1874,6 +1889,251 @@ where
 
 \begin_layout Subsubsection
 Internal vertices
+\end_layout
+
+\begin_layout Standard
+There are 
+\begin_inset Formula $2\times3+1=7$
+\end_inset
+
+ gauge fields for the NN model of triangular lattice.
+ Referring to the definition of the internal vertex Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:int_vert"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+v_{\bm{k},\bm{k}'}^{\lambda_{\bm{q}}^{\omega_{n}}}=\frac{\partial\mathcal{G}^{-1}}{\partial\lambda_{\bm{q}}^{\omega_{n}}}=\frac{i}{2\sqrt{N_{s}\beta}}\sum_{\bm{k},\omega}\sum_{\bm{k}',\omega'}\vec{b}_{\bm{k},\omega}^{\dagger}\hat{v}_{\bm{k},\bm{k}'}^{\lambda_{\bm{q}}^{\omega_{n}}}\vec{b}_{\bm{k}',\omega'},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{v}_{\bm{k},\bm{k}'}^{\lambda_{\bm{q}}^{\omega_{n}}}=\begin{pmatrix}\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}e^{-i\omega0^{+}} & 0 & 0 & 0\\
+0 & \delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}e^{i\omega0^{+}} & 0 & 0\\
+0 & 0 & \delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}e^{-i\omega0^{+}} & 0\\
+0 & 0 & 0 & \delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}e^{i\omega0^{+}}
+\end{pmatrix},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+v_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(A)\omega_{n}}}=\frac{\partial\mathcal{G}^{-1}}{\partial W_{\bm{q}}^{(A)\omega_{n}}}=\frac{J}{2\sqrt{N_{s}\beta}}\sum_{\bm{k},\omega}\sum_{\bm{k}',\omega'}\vec{b}_{\bm{k},\omega}^{\dagger}\hat{v}_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(A)\omega_{n}}}\vec{b}_{\bm{k}',\omega'},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where all matrix elements of 
+\begin_inset Formula $\hat{v}_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(A)\omega_{n}}}$
+\end_inset
+
+ vanish except the (1, 2) and (3, 4) elements, with
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\hat{v}_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(A)\omega_{n}}}(1,2) & =\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}(e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}),\\
+\hat{v}_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(A)\omega_{n}}}(3,4) & =-\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}(e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}).
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can write down the internal vertices for other gauge fields by following
+ the same steps.
+ Below we just list all the non-zero elements of corresponding 4 by by matrix:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+v_{\bm{k},\bm{k}'}^{\bar{W}_{\bm{q}}^{(A)\omega_{n}}}=\frac{\partial\mathcal{G}^{-1}}{\partial\bar{W}_{\bm{q}}^{(A)\omega_{n}}}=\frac{J}{2\sqrt{N_{s}\beta}}\sum_{\bm{k},\omega}\sum_{\bm{k}',\omega'}\vec{b}_{\bm{k},\omega}^{\dagger}\hat{v}_{\bm{k},\bm{k}'}^{\bar{W}_{\bm{q}}^{(A)\omega_{n}}}\vec{b}_{\bm{k}',\omega'},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\hat{v}_{\bm{k},\bm{k}'}^{\bar{W}_{\bm{q}}^{(A)\omega_{n}}}(2,1) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}(e^{i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{-i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}),\\
+\hat{v}_{\bm{k},\bm{k}'}^{\bar{W}_{\bm{q}}^{(A)\omega_{n}}}(3,4) & =-\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}(e^{i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}-e^{-i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}),
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+same for 
+\begin_inset Formula $W^{(B)}$
+\end_inset
+
+ fields: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+v_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(B)\omega_{n}}}=\frac{\partial\mathcal{G}^{-1}}{\partial W_{\bm{q}}^{(B)\omega_{n}}}=-\frac{J}{2\sqrt{N_{s}\beta}}\sum_{\bm{k},\omega}\sum_{\bm{k}',\omega'}\vec{b}_{\bm{k},\omega}^{\dagger}\hat{v}_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(B)\omega_{n}}}\vec{b}_{\bm{k}',\omega'},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\hat{v}_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(B)\omega_{n}}}(1,1) & =\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}},\\
+\hat{v}_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(B)\omega_{n}}}(2,2) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}e^{-i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega0^{+}},\\
+\hat{v}_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(B)\omega_{n}}}(3,3) & =\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}},\\
+\hat{v}_{\bm{k},\bm{k}'}^{W_{\bm{q}}^{(B)\omega_{n}}}(4,4) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}e^{-i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega0^{+}},
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+v_{\bm{k},\bm{k}'}^{\bar{W}_{\bm{q}}^{(B)\omega_{n}}}=\frac{\partial\mathcal{G}^{-1}}{\partial\bar{W}_{\bm{q}}^{(B)\omega_{n}}}=\frac{J}{2\sqrt{N_{s}\beta}}\sum_{\bm{k},\omega}\sum_{\bm{k}',\omega'}\vec{b}_{\bm{k},\omega}^{\dagger}\hat{v}_{\bm{k},\bm{k}'}^{\bar{W}_{\bm{q}}^{(B)\omega_{n}}}\vec{b}_{\bm{k}',\omega'},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\hat{v}_{\bm{k},\bm{k}'}^{\bar{W}_{\bm{q}}^{(B)\omega_{n}}}(1,1) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}e^{i(\bm{k}+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}},\\
+\hat{v}_{\bm{k},\bm{k}'}^{\bar{W}_{\bm{q}}^{(B)\omega_{n}}}(2,2) & =\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}e^{-i(\bm{k}'+\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega0^{+}},\\
+\hat{v}_{\bm{k},\bm{k}'}^{\bar{W}_{\bm{q}}^{(B)\omega_{n}}}(3,3) & =\delta_{\bm{k}'-\bm{k},\bm{q}}\delta_{\omega'-\omega,\omega_{n}}e^{i(\bm{k}-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{-i\omega0^{+}},\\
+\hat{v}_{\bm{k},\bm{k}'}^{\bar{W}_{\bm{q}}^{(B)\omega_{n}}}(4,4) & =\delta_{\bm{k}-\bm{k}',\bm{q}}\delta_{\omega-\omega',\omega_{n}}e^{-i(\bm{k}'-\frac{\bm{Q}}{2})\cdot\bm{\delta}}e^{i\omega0^{+}}.
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Condensation of Schwinger boson
+\end_layout
+
+\begin_layout Standard
+In presence of the SBF, the system has four single-spinon bands in the twisted
+ reference frame.
+ It is easy to check that condensation happens at 
+\begin_inset Formula $\epsilon_{\bm{q}=0,-}$
+\end_inset
+
+ by taking the thermodynamic limit 
+\begin_inset Formula $\lim_{h\rightarrow0}\lim_{N_{s}\rightarrow\infty}$
+\end_inset
+
+.
+ Therefore the full saddle-point Green function can be written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{G}^{\text{SP}}(\bm{k},i\omega_{n})=\mathcal{G}_{0}^{\text{SP}}(\bm{k},i\omega_{n})+\delta(\bm{k})\mathcal{G}_{c}^{\text{SP}}(\bm{k},i\omega_{n}),
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\mathcal{G}_{0}^{\text{SP}}(\bm{k},i\omega_{n})$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{G}_{c}^{\text{SP}}(\bm{k},i\omega_{n})$
+\end_inset
+
+ are the contributions from the non-condensed and condensed bosons, respectively.
+ For the non-condensed bosons, the order of two limits 
+\begin_inset Formula $\lim_{h\rightarrow0}\lim_{N_{s}\rightarrow\infty}$
+\end_inset
+
+ and 
+\begin_inset Formula $\lim_{N_{s}\rightarrow\infty}\lim_{h\rightarrow0}$
+\end_inset
+
+ gives us identical results, then we can directly use the Green function
+ with 
+\begin_inset Formula $h=0$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
