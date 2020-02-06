@@ -175,7 +175,7 @@ where the generalized Hamiltonian is written as,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\mathcal{H}(\bar{b},b)=\sum_{\langle i,j\rangle}\frac{2J_{ij}}{N}(\bar{B}_{ij}^{\tau}B_{ij}^{\tau}-\bar{A}_{ij}^{\tau}A_{ij}^{\tau}),
+\mathcal{H}(\bar{b},b)=\sum_{\langle i,j\rangle}\frac{2J_{ij}}{N}(\bar{B}_{ij}^{\tau}B_{ij}^{\tau}-\bar{A}_{ij}^{\tau}A_{ij}^{\tau}),\label{eq:mfham}
 \end{equation}
 
 \end_inset
@@ -190,7 +190,7 @@ where
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\bar{A}_{ij}=\frac{1}{2}\sum_{\alpha}\text{sgn}\alpha b_{i\alpha}^{\dagger}b_{j\bar{\alpha}}^{\dagger},\ \bar{B}_{ij}=\frac{1}{2}\sum_{\alpha}b_{i\alpha}^{\dagger}b_{j\alpha}\ (\alpha=-N/2,...,N/2).
+\bar{A}_{ij}=\frac{1}{2}\sum_{\alpha}\text{sgn}\alpha\bar{b}_{i\alpha}\bar{b}_{j\bar{\alpha}},\ \bar{B}_{ij}=\frac{1}{2}\sum_{\alpha}\bar{b}_{i\alpha}b_{j\alpha}\ (\alpha=-N/2,...,N/2).
 \end{equation}
 
 \end_inset
@@ -221,7 +221,7 @@ To integrate over bosonic variables, we introduce Hubbard-Stratonovich (H-S)
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-e^{-\alpha\bar{B}_{ij}^{\tau}B_{ij}}=\int\frac{d\bar{W}_{ij}^{(B)\tau}W_{ij}^{(B)\tau}}{2\pi i/\alpha}e^{-\alpha\bar{W}_{ij}^{(B)\tau}W_{ij}^{(B)\tau}+\alpha(-\bar{W}_{ij}^{(B)\tau}B_{ij}^{\tau}+W_{ij}^{(B)\tau}\bar{B}_{ij}^{\tau})},
+e^{-\alpha\bar{B}_{ij}^{\tau}B_{ij}}=\int\frac{d\bar{W}_{ij}^{(B)\tau}W_{ij}^{(B)\tau}}{2\pi i/\alpha}e^{-\alpha\bar{W}_{ij}^{(B)\tau}W_{ij}^{(B)\tau}+\alpha(-\bar{W}_{ij}^{(B)\tau}B_{ij}^{\tau}+W_{ij}^{(B)\tau}\bar{B}_{ij}^{\tau})},\label{eq:HS_for_B}
 \end{equation}
 
 \end_inset
@@ -232,7 +232,7 @@ e^{-\alpha\bar{B}_{ij}^{\tau}B_{ij}}=\int\frac{d\bar{W}_{ij}^{(B)\tau}W_{ij}^{(B
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-e^{\alpha\bar{A}_{ij}^{\tau}A_{ij}^{\tau}}=\int\frac{d\bar{W}_{ij}^{(A)\tau}W_{ij}^{(A)\tau}}{2\pi i/\alpha}e^{-\alpha\bar{W}_{ij}^{(A)\tau}W_{ij}^{(A)\tau}+\alpha(\bar{W}_{ij}^{(A)\tau}A_{ij}^{\tau}+W_{ij}^{(A)\tau}\bar{A}_{ij}^{\tau})}.
+e^{\alpha\bar{A}_{ij}^{\tau}A_{ij}^{\tau}}=\int\frac{d\bar{W}_{ij}^{(A)\tau}W_{ij}^{(A)\tau}}{2\pi i/\alpha}e^{-\alpha\bar{W}_{ij}^{(A)\tau}W_{ij}^{(A)\tau}+\alpha(\bar{W}_{ij}^{(A)\tau}A_{ij}^{\tau}+W_{ij}^{(A)\tau}\bar{A}_{ij}^{\tau})}.\label{eq:HS_for_A}
 \end{equation}
 
 \end_inset
@@ -1468,7 +1468,7 @@ ansatz
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-\left.\bar{W}_{\bm{\delta}}^{(B)}\right\vert _{\text{sp}} & =B_{\bm{\delta}} & \left.W_{\bm{\delta}}^{(B)}\right\vert _{\text{sp}} & =-B_{\bm{\delta}} & \left.\bar{W}_{\bm{\delta}}^{(A)}\right\vert _{\text{sp}} & =-i{A_{\bm{\delta}}} & \left.W_{\bm{\delta}}^{(A)}\right\vert _{\text{sp}} & =iA_{\bm{\delta}} & \left.\lambda\right\vert _{\text{sp}} & =-i\lambda
+\left.\bar{W}_{\bm{\delta}}^{(B)}\right\vert _{\text{sp}} & =B_{\bm{\delta}} & \left.W_{\bm{\delta}}^{(B)}\right\vert _{\text{sp}} & =-B_{\bm{\delta}} & \left.\bar{W}_{\bm{\delta}}^{(A)}\right\vert _{\text{sp}} & =-i{A_{\bm{\delta}}} & \left.W_{\bm{\delta}}^{(A)}\right\vert _{\text{sp}} & =iA_{\bm{\delta}} & \left.\lambda\right\vert _{\text{sp}} & =-i\lambda\label{eq:ansatz_sp}
 \end{align}
 
 \end_inset
@@ -1490,7 +1490,199 @@ where
 \end_inset
 
  are real.
- The Fourier transforms are
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Discussion on the ansatz
+\end_layout
+
+\begin_layout Standard
+Here we make a digression to talk about the physical intuition of reaching
+ the above ansatz.
+ Let's neglect the SBF for a moment, the 
+\begin_inset Formula $\mathcal{G}^{-1}$
+\end_inset
+
+ in real space is written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathcal{G}_{ij}^{-1} & =\sum_{\alpha=\uparrow,\downarrow}\big[\bar{b}_{i\alpha}^{\tau}\big(\partial_{\tau}-i\lambda_{i}^{\tau})b_{i\alpha}\big]\nonumber \\
+ & +\frac{2J_{ij}}{N}\big(-\bar{W}_{ij}^{(B)\tau}B_{ij}^{\tau}+W_{ij}^{(B)\tau}\bar{B}_{ij}^{\tau}+\bar{W}_{ij}^{(A)\tau}A_{ij}^{\tau}+W_{ij}^{(A)\tau}\bar{A}_{ij}^{\tau}\big).
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The boson action is defined as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+e^{-S_{\text{bos}}}\equiv\int D[\bar{b},b]e^{-\int_{0}^{\beta}d\tau\sum_{ij}\bar{b}_{i}^{\tau}\mathcal{G}_{ij}^{-1}b_{j}^{\tau}}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The derivative of the boson action with respect to a particular gauge field
+ 
+\begin_inset Formula $\phi_{\alpha}$
+\end_inset
+
+ corresponds to the 
+\begin_inset Quotes eld
+\end_inset
+
+Gaussian average
+\begin_inset Quotes erd
+\end_inset
+
+ of 
+\begin_inset Formula $\partial\mathcal{G}^{-1}/\partial\phi_{\alpha}$
+\end_inset
+
+, because 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial S_{\text{bos}}}{\partial\phi_{\alpha}}=-\frac{\int D[\bar{b},b](\partial\mathcal{G}^{-1}/\partial\phi_{\alpha})e^{-\int_{0}^{\beta}d\tau\sum_{ij}\bar{b}_{i}^{\tau}\mathcal{G}_{ij}^{-1}b_{j}^{\tau}}}{\int D[\bar{b},b]e^{-\int_{0}^{\beta}d\tau\sum_{ij}\bar{b}_{i}^{\tau}\mathcal{G}_{ij}^{-1}b_{j}^{\tau}}},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which leads to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\bar{W}_{ij}^{(B)\tau}\bigg|_{\text{SP}} & =-\langle B_{ij}^{\tau}\rangle\bigg|_{\text{SP}},\ \ W_{ij}^{(B)\tau}\bigg|_{\text{SP}}=+\langle\bar{B}_{ij}^{\tau}\rangle\bigg|_{\text{SP}},\\
+\bar{W}_{ij}^{(A)\tau}\bigg|_{\text{SP}} & =+\langle A_{ij}^{\tau}\rangle\bigg|_{\text{SP}},\ \ W_{ij}^{(A)\tau}\bigg|_{\text{SP}}=+\langle\bar{A}_{ij}^{\tau}\rangle\bigg|_{\text{SP}},
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\langle O\rangle\big|_{\text{SP}}=\big[\mathcal{Z}^{-1}\int D[\bar{b},b]e^{-\int_{0}^{\beta}d\tau\sum_{ij}\bar{b}_{i}^{\tau}\mathcal{G}_{ij}^{-1}b_{j}^{\tau}}O\big]\big|_{\text{SP}}$
+\end_inset
+
+ is a short-handed notation for the Gaussian average at the saddle-point.
+ Then the ansatz for saddle-point values of the gauge fields should reflect
+ the ansatz for the SP(2) bond operators.
+ Furthermore, given that the mean-field Hamiltonian Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:mfham"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is quadratic in the bond operators, the ansatz should be the ones that
+ are consistent with the ground state.
+ 
+\end_layout
+
+\begin_layout Standard
+Particularly for our problem, the ansatz in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:ansatz_sp"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ are indeed consistent with the 
+\begin_inset Formula $2\pi/3$
+\end_inset
+
+-order that is selected by the SBF.
+ It is expected that 
+\begin_inset Formula $\langle A_{ij}\rangle=iS\sin\frac{\bm{Q}}{2}\cdot\bm{\delta}_{ij}$
+\end_inset
+
+ and 
+\begin_inset Formula $\langle B_{ij}\rangle=S\cos\frac{\bm{Q}}{2}\cdot\bm{\delta}_{ij}$
+\end_inset
+
+ .
+ Then 
+\begin_inset Formula $\bar{W}_{ij}^{A}\big|_{\text{SP}}=(W_{ij}^{A}\big|_{\text{SP}})^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{W}_{ij}^{B}\big|_{\text{SP}}=-(W_{ij}^{B}\big|_{\text{SP}})^{*}$
+\end_inset
+
+, which is consistent with the sign difference between the sign difference
+ of the corresponding terms in the mean-field Hamiltonian Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:mfham"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and H-S decouplings Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HS_for_B"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HS_for_A"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Momentum space representation
+\end_layout
+
+\begin_layout Standard
+The Fourier transform of static and homogenous gauge fields are
 \end_layout
 
 \begin_layout Standard
@@ -1535,8 +1727,8 @@ where
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-\gamma_{\bm{k}}^{A} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}>0}J_{\bm{\delta}}A_{\bm{\delta}}\sin(\bm{k}\cdot\bm{\delta})\nonumber \\
-\gamma_{\bm{k}}^{B} & =\sum_{\bm{\delta}=\bm{\delta}_{1},\bm{\delta}_{2}>0}J_{\bm{\delta}}B_{\bm{\delta}}\cos(\bm{k}\cdot\bm{\delta}).
+\gamma_{\bm{k}}^{A} & =\sum_{\bm{\delta}}J_{\bm{\delta}}A_{\bm{\delta}}\sin(\bm{k}\cdot\bm{\delta})\nonumber \\
+\gamma_{\bm{k}}^{B} & =\sum_{\bm{\delta}}J_{\bm{\delta}}B_{\bm{\delta}}\cos(\bm{k}\cdot\bm{\delta}).
 \end{align}
 
 \end_inset
@@ -1731,7 +1923,7 @@ noprefix "false"
 \begin_inset Formula 
 \begin{align}
 S & =\frac{1}{N_{s}}\sum_{\bm{k},\sigma}A_{\bm{k},\sigma},\nonumber \\
-A_{\bm{\delta}} & =\frac{1}{N_{s}}\sum_{\bm{k},\sigma}C_{\bm{k},\sigma}\sin\bigg[\bigg(\bm{k}+\frac{\bm{Q}}{2}\bigg)\cdot\bm{\delta}\bigg),\\
+A_{\bm{\delta}} & =\frac{1}{N_{s}}\sum_{\bm{k},\sigma}C_{\bm{k},\sigma}\sin\bigg[\bigg(\bm{k}+\frac{\bm{Q}}{2}\bigg)\cdot\bm{\delta}\bigg),\label{eq:speqs}\\
 B_{\bm{\delta}} & =\frac{1}{N_{s}}\sum_{\bm{k}}\sum_{\sigma}A_{\bm{k},\sigma}\cos\bigg[\bigg(\bm{k+\frac{\bm{Q}}{2}}\bigg)\cdot\bm{\delta}\bigg],\nonumber 
 \end{align}
 
@@ -1757,6 +1949,208 @@ which are solved self-consistently.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection*
+Solve the saddle-point equations
+\end_layout
+
+\begin_layout Standard
+Because the SU(2) symmetry is spontaneously broken for the ground state,
+ we expect gapless spinon modes according to the Goldstone theorem.
+ In the twisted frame, this Goldstone mode locates at 
+\begin_inset Formula $\epsilon_{\bm{q}=0,-}$
+\end_inset
+
+ (because the order is FM in the twisted frame) in presence of the SBF,
+ while on a finite size lattice, 
+\begin_inset Formula $\epsilon_{\bm{q}=0,-}\sim1/N_{s}$
+\end_inset
+
+ .
+ As a result, spinons condense at 
+\begin_inset Formula $\epsilon_{\bm{q}=0,-}$
+\end_inset
+
+ for low 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Notice that the saddle point equations involve the matrix elements of the
+ saddle-point Green function, whereas the condensation of spinons may simply
+ the expressions of the matrix element.
+ Let's have a look:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{0,-}=\frac{1}{2}v_{0,-}^{2}-\frac{h}{8\epsilon_{0,-}},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $v_{0,-}=(\lambda+\gamma_{\bm{Q}/2}^{B})/2\epsilon_{0,-}-\frac{1}{2}$
+\end_inset
+
+.
+ Notice that 
+\begin_inset Formula $\epsilon_{0,-},h\sim1/N_{s}$
+\end_inset
+
+ while 
+\begin_inset Formula $\lambda,\gamma_{\bm{Q}/2}^{B}\sim(N_{s})^{0}$
+\end_inset
+
+, therefore 
+\begin_inset Formula $A_{0,-}\sim N_{s}.$
+\end_inset
+
+ We immediately conclude that 
+\begin_inset Formula $A_{0,-}$
+\end_inset
+
+ is the major contribution to the sum over 
+\begin_inset Formula $\bm{k}$
+\end_inset
+
+ in the third expression of Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:speqs"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Similarly, we find that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+A_{0,-}=B_{0,-} & =\frac{1}{2}v_{0,-}^{2}-\frac{h}{8\epsilon_{0,-}}\sim N_{s},\nonumber \\
+C_{0,-} & =\frac{1}{2}z_{0,-}\sim N_{s},\nonumber \\
+D_{0,-} & =\frac{1}{4}z_{0,-}\sim N_{s},\nonumber \\
+E_{0,-}=F_{0,-} & =\frac{1}{2}u_{0,-}^{2}-\frac{h}{8\epsilon_{0,-}}\sim N_{s}.
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In concrete, the initial guess of solutions to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:speqs"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is given by the solutions of the following equations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+S=\frac{1}{N_{s}}\bigg(\frac{\lambda+\gamma_{\bm{Q}/2}^{B}}{4\epsilon_{0,-}}-\frac{1}{4}-\frac{h}{8\epsilon_{0,-}}\bigg)\simeq\frac{1}{N_{s}}\frac{\lambda+\gamma_{\bm{Q}/2}^{B}}{4\epsilon_{0,-}},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{\bm{\delta}}=\frac{1}{N_{s}}\frac{\gamma_{\bm{Q}/2}^{A}}{4\epsilon_{0,-}}\sin\big(\frac{\bm{Q}}{2}\cdot\bm{\delta}\big),
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+B_{\bm{\delta}} & =\frac{1}{N_{s}}\bigg(\frac{\lambda+\gamma_{\bm{Q}/2}^{B}}{4\epsilon_{0,-}}-\frac{1}{4}-\frac{h}{8\epsilon_{0,-}}\bigg)\cos\big(\frac{\bm{Q}}{2}\cdot\bm{\delta}\big)\nonumber \\
+ & \simeq\frac{1}{N_{s}}\frac{\lambda+\gamma_{\bm{Q}/2}^{B}}{4\epsilon_{0,-}}\cos\big(\frac{\bm{Q}}{2}\cdot\bm{\delta}\big),
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\gamma_{\bm{Q}/2}^{B}=\frac{J}{2}(-B_{\bm{\delta}_{1}}+B_{\bm{\delta}_{2}}+B_{\bm{\delta}_{3}})=-\frac{3J}{2}B_{\bm{\delta}_{1}},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\gamma_{\bm{Q}/2}^{A}=\frac{\sqrt{3}J}{2}(A_{\bm{\delta}_{1}}+A_{\bm{\delta}_{2}}-A_{\bm{\delta}_{3}})=\frac{3\sqrt{3}J}{2}A_{\bm{\delta}_{1}}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that we have used ansatz that 
+\begin_inset Formula $A_{\bm{\delta}_{2}}=A_{\bm{\delta}_{1}}$
+\end_inset
+
+, 
+\begin_inset Formula $A_{\bm{\delta}_{3}}=-A_{\bm{\delta}_{1}}$
+\end_inset
+
+, and 
+\begin_inset Formula $B_{\bm{\delta}_{2}}=B_{\bm{\delta}_{3}}=-B_{\bm{\delta}_{1}}$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Subsection
