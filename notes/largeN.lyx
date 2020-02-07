@@ -1964,7 +1964,7 @@ Because the SU(2) symmetry is spontaneously broken for the ground state,
 
  (because the order is FM in the twisted frame) in presence of the SBF,
  while on a finite size lattice, 
-\begin_inset Formula $\epsilon_{\bm{q}=0,-}\sim1/N_{s}$
+\begin_inset Formula $\epsilon_{\bm{q}=0,-}=\alpha_{\bm{Q}/2}^{2}+h^{2}/4-\Delta_{0}^{2}/2\sim1/N_{s}$
 \end_inset
 
  .
@@ -2149,8 +2149,42 @@ Notice that we have used ansatz that
 \begin_inset Formula $B_{\bm{\delta}_{2}}=B_{\bm{\delta}_{3}}=-B_{\bm{\delta}_{1}}$
 \end_inset
 
-.
- 
+ (
+\begin_inset Formula $\bm{Q}=(2/3,1/3)$
+\end_inset
+
+).
+ To obtain an initial guess of the solutions, we send 
+\begin_inset Formula $\epsilon_{0,-}\rightarrow1/N_{s}$
+\end_inset
+
+, then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+B_{\bm{\delta}_{1}}=-0.25,\ \lambda=2-\frac{3}{8}J,
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{\bm{\delta}_{1}}=-\bigg(\frac{4}{27J^{2}}\bigg[4-\frac{1}{N_{s}}\bigg]\bigg)^{1/2}.
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
