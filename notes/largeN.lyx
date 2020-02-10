@@ -1268,7 +1268,11 @@ To fully describe the interactions, we introduce three pairs of SP(
 \begin_inset Formula $\bm{Q}=(2\pi/3,2\pi/\sqrt{3})$
 \end_inset
 
- is the ordering wave vector for the 
+ in Cartesian basis or 
+\begin_inset Formula $\bm{Q}=(1/3,2/3$
+\end_inset
+
+) in natural basis is the ordering wave vector for the 
 \begin_inset Formula $2\pi/3$
 \end_inset
 
@@ -1964,7 +1968,7 @@ Because the SU(2) symmetry is spontaneously broken for the ground state,
 
  (because the order is FM in the twisted frame) in presence of the SBF,
  while on a finite size lattice, 
-\begin_inset Formula $\epsilon_{\bm{q}=0,-}=\alpha_{\bm{Q}/2}^{2}+h^{2}/4-\Delta_{0}^{2}/2\sim1/N_{s}$
+\begin_inset Formula $\epsilon_{\bm{q}=0,-}=\sqrt{\alpha_{\bm{Q}/2}^{2}+h^{2}/4-\Delta_{0}^{2}/2}\sim1/N_{s}$
 \end_inset
 
  .
@@ -2113,7 +2117,7 @@ where
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\gamma_{\bm{Q}/2}^{B}=\frac{J}{2}(-B_{\bm{\delta}_{1}}+B_{\bm{\delta}_{2}}+B_{\bm{\delta}_{3}})=-\frac{3J}{2}B_{\bm{\delta}_{1}},
+\gamma_{\bm{Q}/2}^{B}=\frac{J}{2}(B_{\bm{\delta}_{1}}-B_{\bm{\delta}_{2}}+B_{\bm{\delta}_{3}})=\frac{3J}{2}B_{\bm{\delta}_{1}},
 \end{equation}
 
 \end_inset
@@ -2128,7 +2132,7 @@ and
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\gamma_{\bm{Q}/2}^{A}=\frac{\sqrt{3}J}{2}(A_{\bm{\delta}_{1}}+A_{\bm{\delta}_{2}}-A_{\bm{\delta}_{3}})=\frac{3\sqrt{3}J}{2}A_{\bm{\delta}_{1}}.
+\gamma_{\bm{Q}/2}^{A}=\frac{\sqrt{3}J}{2}(A_{\bm{\delta}_{1}}+A_{\bm{\delta}_{2}}+A_{\bm{\delta}_{3}})=\frac{3\sqrt{3}J}{2}A_{\bm{\delta}_{1}}.
 \end{equation}
 
 \end_inset
@@ -2138,33 +2142,29 @@ and
 
 \begin_layout Standard
 Notice that we have used ansatz that 
-\begin_inset Formula $A_{\bm{\delta}_{2}}=A_{\bm{\delta}_{1}}$
-\end_inset
-
-, 
-\begin_inset Formula $A_{\bm{\delta}_{3}}=-A_{\bm{\delta}_{1}}$
+\begin_inset Formula $A_{\bm{\delta}_{2}}=A_{\bm{\delta}_{3}}=A_{\bm{\delta}_{1}}$
 \end_inset
 
 , and 
-\begin_inset Formula $B_{\bm{\delta}_{2}}=B_{\bm{\delta}_{3}}=-B_{\bm{\delta}_{1}}$
+\begin_inset Formula $B_{\bm{\delta}_{2}}=-B_{\bm{\delta}_{1}}$
 \end_inset
 
- (
-\begin_inset Formula $\bm{Q}=(2/3,1/3)$
+, 
+\begin_inset Formula $B_{\bm{\delta}_{3}}=B_{\bm{\delta}_{1}}$
 \end_inset
 
-).
- To obtain an initial guess of the solutions, we send 
-\begin_inset Formula $\epsilon_{0,-}\rightarrow1/N_{s}$
+ .
+ By sending 
+\begin_inset Formula $h\rightarrow1/N_{s}$
 \end_inset
 
-, then
+, the initial guess of solutions are given by
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-B_{\bm{\delta}_{1}}=-0.25,\ \lambda=2-\frac{3}{8}J,
+B_{\bm{\delta}_{1}}\simeq\frac{1}{2}S,\ \lambda\simeq\frac{3}{2}JS,\ A_{\bm{\delta}_{1}}\simeq\frac{2J}{3\sqrt{3}}\bigg[\bigg(\frac{9JS}{4}-\frac{1}{2N_{s}}\bigg)^{2}-\frac{81}{256N_{s}^{2}}\bigg]^{1/2},
 \end{equation}
 
 \end_inset
@@ -2173,13 +2173,13 @@ B_{\bm{\delta}_{1}}=-0.25,\ \lambda=2-\frac{3}{8}J,
 \end_layout
 
 \begin_layout Standard
-and 
+with 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-A_{\bm{\delta}_{1}}=-\bigg(\frac{4}{27J^{2}}\bigg[4-\frac{1}{N_{s}}\bigg]\bigg)^{1/2}.
+\epsilon_{0,-}\simeq\frac{9J}{16N_{s}}.
 \end{equation}
 
 \end_inset

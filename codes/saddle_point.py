@@ -3,7 +3,7 @@
 # File              : saddle_point.py
 # Author            : Hao Zhang <hzhangphys@gmail.com>
 # Date              : 02.07.2020
-# Last Modified Date: 02.07.2020
+# Last Modified Date: 02.09.2020
 # Last Modified By  : Hao Zhang <hzhangphys@gmail.com>
 import numpy as np
 import cofig as cf
@@ -27,7 +27,9 @@ h_SB = cf.h_SB
 def saddle_values(k, sigma, Lambda, A_delta1, B_delta1, rcase):
     """saddle_values 
 
-    :param k: momentum
+    :param k: momentum, 
+              can be a vector with dim=N
+              or a meshgrid with dim=N
     :param sigma: flavor, -1 or 1
     :param Lambda: saddle-point values of lambda
     :param A_delta1: saddle-point values of A_delta1
@@ -40,8 +42,11 @@ def saddle_values(k, sigma, Lambda, A_delta1, B_delta1, rcase):
                   others, exit the program
     """
 
-    kQ = k + Q_half
-    mkQ = -k + Q_half
+    kQ0 = k[0, ...] + Q_half[0]
+    kQ1 = k[1, ...] + Q_half[1]
+
+    mkQ0 = -k[0, ...] + Q_half[0]
+    mkQ1 = -k[1, ...] + Q_half[1]
 
     gammaA_kQ = 0.0
     gammaA_mkQ = 0.0
@@ -50,26 +55,29 @@ def saddle_values(k, sigma, Lambda, A_delta1, B_delta1, rcase):
 
     for bond in range(3):
 
+        k_dot_d = kQ0 * delta_ij[bond, 0] + kQ1 * delta_ij[bond, 1]
+        mk_dot_d = mkQ0 * delta_ij[bond, 0] + mkQ1 * delta_ij[bond, 1]
+        
         gammaA_kQ += Jex * (A_delta1*A_sign[bond] \
-                             * np.sin(2.0*np.pi * kQ @ delta_ij[bond, :]))
+                             * np.sin(2.0*np.pi * k_dot_d))
 
         gammaA_mkQ += Jex * (A_delta1*A_sign[bond] \
-                             * np.sin(2.0*np.pi * mkQ @ delta_ij[bond, :]))
+                             * np.sin(2.0*np.pi * mk_dot_d))
 
         gammaB_kQ += Jex * (B_delta1*B_sign[bond] \
-                             * np.cos(2.0*np.pi * kQ @ delta_ij[bond, :]))
+                             * np.cos(2.0*np.pi * k_dot_d))
 
         gammaB_mkQ += Jex * (B_delta1*B_sign[bond] \
-                             * np.cos(2.0*np.pi * mkQ @ delta_ij[bond, :]))
+                             * np.cos(2.0*np.pi * mk_dot_d))
 
     alpha_kQ_sq = (Lambda + gammaB_kQ)**2 - gammaA_kQ**2
     alpha_mkQ_sq = (Lambda + gammaB_mkQ)**2 - gammaA_mkQ**2 
 
-    deltak_sq = np.sqrt( (alphap_kQ_sq-alpha_mkQ_sq)**2 + \
+    deltak_sq = np.sqrt( (alpha_kQ_sq-alpha_mkQ_sq)**2 + \
             ( (Lambda+gammaB_kQ+Lambda+gammaB_mkQ)**2  \
             - (gammaA_kQ-gammaA_mkQ)**2 ) * h_SB**2 )
 
-    epsilonk = np.sqrt( 0.5*(alphap_kQ_sq + alpha_mkQ_sq + h_SB**2 \
+    epsilonk = np.sqrt( 0.5*(alpha_kQ_sq + alpha_mkQ_sq + h_SB**2 \
                              + sigma * deltak_sq) )
 
     # notice that epsilon(k) = epsilon(-k)
@@ -102,11 +110,11 @@ def saddle_values(k, sigma, Lambda, A_delta1, B_delta1, rcase):
     Fk = - sigma * epsilonk * ( uk_sq*umk_sq + zk*zmk \
             - ( h_SB/(4.0*epsilonk) )**2 ) * (h_SB/deltak_sq)
 
-    if case == 0:
+    if rcase == 0:
         return epsilonk
-    elif case == 1:
+    elif rcase == 1:
         return Ak, Ck
-    elif case == 2:
+    elif rcase == 2:
         return Ak, Bk, Ck, Dk, Ek, Fk
     else:
         print('wrong return type, exiting')
